@@ -4,7 +4,7 @@ img.src = "img/download.jpg"
 
 img.onload = function(){
     dessiner(this);
-    
+    clearBlue(this);
 }
 
 function shadeGrey(){
@@ -35,7 +35,6 @@ function invert(){
     }
     contextInvert.putImageData(imgData, 0, 0);
 }
-
 
 function decreaseRed(){
     var canvasDecreaseRed = document.getElementById('modify');
@@ -73,12 +72,76 @@ function decreaseBlue(){
     contextDecreaseBlue.putImageData(imgData, 0, 0);
 }
 
+function whileDecreaseRed(){
+    var canvasWhileDecreaseRed = document.getElementById('modify');
+    var contextWhileDecreaseRed = canvasWhileDecreaseRed.getContext('2d');
+    contextWhileDecreaseRed.drawImage(img, 0, 0);
+    var imgData = contextWhileDecreaseRed.getImageData(0, 0, canvasWhileDecreaseRed.width, canvasWhileDecreaseRed.height);
+    var data = imgData.data;
+    var i=0;
+    while(i<data.length){
+        data[i] = data[i]*0.5;
+        i+=4;
+    }
+    contextWhileDecreaseRed.putImageData(imgData, 0, 0);
+}
+
+function whileDecreaseGreen(){
+    var canvasWhileDecreaseGreen = document.getElementById('modify');
+    var contextWhileDecreaseGreen = canvasWhileDecreaseGreen.getContext('2d');
+    contextWhileDecreaseGreen.drawImage(img, 0, 0);
+    var imgData = contextWhileDecreaseGreen.getImageData(0, 0, canvasWhileDecreaseGreen.width, canvasWhileDecreaseGreen.height);
+    var data = imgData.data;
+    var i=1;
+    while(i<data.length){
+        data[i] = data[i]*0.5;
+        i+=4;
+    }
+    contextWhileDecreaseGreen.putImageData(imgData, 0, 0);
+}
+
+function whileDecreaseBlue(){
+    var canvasWhileDecreaseBlue = document.getElementById('modify');
+    var contextWhileDecreaseBlue = canvasWhileDecreaseBlue.getContext('2d');
+    contextWhileDecreaseBlue.drawImage(img, 0, 0);
+    var imgData = contextWhileDecreaseBlue.getImageData(0, 0, canvasWhileDecreaseBlue.width, canvasWhileDecreaseBlue.height);
+    var data = imgData.data;
+    var i=2;
+    while(i<data.length){
+        data[i] = data[i]*0.5;
+        i+=4;
+    }
+    contextWhileDecreaseBlue.putImageData(imgData, 0, 0);
+}
+
+function IncreaseRed(){
+    var canvasIncreaseRed = document.getElementById('modify');
+    var contextIncreaseRed = canvasIncreaseRed.getContext('2d');
+    contextIncreaseRed.drawImage(img, 0, 0);
+    var imgData = contextIncreaseRed.getImageData(0, 0, canvasIncreaseRed.width, canvasIncreaseRed.height);
+    var data = imgData.data;
+    for(var i = 0; i < data.length; i += 4){
+        data[i] = data[i]*2.5;
+    }
+    contextIncreaseRed.putImageData(imgData, 0, 0);
+}
+
+function clearBlue(){
+    var canvasClearBlue = document.getElementById('modify');
+    var contextClearBlue = canvasClearBlue.getContext('2d');
+    contextClearBlue.drawImage(img, 0, 0);
+    var imgData = contextClearBlue.getImageData(0, 0, canvasClearBlue.width, canvasClearBlue.height);
+    var data = imgData.data;
+    var i=2;
+    while(i<data.length){
+        data[i] = 0;
+        i+=4;
+    }
+    contextClearBlue.putImageData(imgData, 0, 0);
+}
 
 function dessiner(){
     var base = document.getElementById('base');
     var context_base = base.getContext('2d');
     context_base.drawImage(img, 0, 0);
-
-    
 }
-
