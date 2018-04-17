@@ -1,14 +1,13 @@
 var img = new Image();
 
-img.src = "img/download.jpg"
+img.src = "img/drapeauFr.png"
 
 img.onload = function(){
     dessiner(this);
-    clearBlue(this);
 }
 
 function shadeGrey(){
-    var canevasGris = document.getElementById('modify');
+    var canevasGris = document.getElementById('grey');
     var contextGris = canevasGris.getContext('2d');
     contextGris.drawImage(img, 0, 0);
     var imgData = contextGris.getImageData(0, 0, canevasGris.width, canevasGris.height);
@@ -23,7 +22,7 @@ function shadeGrey(){
 }
 
 function invert(){
-    var canvasInvert = document.getElementById('modify');
+    var canvasInvert = document.getElementById('invert');
     var contextInvert = canvasInvert.getContext('2d');
     contextInvert.drawImage(img, 0, 0);
     var imgData = contextInvert.getImageData(0, 0, canvasInvert.width, canvasInvert.height);
@@ -37,7 +36,7 @@ function invert(){
 }
 
 function decreaseRed(){
-    var canvasDecreaseRed = document.getElementById('modify');
+    var canvasDecreaseRed = document.getElementById('decreaseRed');
     var contextDecreaseRed = canvasDecreaseRed.getContext('2d');
     contextDecreaseRed.drawImage(img, 0, 0);
     var imgData = contextDecreaseRed.getImageData(0, 0, canvasDecreaseRed.width, canvasDecreaseRed.height);
@@ -49,7 +48,7 @@ function decreaseRed(){
 }
 
 function decreaseGreen(){
-    var canvasDecreaseGreen = document.getElementById('modify');
+    var canvasDecreaseGreen = document.getElementById('decreaseGreen');
     var contextDecreaseGreen = canvasDecreaseGreen.getContext('2d');
     contextDecreaseGreen.drawImage(img, 0, 0);
     var imgData = contextDecreaseGreen.getImageData(0, 0, canvasDecreaseGreen.width, canvasDecreaseGreen.height);
@@ -61,7 +60,7 @@ function decreaseGreen(){
 }
 
 function decreaseBlue(){
-    var canvasDecreaseBlue = document.getElementById('modify');
+    var canvasDecreaseBlue = document.getElementById('decreaseBlue');
     var contextDecreaseBlue = canvasDecreaseBlue.getContext('2d');
     contextDecreaseBlue.drawImage(img, 0, 0);
     var imgData = contextDecreaseBlue.getImageData(0, 0, canvasDecreaseBlue.width, canvasDecreaseBlue.height);
@@ -73,7 +72,7 @@ function decreaseBlue(){
 }
 
 function whileDecreaseRed(){
-    var canvasWhileDecreaseRed = document.getElementById('modify');
+    var canvasWhileDecreaseRed = document.getElementById('decreaseRedWhile');
     var contextWhileDecreaseRed = canvasWhileDecreaseRed.getContext('2d');
     contextWhileDecreaseRed.drawImage(img, 0, 0);
     var imgData = contextWhileDecreaseRed.getImageData(0, 0, canvasWhileDecreaseRed.width, canvasWhileDecreaseRed.height);
@@ -87,7 +86,7 @@ function whileDecreaseRed(){
 }
 
 function whileDecreaseGreen(){
-    var canvasWhileDecreaseGreen = document.getElementById('modify');
+    var canvasWhileDecreaseGreen = document.getElementById('decreaseGreenWhile');
     var contextWhileDecreaseGreen = canvasWhileDecreaseGreen.getContext('2d');
     contextWhileDecreaseGreen.drawImage(img, 0, 0);
     var imgData = contextWhileDecreaseGreen.getImageData(0, 0, canvasWhileDecreaseGreen.width, canvasWhileDecreaseGreen.height);
@@ -101,7 +100,7 @@ function whileDecreaseGreen(){
 }
 
 function whileDecreaseBlue(){
-    var canvasWhileDecreaseBlue = document.getElementById('modify');
+    var canvasWhileDecreaseBlue = document.getElementById('decreaseBlueWhile');
     var contextWhileDecreaseBlue = canvasWhileDecreaseBlue.getContext('2d');
     contextWhileDecreaseBlue.drawImage(img, 0, 0);
     var imgData = contextWhileDecreaseBlue.getImageData(0, 0, canvasWhileDecreaseBlue.width, canvasWhileDecreaseBlue.height);
@@ -115,7 +114,7 @@ function whileDecreaseBlue(){
 }
 
 function IncreaseRed(){
-    var canvasIncreaseRed = document.getElementById('modify');
+    var canvasIncreaseRed = document.getElementById('increaseRed');
     var contextIncreaseRed = canvasIncreaseRed.getContext('2d');
     contextIncreaseRed.drawImage(img, 0, 0);
     var imgData = contextIncreaseRed.getImageData(0, 0, canvasIncreaseRed.width, canvasIncreaseRed.height);
@@ -127,7 +126,7 @@ function IncreaseRed(){
 }
 
 function clearBlue(){
-    var canvasClearBlue = document.getElementById('modify');
+    var canvasClearBlue = document.getElementById('clearBlue');
     var contextClearBlue = canvasClearBlue.getContext('2d');
     contextClearBlue.drawImage(img, 0, 0);
     var imgData = contextClearBlue.getImageData(0, 0, canvasClearBlue.width, canvasClearBlue.height);

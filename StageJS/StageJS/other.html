@@ -1,18 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <meta charset="UTF-8">
     <title>Super site web</title>
     <script type="text/javascript" src="code.js"></script>
+    <script type="text/javascript" src="displayCode.js"></script>
+    <canvas id="base"></canvas>
 </head>
 <body>
-    <canvas id="base"></canvas>
-    <canvas id="modify"></canvas>
-    <button type="button" onClick="shadeGrey()">Black & White!</button>
-    <button type="button" onClick="invert()">Invert Colors!</button>
-    <button type="button" onClick="decreaseRed()">Decrease Red!</button>
-    <button type="button" onClick="decreaseGreen()">Decrease Green!</button>
-    <button type="button" onClick="decreaseBlue()">Decrease Blue!</button>
-    <button >not implemented yet!</button>
+    <p>
+    <h1>Chapter 4:</h1>
+    <table class="z-depth-3 bordered highlight responsive-table">
+            <thead> <!-- En-tête du tableau -->
+                <tr>
+                    <th>Action</th>
+                    <th>Result</th>
+                    <th>Code</th>
+                </tr>
+            </thead>
+        <tr>
+            <td><button type="button" onClick="shadeGrey()">Black & White!</button></td>
+            <td><canvas id="grey"></canvas></td>
+            <td id="codeGrey"><p></p>
+                
+            </td>
+        </tr>
+        <tr>
+            <td><button type="button" onClick="invert()">Invert Colors!</button></td>
+            <td><canvas id="invert"></canvas></td>
+        </tr>
+        <tr>
+            <td><button type="button" onClick="decreaseRed()">Decrease Red!</button></td>
+            <td><canvas id="decreaseRed"></canvas></td>
+        </tr>
+        <tr>
+            <td><button type="button" onClick="decreaseGreen()">Decrease Green!</button></td>
+            <td><canvas id="decreaseGreen"></canvas></td>
+        </tr>
+        <tr>
+            <td><button type="button" onClick="decreaseBlue()">Decrease Blue!</button></td>
+            <td><canvas id="decreaseBlue"></canvas></td>
+        </tr>
+        <tr>
+            <td><button type="button" onClick="whileDecreaseRed()">Decrease Red with a While loop</button></td>
+            <td><canvas id="decreaseRedWhile"></canvas></td>
+        </tr>
+        <tr>
+            <td><button type="button" onClick="whileDecreaseGreen()">Decrease Green with a While loop</button></td>
+            <td><canvas id="decreaseGreenWhile"></canvas></td>
+        </tr>
+        <tr>
+            <td><button type="button" onClick="whileDecreaseBlue()">Decrease Blue with a While loop</button></td>
+            <td><canvas id="decreaseBlueWhile"></canvas></td>
+        </tr>
+        <tr>
+            <td><button type="button" onClick="increaseRed()">Increase Red</button></td>
+            <td><canvas id="increaseRed"></canvas></td>
+        </tr>
+        <tr>
+            <td><button type="button" onClick="clearBlue()">Remove Blue from Picture</button></td>
+            <td><canvas id="clearBlue"></canvas></td>
+        </tr>
+    </table>
 </body>
 </html>
