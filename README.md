@@ -1,2 +1,4 @@
-# Stage_Aberdeen
-Notre travail au cours du stage
+# Internship in Aberdeen
+Our work during the internship
+# Group composed by...
+Noémie Chevalier, Vincent Morel, Timothé Rouze and Enzo Contini.
