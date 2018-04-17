@@ -1,40 +1,18 @@
 var img = new Image();
 
-img.src = "img/download.jpg"
+img.src = "img/supp.jpg"
 
 img.onload = function(){
     dessiner(this);
-    clearBlue(this);
+    lighten(this);
 }
 
-function shadeGrey(){
-    var canevasGris = document.getElementById('modify');
-    var contextGris = canevasGris.getContext('2d');
-    contextGris.drawImage(img, 0, 0);
-    var imgData = contextGris.getImageData(0, 0, canevasGris.width, canevasGris.height);
-    var data = imgData.data;
-    for (var i = 0; i < data.length; i += 4) {
-        var moy = (data[i] + data[i + 1] + data[i + 2]) / 3;
-        data[i] = moy;
-        data[i + 1] = moy;
-        data[i + 2] = moy;
-    }
-    contextGris.putImageData(imgData, 0, 0);
+function dessiner(){
+    var base = document.getElementById('base');
+    var context_base = base.getContext('2d');
+    context_base.drawImage(img, 0, 0);
 }
 
-function invert(){
-    var canvasInvert = document.getElementById('modify');
-    var contextInvert = canvasInvert.getContext('2d');
-    contextInvert.drawImage(img, 0, 0);
-    var imgData = contextInvert.getImageData(0, 0, canvasInvert.width, canvasInvert.height);
-    var data = imgData.data;
-    for(var i = 0; i < data.length; i += 4){
-        data[i] = 255 - data[i];
-        data[i + 1] = 255 - data[i + 1];
-        data[i + 2] = 255 - data[i + 2];
-    }
-    contextInvert.putImageData(imgData, 0, 0);
-}
 
 function decreaseRed(){
     var canvasDecreaseRed = document.getElementById('modify');
@@ -140,8 +118,97 @@ function clearBlue(){
     contextClearBlue.putImageData(imgData, 0, 0);
 }
 
-function dessiner(){
-    var base = document.getElementById('base');
-    var context_base = base.getContext('2d');
-    context_base.drawImage(img, 0, 0);
+function sunset(){
+    decreaseGreen();
+    decreaseBlue();
 }
+
+function changeRed(amount){
+    var canvasChangeRed = document.getElementById('modify');
+    var contextChangeRed = canvasChangeRed.getContext('2d');
+    contextChangeRed.drawImage(img, 0, 0);
+    var imgData = contextChangeRed.getImageData(0, 0, canvasChangeRed.width, canvasChangeRed.height);
+    var data = imgData.data;
+    for(var i = 0; i < data.length; i += 4){
+        data[i] = data[i]*amount;
+    }
+    contextChangeRed.putImageData(imgData, 0, 0);
+}
+
+function changeColors(redAmount, greenAmount, blueAmount){
+    var canvasChangeColors = document.getElementById('modify');
+    var contextChangeColors = canvasChangeColors.getContext('2d');
+    contextChangeColors.drawImage(img, 0, 0);
+    var imgData = contextChangeColors.getImageData(0, 0, canvasChangeColors.width, canvasChangeColors.height);
+    var data = imgData.data;
+    for(var i = 0; i < data.length; i += 4){
+        data[i] = data[i]*redAmount;
+        data[i+1] = data[i+1]*greenAmount;
+        data[i+2] = data[i+2]*blueAmount;
+    }
+    contextChangeColors.putImageData(imgData, 0, 0);
+}
+
+function lighten(){
+    var canvaslighten = document.getElementById('modify');
+    var contextlighten = canvaslighten.getContext('2d');
+    contextlighten.drawImage(img, 0, 0);
+    var imgData = contextlighten.getImageData(0, 0, canvaslighten.width, canvaslighten.height);
+    var data = imgData.data;
+    for(var i = 3; i < data.length; i += 4){
+        data[i] = data[i]*1.3;
+        data[i+1] = data[i+1]*1.3;
+        data[i+2] = data[i+2]*1.3;
+    }
+    contextlighten.putImageData(imgData, 0, 0);
+}
+
+function darken(){
+    var canvasdarken = document.getElementById('modify');
+    var contextdarken = canvasdarken.getContext('2d');
+    contextdarken.drawImage(img, 0, 0);
+    var imgData = contextdarken.getImageData(0, 0, canvasdarken.width, canvasdarken.height);
+    var data = imgData.data;
+    for(var i = 0; i < data.length; i += 4){
+        data[i] = data[i]*0.7;
+        data[i+1] = data[i+1]*0.7;
+        data[i+2] = data[i+2]*0.7;
+    }
+    contextdarken.putImageData(imgData, 0, 0);
+}
+
+function invert(){
+    var canvasInvert = document.getElementById('modify');
+    var contextInvert = canvasInvert.getContext('2d');
+    contextInvert.drawImage(img, 0, 0);
+    var imgData = contextInvert.getImageData(0, 0, canvasInvert.width, canvasInvert.height);
+    var data = imgData.data;
+    for(var i = 0; i < data.length; i += 4){
+        data[i] = 255 - data[i];
+        data[i + 1] = 255 - data[i + 1];
+        data[i + 2] = 255 - data[i + 2];
+    }
+    contextInvert.putImageData(imgData, 0, 0);
+}
+
+function shadeGrey(){
+    var canevasGris = document.getElementById('modify');
+    var contextGris = canevasGris.getContext('2d');
+    contextGris.drawImage(img, 0, 0);
+    var imgData = contextGris.getImageData(0, 0, canevasGris.width, canevasGris.height);
+    var data = imgData.data;
+    for (var i = 0; i < data.length; i += 4) {
+        var moy = (data[i] + data[i + 1] + data[i + 2]) / 3;
+        data[i] = moy;
+        data[i + 1] = moy;
+        data[i + 2] = moy;
+    }
+    contextGris.putImageData(imgData, 0, 0);
+}
+
+function betterShadeGrey(){
+    /* Je m'en occupe demain */
+}
+
+
+
