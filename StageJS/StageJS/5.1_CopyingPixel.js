@@ -154,3 +154,85 @@ function mirrorHorizontal(img){
 
 
 //5.2 Copying And Transforming Pictures
+function copyPicture(img) {
+
+    var base = document.getElementById('base');
+    var context_base = base.getContext('2d');
+    var source= context_base.getImageData(0, 0,base.width, base.height);
+
+
+    var canevasModify = document.getElementById("modify");
+    var contextModify = canevasModify.getContext("2d");
+    //normalise the caneva with the image
+    canevasModify.width = img.width;
+    canevasModify.height = img.height;
+    var target= contextModify.createImageData(img.width, img.height);
+
+    for (var row = 0; row < img.height; row ++) {
+        //loop through the cols (x direction)
+        for (var col=0; col<img.width; col ++){
+            // get the pixel
+            var pixel= getPixel(col,row,img.width);
+            target.data[pixel[0]]=source.data[pixel[0]];
+            target.data[pixel[1]]=source.data[pixel[1]];
+            target.data[pixel[2]]=source.data[pixel[2]];
+            target.data[pixel[3]]=source.data[pixel[3]];
+        }
+    }
+    contextModify.putImageData(target, 0, 0);
+}
+
+function copyPictureMidway(img) {
+
+    var base = document.getElementById('base');
+    var context_base = base.getContext('2d');
+    var source= context_base.getImageData(0, 0,base.width, base.height);
+
+
+    var canevasModify = document.getElementById("modify");
+    var contextModify = canevasModify.getContext("2d");
+    //normalise the caneva with the image
+    canevasModify.width = 1000;
+    canevasModify.height = 1000;
+    var target= contextModify.createImageData(img.width, img.height);
+    for (var row = 0; row < img.height; row ++) {
+        //loop through the cols (x direction)
+        for (var col=0; col<img.width; col ++){
+            // get the pixel
+            var pixel= getPixel(col,row,img.width);
+            target.data[pixel[0]]=source.data[pixel[0]];
+            target.data[pixel[1]]=source.data[pixel[1]];
+            target.data[pixel[2]]=source.data[pixel[2]];
+            target.data[pixel[3]]=source.data[pixel[3]];
+        }
+    }
+    contextModify.putImageData(target, 100, 100);
+}
+
+function copyPictureSmallPart(img) {
+
+    var base = document.getElementById('base');
+    var context_base = base.getContext('2d');
+    var source= context_base.getImageData(0, 0,base.width, base.height);
+
+
+    var canevasModify = document.getElementById("modify");
+    var contextModify = canevasModify.getContext("2d");
+    //normalise the caneva with the image
+    canevasModify.width = img.width;
+    canevasModify.height = img.height;
+    var target= contextModify.createImageData(img.width, img.height);
+  
+    for (var row = 0; row < 170; row ++) {
+        //loop through the cols (x direction)
+        for (var col=70; col<260; col ++){
+            // get the pixel
+            var pixel= getPixel(col,row,img.width);
+            target.data[pixel[0]]=source.data[pixel[0]];
+            target.data[pixel[1]]=source.data[pixel[1]];
+            target.data[pixel[2]]=source.data[pixel[2]];
+            target.data[pixel[3]]=source.data[pixel[3]];
+        }
+    }
+    contextModify.putImageData(target, 0, 0);
+}
