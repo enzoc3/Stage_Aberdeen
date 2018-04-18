@@ -1,9 +1,10 @@
 var img = new Image();
 
-img.src = "img/drapeauFr.png"
+img.src = "img/download.jpg"
 
 window.onload = function(){
     dessiner(img);
+    shadeGrey(img);
 }
 
 function dessiner(){
@@ -208,7 +209,23 @@ function shadeGrey(){
 }
 
 function betterShadeGrey(){
-    /* Je m'en occupe demain */
+    var canevasBetterShadeGrey = document.getElementById('grey');
+    var contextBetterShadeGrey = canevasBetterShadeGrey.getContext('2d');
+    contextBetterShadeGrey.drawImage(img, 0, 0);
+    var imgData = contextBetterShadeGrey.getImageData(0, 0, canevasBetterShadeGrey.width, canevasBetterShadeGrey.height);
+    var data = imgData.data;
+    redValue=greenValue=blueValue=0;
+    for (var i = 0; i < data.length; i += 4) {
+        redValue=data[i]*0.299;
+        greenValue=data[i+1]*0.587;
+        blueValue=data[i+2]*0.114;
+        luminance = redValue+greenValue+blueValue;
+        data[i] = luminance;
+        data[i + 1] = luminance;
+        data[i + 2] = luminance;       
+    }
+    contextBetterShadeGrey.putImageData(imgData, 0, 0);
+    betterShadeGreyCode();
 }
 
 
