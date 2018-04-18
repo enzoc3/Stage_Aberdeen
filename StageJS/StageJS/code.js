@@ -35,6 +35,7 @@ function decreaseGreen(){
         data[i+1] = data[i+1]*0.5;
     }
     contextDecreaseGreen.putImageData(imgData, 0, 0);
+    decreaseGreenCode();
 }
 
 function decreaseBlue(){
@@ -47,6 +48,7 @@ function decreaseBlue(){
         data[i+2] = data[i+2]*0.5;
     }
     contextDecreaseBlue.putImageData(imgData, 0, 0);
+    decreaseBlueCode();
 }
 
 function whileDecreaseRed(){
@@ -61,6 +63,7 @@ function whileDecreaseRed(){
         i+=4;
     }
     contextWhileDecreaseRed.putImageData(imgData, 0, 0);
+    decreaseRedWhileCode();
 }
 
 function whileDecreaseGreen(){
@@ -75,6 +78,7 @@ function whileDecreaseGreen(){
         i+=4;
     }
     contextWhileDecreaseGreen.putImageData(imgData, 0, 0);
+    decreaseGreenWhileCode();
 }
 
 function whileDecreaseBlue(){
@@ -89,6 +93,7 @@ function whileDecreaseBlue(){
         i+=4;
     }
     contextWhileDecreaseBlue.putImageData(imgData, 0, 0);
+    decreaseBlueWhileCode();
 }
 
 function IncreaseRed(){
@@ -101,6 +106,7 @@ function IncreaseRed(){
         data[i] = data[i]*2.5;
     }
     contextIncreaseRed.putImageData(imgData, 0, 0);
+    increaseRedCode();
 }
 
 function clearBlue(){
@@ -115,6 +121,7 @@ function clearBlue(){
         i+=4;
     }
     contextClearBlue.putImageData(imgData, 0, 0);
+    clearBlueCode();
 }
 
 function sunset(){
