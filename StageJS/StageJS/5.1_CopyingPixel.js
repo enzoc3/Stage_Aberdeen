@@ -3,12 +3,15 @@
  */
 //Image Loadimg
 var img = new Image();
-img.src = "img/download.jpg"
+img.src = "img/flower1.png";
+var img2 = new Image();
+img2.src = "img/flower2.png";
 img.onload = function(){
-    drawBase();
-    mirrorVertial(this);
-
+    draw2Base();
+    copyFlowers(img,img2);
+    //lighten2WithNestedLoop(this)
 }
+
 /**
  * Method to draw the image of reference
  */
@@ -22,6 +25,23 @@ function drawBase() {
     img.style.display = 'none';
 }
 
+function draw2Base() {
+    var base = document.getElementById('base');
+    //normalise the caneva with the image
+    base.width = img.width;
+    base.height = img.height;
+    var context_base = base.getContext('2d');
+    context_base.drawImage(img, 0, 0);
+    img.style.display = 'none';
+
+    var base2 = document.getElementById('base2');
+    //normalise the caneva with the image
+    base2.width = img2.width;
+    base2.height = img2.height;
+    var context_base2 = base2.getContext('2d');
+    context_base2.drawImage(img2, 0, 0);
+    img2.style.display = 'none';
+}
 /**
  * Method to get the indice of a pixel
  * @param x
@@ -235,4 +255,76 @@ function copyPictureSmallPart(img) {
         }
     }
     contextModify.putImageData(target, 0, 0);
+}
+
+
+function copyFlowers(img,img2) {
+
+    var base = document.getElementById('base');
+    var context_base = base.getContext('2d');
+    var source= context_base.getImageData(0, 0,base.width, base.height);
+
+    var base2 = document.getElementById('base2');
+    var context_base2 = base2.getContext('2d');
+    var source2= context_base2.getImageData(0, 0,base2.width, base2.height);
+
+    var canevasModify = document.getElementById("modify");
+    var contextModify = canevasModify.getContext("2d");
+    //normalise the caneva with the image
+    canevasModify.width = 10000;
+    canevasModify.height = 400;
+    var target= contextModify.createImageData(canevasModify.width, canevasModify.height);
+
+    for (var row = 0; row< img.height; row ++) {
+        //loop through the cols (x direction)
+        for (var col=0; col<img.width; col ++){
+            // get the pixel
+            var pixelSource= getPixel(col,row,img.width);
+            var pixelTarget=getPixel(col,row,canevasModify.width);
+            target.data[pixelTarget[0]]=source.data[pixelSource[0]];
+            target.data[pixelTarget[1]]=source.data[pixelSource[1]];
+            target.data[pixelTarget[2]]=source.data[pixelSource[2]];
+            target.data[pixelTarget[3]]=source.data[pixelSource[3]];
+        }
+    }
+
+    for (var row = 0; row< img2.height; row ++) {
+        //loop through the cols (x direction)
+        for (var col=0; col<img2.width; col ++){
+            // get the pixel
+            var pixelSource= getPixel(col,row,img2.width);
+            var pixelTarget=getPixel(col+img2.width+1,row,canevasModify.width);
+            target.data[pixelTarget[0]]=source2.data[pixelSource[0]];
+            target.data[pixelTarget[1]]=source2.data[pixelSource[1]];
+            target.data[pixelTarget[2]]=source2.data[pixelSource[2]];
+            target.data[pixelTarget[3]]=source2.data[pixelSource[3]];
+        }
+    }
+    //retire blue and copy flower1
+    for (var row = 0; row< img.height; row ++) {
+        //loop through the cols (x direction)
+        for (var col=0; col<img.width; col ++){
+            // get the pixel
+            var pixelSource= getPixel(col,row,img.width);
+            var pixelTarget=getPixel(col+img.width*2+1,row,canevasModify.width);
+            target.data[pixelTarget[0]]=source.data[pixelSource[0]];
+            target.data[pixelTarget[1]]=source.data[pixelSource[1]];
+            target.data[pixelTarget[2]]=0;
+            target.data[pixelTarget[3]]=source.data[pixelSource[3]];
+        }
+    }
+    //negate and copy flower2
+    for (var row = 0; row< img2.height; row ++) {
+        //loop through the cols (x direction)
+        for (var col=0; col<img2.width; col ++){
+            // get the pixel
+            var pixelSource= getPixel(col,row,img2.width);
+            var pixelTarget=getPixel(col+img2.width*3+1,row,canevasModify.width);
+            target.data[pixelTarget[0]]=255-source2.data[pixelSource[0]];
+            target.data[pixelTarget[1]]=255-source2.data[pixelSource[1]];
+            target.data[pixelTarget[2]]=255-source2.data[pixelSource[2]];
+            target.data[pixelTarget[3]]=source2.data[pixelSource[3]];
+        }
+    }
+    contextModify.putImageData(target, 0, (canevasModify.height)-img.height-5);
 }
