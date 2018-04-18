@@ -210,3 +210,25 @@ function clearBlueCode(){
         </code>\
     </pre>";
 }
+
+function changeRedCode(){
+    document.getElementById('headChangeRed').innerHTML = 'function changeRed()';
+    document.getElementById('codeChangeRed').innerHTML = 
+    "<pre>\
+        <code>\
+    function changeRed(form){<br>\
+            var amount = form.value.value;<br>\
+            var canvasChangeRed = document.getElementById('changeRed');<br>\
+            var contextChangeRed = canvasChangeRed.getContext('2d');<br>\
+            contextChangeRed.drawImage(img, 0, 0);<br>\
+            var imgData = contextChangeRed.getImageData(0, 0, canvasChangeRed.width, canvasChangeRed.height);<br>\
+            var data = imgData.data;<br>\
+            for(var i = 0; i < data.length; i += 4){<br>\
+                data[i] = data[i]*amount;<br>\
+                console.log(data[i]);<br>\
+            }<br>\
+            contextChangeRed.putImageData(imgData, 0, 0);<br>\
+    } <br>\
+        </code>\
+    </pre>";
+}

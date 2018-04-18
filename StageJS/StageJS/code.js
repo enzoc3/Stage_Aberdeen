@@ -1,10 +1,9 @@
 var img = new Image();
 
-img.src = "img/download.jpg"
+img.src = "img/drapeauFr.png"
 
 window.onload = function(){
     dessiner(img);
-    shadeGrey(img);
 }
 
 function dessiner(){
@@ -130,7 +129,8 @@ function sunset(){
     decreaseBlue();
 }
 
-function changeRed(amount){//TO DO IN HTML
+function changeRed(form){
+    var amount = form.value.value;
     var canvasChangeRed = document.getElementById('changeRed');
     var contextChangeRed = canvasChangeRed.getContext('2d');
     contextChangeRed.drawImage(img, 0, 0);
@@ -140,9 +140,13 @@ function changeRed(amount){//TO DO IN HTML
         data[i] = data[i]*amount;
     }
     contextChangeRed.putImageData(imgData, 0, 0);
+    changeRedCode();
 }
 
-function changeColors(redAmount, greenAmount, blueAmount){//TO DO IN HTML
+function changeColors(form){
+    var redAmount = form.valueRed.value;
+    var greenAmount = form.valueGreen.value;
+    var blueAmount = form.valueBlue.value;
     var canvasChangeColors = document.getElementById('changeColors');
     var contextChangeColors = canvasChangeColors.getContext('2d');
     contextChangeColors.drawImage(img, 0, 0);
