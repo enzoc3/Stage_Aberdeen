@@ -2,8 +2,8 @@ var img = new Image();
 
 img.src = "img/drapeauFr.png"
 
-img.onload = function(){
-    dessiner(this);
+window.onload = function(){
+    dessiner(img);
 }
 
 function dessiner(){
@@ -22,6 +22,7 @@ function decreaseRed(){
         data[i] = data[i]*0.5;
     }
     contextDecreaseRed.putImageData(imgData, 0, 0);
+    decreaseRedCode();
 }
 
 function decreaseGreen(){
@@ -187,6 +188,7 @@ function invert(){
         data[i + 2] = 255 - data[i + 2];
     }
     contextInvert.putImageData(imgData, 0, 0);
+    InvertCode();
 }
 
 function shadeGrey(){
@@ -202,6 +204,7 @@ function shadeGrey(){
         data[i + 2] = moy;
     }
     contextGris.putImageData(imgData, 0, 0);
+    greyCode();
 }
 
 function betterShadeGrey(){

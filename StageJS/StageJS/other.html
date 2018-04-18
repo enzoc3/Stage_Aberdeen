@@ -9,61 +9,92 @@
     <title>Super site web</title>
     <script type="text/javascript" src="code.js"></script>
     <script type="text/javascript" src="displayCode.js"></script>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <canvas id="base"></canvas>
 </head>
 <body>
-    <p>
-    <h1>Chapter 4:</h1>
     <table class="z-depth-3 bordered highlight responsive-table">
-            <thead> <!-- En-tête du tableau -->
-                <tr>
-                    <th>Action</th>
-                    <th>Result</th>
-                    <th>Code</th>
-                </tr>
-            </thead>
         <tr>
-            <td><button type="button" onClick="shadeGrey()">Black & White!</button></td>
-            <td><canvas id="grey"></canvas></td>
-            <td id="codeGrey"><p></p>
-                
+            <td class='collapsible popout' data-collapsible='accordion'>
+                <li style='list-style-type:none'>
+                    <div class='collapsible-header'>
+                        <h1>Chapter 4:</h1>
+                    </div>
+                    <div class='collapsible-body'>        
+                        <table class="z-depth-3 bordered highlight responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>Action</th>
+                                    <th>Result</th>
+                                    <th>Code</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><button type="button" onClick="shadeGrey()">Black & White!</button></td>
+                                    <td><canvas id="grey"></canvas></td>
+                                    <td class='collapsible popout' data-collapsible='accordion'>
+                                        <li style='list-style-type:none'>
+                                            <div class='collapsible-header' id='headGrey'></div>
+                                            <div class='collapsible-body' id='codeGrey'></div>
+                                        </li>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="invert()">Invert Colors!</button></td>
+                                    <td><canvas id="invert"></canvas></td>
+                                    <td class='collapsible popout' data-collapsible='accordion'>
+                                        <li style='list-style-type:none'>
+                                            <div class='collapsible-header' id='headInvert'></div>
+                                            <div class='collapsible-body' id='codeInvert'></div>
+                                        </li>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="decreaseRed()">Decrease Red!</button></td>
+                                    <td><canvas id="decreaseRed"></canvas></td>
+                                    <td class='collapsible popout' data-collapsible='accordion'>
+                                        <li style='list-style-type:none'>
+                                            <div class='collapsible-header' id='headDecreaseRed'></div>
+                                            <div class='collapsible-body' id='codeDecreaseRed'></div>
+                                        </li>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="decreaseGreen()">Decrease Green!</button></td>
+                                    <td><canvas id="decreaseGreen"></canvas></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="decreaseBlue()">Decrease Blue!</button></td>
+                                    <td><canvas id="decreaseBlue"></canvas></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="whileDecreaseRed()">Decrease Red with a While loop</button></td>
+                                    <td><canvas id="decreaseRedWhile"></canvas></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="whileDecreaseGreen()">Decrease Green with a While loop</button></td>
+                                    <td><canvas id="decreaseGreenWhile"></canvas></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="whileDecreaseBlue()">Decrease Blue with a While loop</button></td>
+                                    <td><canvas id="decreaseBlueWhile"></canvas></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="increaseRed()">Increase Red</button></td>
+                                    <td><canvas id="increaseRed"></canvas></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="clearBlue()">Remove Blue from Picture</button></td>
+                                    <td><canvas id="clearBlue"></canvas></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
             </td>
-        </tr>
-        <tr>
-            <td><button type="button" onClick="invert()">Invert Colors!</button></td>
-            <td><canvas id="invert"></canvas></td>
-        </tr>
-        <tr>
-            <td><button type="button" onClick="decreaseRed()">Decrease Red!</button></td>
-            <td><canvas id="decreaseRed"></canvas></td>
-        </tr>
-        <tr>
-            <td><button type="button" onClick="decreaseGreen()">Decrease Green!</button></td>
-            <td><canvas id="decreaseGreen"></canvas></td>
-        </tr>
-        <tr>
-            <td><button type="button" onClick="decreaseBlue()">Decrease Blue!</button></td>
-            <td><canvas id="decreaseBlue"></canvas></td>
-        </tr>
-        <tr>
-            <td><button type="button" onClick="whileDecreaseRed()">Decrease Red with a While loop</button></td>
-            <td><canvas id="decreaseRedWhile"></canvas></td>
-        </tr>
-        <tr>
-            <td><button type="button" onClick="whileDecreaseGreen()">Decrease Green with a While loop</button></td>
-            <td><canvas id="decreaseGreenWhile"></canvas></td>
-        </tr>
-        <tr>
-            <td><button type="button" onClick="whileDecreaseBlue()">Decrease Blue with a While loop</button></td>
-            <td><canvas id="decreaseBlueWhile"></canvas></td>
-        </tr>
-        <tr>
-            <td><button type="button" onClick="increaseRed()">Increase Red</button></td>
-            <td><canvas id="increaseRed"></canvas></td>
-        </tr>
-        <tr>
-            <td><button type="button" onClick="clearBlue()">Remove Blue from Picture</button></td>
-            <td><canvas id="clearBlue"></canvas></td>
         </tr>
     </table>
 </body>
