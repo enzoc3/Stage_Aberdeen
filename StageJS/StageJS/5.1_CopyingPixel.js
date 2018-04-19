@@ -4,9 +4,9 @@
 //Image Loadimg
 var img = new Image();
 img.src = "img/download.jpg"
-img.onload = function(){
+window.onload = function(){
     drawBase();
-    mirrorVertial(this);
+    //mirrorVertial(this);
 
 }
 /**
@@ -32,15 +32,17 @@ function drawBase() {
 function getPixel(x, y, width) {
     var colorIndice = y * (width * 4) + x * 4;
     return [colorIndice, colorIndice+1, colorIndice+2, colorIndice+3];
+    getPixelCode();
 }
 
 /**
  * Method to change the color of an image with nested loops
  * @param img
  */
-function ChangePixelColorNestedLoop(img){
+
+function ChangePixelColorNestedLoop(){
     //init the canvas and the image
-    var canevasModify = document.getElementById('modify');
+    var canevasModify = document.getElementById('changePixelColor');
     //normalise the caneva with the image
     canevasModify.width = img.width;
     canevasModify.height = img.height;
@@ -61,15 +63,16 @@ function ChangePixelColorNestedLoop(img){
         }
     }
     contextModify.putImageData(imgData, 0, 0);
+    changePixelColorNestedLoopCode();
 }
 
 /**
  * Method to ligthen an image with nested loop
  * @param img
  */
-function lighten2WithNestedLoop(img) {
+function lighten2WithNestedLoop(){
     //init the canvas and the image
-    var canevasModify = document.getElementById('modify');
+    var canevasModify = document.getElementById('lighten2');
     //normalise the caneva with the image
     canevasModify.width = img.width;
     canevasModify.height = img.height;
@@ -88,11 +91,12 @@ function lighten2WithNestedLoop(img) {
         }
     }
     contextModify.putImageData(imgData, 0, 0);
+    lighten2WithNestedLoopCode();
 }
 
-function mirrorVertial(img) {
+function mirrorVertial() {
     //init the canvas and the image
-    var canevasModify = document.getElementById('modify');
+    var canevasModify = document.getElementById('mirrorVert');
     //normalise the caneva with the image
     canevasModify.width = img.width;
     canevasModify.height = img.height;
@@ -115,15 +119,16 @@ function mirrorVertial(img) {
         }
     }
     contextModify.putImageData(imgData, 0, 0);
+    mirrorVertialCode();
 }
 
 /**
  * Method to change the color of an image with nested loops
  * @param img
  */
-function mirrorHorizontal(img){
+function mirrorHorizontal(){
     //init the canvas and the image
-    var canevasModify = document.getElementById('modify');
+    var canevasModify = document.getElementById('mirrorHori');
     //normalise the caneva with the image
     canevasModify.width = img.width;
     canevasModify.height = img.height;
@@ -150,6 +155,7 @@ function mirrorHorizontal(img){
         }
     }
     contextModify.putImageData(imgData, 0, 0);
+    mirrorHorizontalCode();
 }
 
 
