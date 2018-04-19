@@ -7,14 +7,212 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <meta charset="UTF-8">
     <title>Super site web</title>
-    <script type="text/javascript" src="5.1_CopyingPixel.js"></script>
-    <script type="text/javascript" src="displayCode.js"></script>
+    <img id="nous" src="img/nous.jpg">
+    <img id="temple" src="img/temple.jpg" style="display: none;">
+    <script type="text/javascript" src="codeCh4.js"></script>
+    <script type="text/javascript" src="codeCh5.js"></script>
+    <script type="text/javascript" src="displayCodeCh5.js"></script>
+    <script type="text/javascript" src="displayCodeCh4.js"></script>
     
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    
     <canvas id="base"></canvas>
+    <canvas id="baseFlower"></canvas>
 </head>
 <body>
+    <table class="z-depth-3 bordered highlight responsive-table">
+        <tr>
+            <td class='collapsible popout' data-collapsible='accordion'>
+                <li style='list-style-type:none'>
+                    <div class='collapsible-header'>
+                        <h1>Chapter 4:</h1>
+                    </div>
+                    <div class='collapsible-body'>        
+                        <table class="z-depth-3 bordered highlight responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>Action</th>
+                                    <th>Result</th>
+                                    <th>Code</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><button type="button" onClick="shadeGrey()" class="btn waves-effect waves-light">Black & White!</button></td>
+                                    <td><canvas id="grey"></canvas></td>
+                                    <td class='collapsible popout' data-collapsible='accordion'>
+                                        <li style='list-style-type:none'>
+                                            <div class='collapsible-header' id='headGrey'></div>
+                                            <div class='collapsible-body' id='codeGrey'></div>
+                                        </li>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="invert()" class="btn waves-effect waves-light">Invert Colors!</button></td>
+                                    <td><canvas id="invert"></canvas></td>
+                                    <td class='collapsible popout' data-collapsible='accordion'>
+                                        <li style='list-style-type:none'>
+                                            <div class='collapsible-header' id='headInvert'></div>
+                                            <div class='collapsible-body' id='codeInvert'></div>
+                                        </li>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="decreaseRed()" class="btn waves-effect waves-light">Decrease Red!</button></td>
+                                    <td><canvas id="decreaseRed"></canvas></td>
+                                    <td class='collapsible popout' data-collapsible='accordion'>
+                                        <li style='list-style-type:none'>
+                                            <div class='collapsible-header' id='headDecreaseRed'></div>
+                                            <div class='collapsible-body' id='codeDecreaseRed'></div>
+                                        </li>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="decreaseGreen()" class="btn waves-effect waves-light">Decrease Green!</button></td>
+                                    <td><canvas id="decreaseGreen"></canvas></td>
+                                    <td class='collapsible popout' data-collapsible='accordion'>
+                                        <li style='list-style-type:none'>
+                                            <div class='collapsible-header' id='headDecreaseGreen'></div>
+                                            <div class='collapsible-body' id='codeDecreaseGreen'></div>
+                                        </li>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="decreaseBlue()" class="btn waves-effect waves-light">Decrease Blue!</button></td>
+                                    <td><canvas id="decreaseBlue"></canvas></td>
+                                    <td class='collapsible popout' data-collapsible='accordion'>
+                                        <li style='list-style-type:none'>
+                                            <div class='collapsible-header' id='headDecreaseBlue'></div>
+                                            <div class='collapsible-body' id='codeDecreaseBlue'></div>
+                                        </li>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="whileDecreaseRed()" class="btn waves-effect waves-light">Decrease Red with a While loop</button></td>
+                                    <td><canvas id="decreaseRedWhile"></canvas></td>
+                                    <td class='collapsible popout' data-collapsible='accordion'>
+                                        <li style='list-style-type:none'>
+                                            <div class='collapsible-header' id='headDecreaseRedWhile'></div>
+                                            <div class='collapsible-body' id='codeDecreaseRedWhile'></div>
+                                        </li>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="whileDecreaseGreen()" class="btn waves-effect waves-light">Decrease Green with a While loop</button></td>
+                                    <td><canvas id="decreaseGreenWhile"></canvas></td>
+                                    <td class='collapsible popout' data-collapsible='accordion'>
+                                        <li style='list-style-type:none'>
+                                            <div class='collapsible-header' id='headDecreaseGreenWhile'></div>
+                                            <div class='collapsible-body' id='codeDecreaseGreenWhile'></div>
+                                        </li>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="whileDecreaseBlue()" class="btn waves-effect waves-light">Decrease Blue with a While loop</button></td>
+                                    <td><canvas id="decreaseBlueWhile"></canvas></td>
+                                    <td class='collapsible popout' data-collapsible='accordion'>
+                                        <li style='list-style-type:none'>
+                                            <div class='collapsible-header' id='headDecreaseBlueWhile'></div>
+                                            <div class='collapsible-body' id='codeDecreaseBlueWhile'></div>
+                                        </li>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="increaseRed()" class="btn waves-effect waves-light">Increase Red</button></td>
+                                    <td><canvas id="increaseRed"></canvas></td>
+                                    <td class='collapsible popout' data-collapsible='accordion'>
+                                        <li style='list-style-type:none'>
+                                            <div class='collapsible-header' id='headIncreaseRed'></div>
+                                            <div class='collapsible-body' id='codeIncreaseRed'></div>
+                                        </li>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="clearBlue()" class="btn waves-effect waves-light">Remove Blue from Picture</button></td>
+                                    <td><canvas id="clearBlue"></canvas></td>
+                                    <td class='collapsible popout' data-collapsible='accordion'>
+                                        <li style='list-style-type:none'>
+                                            <div class='collapsible-header' id='headClearBlue'></div>
+                                            <div class='collapsible-body' id='codeClearBlue'></div>
+                                        </li>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <form class="col s12" method="GET" action='' id='changeRedForm'>
+                                            <div class="input-field col s12">
+                                                <label for = "value"> Enter a value to change the amount of red (between 0 & 1): </label>
+                                                <input name='value' type="text" value="0"/>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <input type="button" class="btn waves-effect waves-light" onclick="changeRed(this.form)"value="Change red value"></input>
+                                            </div>
+                                        </form>
+                                    </td>
+                                    <td><canvas id="changeRed"></canvas></td>
+                                    <td class='collapsible popout' data-collapsible='accordion'>
+                                        <li style='list-style-type:none'>
+                                            <div class='collapsible-header' id='headChangeRed'></div>
+                                            <div class='collapsible-body' id='codeChangeRed'></div>
+                                        </li>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <form class="col s12" method="GET" action='' id='changeColorsForm'>
+                                            <div class="input-field col s12">
+                                                <label for = "valueRed"> Enter a value to change the amount of red (between 0 & 1): </label>
+                                                <input name='valueRed' type="text" value="0"/>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <label for = "valueGreen"> Enter a value to change the amount of green (between 0 & 1): </label>
+                                                <input name='valueGreen' type="text" value="0"/>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <label for = "valueBlue"> Enter a value to change the amount of blue (between 0 & 1): </label>
+                                                <input name='valueBlue' type="text" value="0"/>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <input type="button" class="btn waves-effect waves-light" onclick="changeColors(this.form)"value="Change RGB values"></input>
+                                            </div>
+                                        </form>
+                                    </td>
+                                    <td><canvas id="changeColors"></canvas></td>
+                                    <td class='collapsible popout' data-collapsible='accordion'>
+                                        <li style='list-style-type:none'>
+                                            <div class='collapsible-header' id='headChangeColors'></div>
+                                            <div class='collapsible-body' id='codeChangeColors'></div>
+                                        </li>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="lighten()" class="btn waves-effect waves-light">lighten</button></td>
+                                    <td><canvas id="lighten"></canvas></td>
+                                    <td class='collapsible popout' data-collapsible='accordion'>
+                                        <li style='list-style-type:none'>
+                                            <div class='collapsible-header' id='headLighten'></div>
+                                            <div class='collapsible-body' id='codeLighten'></div>
+                                        </li>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" onClick="darken()" class="btn waves-effect waves-light">darken</button></td>
+                                    <td><canvas id="darken"></canvas></td>
+                                    <td class='collapsible popout' data-collapsible='accordion'>
+                                        <li style='list-style-type:none'>
+                                            <div class='collapsible-header' id='headDarken'></div>
+                                            <div class='collapsible-body' id='codeDarken'></div>
+                                        </li>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+            </td>
+        </tr>
+    </table>
     <table class="z-depth-3 bordered highlight responsive-table">
         <tr>
             <td class='collapsible popout' data-collapsible='accordion'>
@@ -33,7 +231,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><button type="button" onClick="ChangePixelColorNestedLoop()">Change Pixel Color!</button></td>
+                                    <td><button type="button" onClick="ChangePixelColorNestedLoop()" class="btn waves-effect waves-light">Change Pixel Color!</button></td>
                                     <td><canvas id="changePixelColor"></canvas></td>
                                     <td class='collapsible popout' data-collapsible='accordion'>
                                         <li style='list-style-type:none'>
@@ -43,7 +241,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><button type="button" onClick="lighten2WithNestedLoop()">Lighten!</button></td>
+                                    <td><button type="button" onClick="lighten2WithNestedLoop()" class="btn waves-effect waves-light">Lighten!</button></td>
                                     <td><canvas id="lighten2"></canvas></td>
                                     <td class='collapsible popout' data-collapsible='accordion'>
                                         <li style='list-style-type:none'>
@@ -53,7 +251,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><button type="button" onClick="mirrorVertial()">Mirror Vertical!</button></td>
+                                    <td><button type="button" onClick="mirrorVertial()" class="btn waves-effect waves-light">Mirror Vertical!</button></td>
                                     <td><canvas id="mirrorVert"></canvas></td>
                                     <td class='collapsible popout' data-collapsible='accordion'>
                                         <li style='list-style-type:none'>
@@ -63,7 +261,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><button type="button" onClick="mirrorHorizontalTopToBottom()">Mirror Horizontal Top to Bottom!</button></td>
+                                    <td><button type="button" onClick="mirrorHorizontalTopToBottom()" class="btn waves-effect waves-light">Mirror Horizontal Top to Bottom!</button></td>
                                     <td><canvas id="mirrorHoriTB"></canvas></td>
                                     <td class='collapsible popout' data-collapsible='accordion'>
                                         <li style='list-style-type:none'>
@@ -73,7 +271,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><button type="button" onClick="mirrorHorizontalBottomToTop()">Mirror Horizontal Bottom to Top!</button></td>
+                                    <td><button type="button" onClick="mirrorHorizontalBottomToTop()" class="btn waves-effect waves-light">Mirror Horizontal Bottom to Top!</button></td>
                                     <td><canvas id="mirrorHoriBT"></canvas></td>
                                     <td class='collapsible popout' data-collapsible='accordion'>
                                         <li style='list-style-type:none'>
@@ -83,7 +281,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><button type="button" onClick="mirrorTemplePartVertical()">Mirror Temple Vertical!</button></td>
+                                    <td><button type="button" onClick="mirrorTemplePartVertical()" class="btn waves-effect waves-light">Mirror Temple Vertical!</button></td>
                                     <td><canvas id="templePartVertical"></canvas></td>
                                     <td class='collapsible popout' data-collapsible='accordion'>
                                         <li style='list-style-type:none'>
@@ -93,7 +291,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><button type="button" onClick="copyPicture()">Copy Picture!</button></td>
+                                    <td><button type="button" onClick="copyPicture()" class="btn waves-effect waves-light">Copy Picture!</button></td>
                                     <td><canvas id="copyP"></canvas></td>
                                     <td class='collapsible popout' data-collapsible='accordion'>
                                         <li style='list-style-type:none'>
@@ -103,7 +301,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><button type="button" onClick="copyPictureMidway()">Copy Picture Midway!</button></td>
+                                    <td><button type="button" onClick="copyPictureMidway()" class="btn waves-effect waves-light">Copy Picture Midway!</button></td>
                                     <td><canvas id="copyPM"></canvas></td>
                                     <td class='collapsible popout' data-collapsible='accordion'>
                                         <li style='list-style-type:none'>
@@ -113,7 +311,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><button type="button" onClick="copyPictureSmallPart()">Copy Picture Small Part!</button></td>
+                                    <td><button type="button" onClick="copyPictureSmallPart()" class="btn waves-effect waves-light">Copy Picture Small Part!</button></td>
                                     <td><canvas id="copySM"></canvas></td>
                                     <td class='collapsible popout' data-collapsible='accordion'>
                                         <li style='list-style-type:none'>
@@ -123,7 +321,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><button type="button" onClick="copyAndLeftRotation()">Copy And left rotation!</button></td>
+                                    <td><button type="button" onClick="copyAndLeftRotation()" class="btn waves-effect waves-light">Copy And left rotation!</button></td>
                                     <td><canvas id="copyAndLeft"></canvas></td>
                                     <td class='collapsible popout' data-collapsible='accordion'>
                                         <li style='list-style-type:none'>
@@ -133,7 +331,17 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><button type="button" onClick="scaleUp()">Scale up!</button></td>
+                                    <td>
+                                        <form class="col s12" method="GET" action='' id='scaleUpForm'>
+                                            <div class="input-field col s12">
+                                                <label for = "scale"> Enter a value to scale up: </label>
+                                                <input name='scale' type="text" value="0"/>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <input type="button" class="btn waves-effect waves-light" onclick="scaleUp(this.form)"value="Scale up!"></input>
+                                            </div>
+                                        </form>
+                                    </td>
                                     <td><canvas id="scale"></canvas></td>
                                     <td class='collapsible popout' data-collapsible='accordion'>
                                         <li style='list-style-type:none'>
