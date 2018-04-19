@@ -1,4 +1,5 @@
-var imgCh4 = document.getElementById("drapeau");
+
+var imgCh4 = document.getElementById("nous");
 
 window.onload = function(){
     dessiner();
@@ -12,6 +13,8 @@ function dessiner(){
 
 function decreaseRed(){
     var canvasDecreaseRed = document.getElementById('decreaseRed');
+    canvasDecreaseRed.width = imgCh4.width;
+    canvasDecreaseRed.height = imgCh4.height;
     var contextDecreaseRed = canvasDecreaseRed.getContext('2d');
     contextDecreaseRed.drawImage(imgCh4, 0, 0);
     var imgData = contextDecreaseRed.getImageData(0, 0, canvasDecreaseRed.width, canvasDecreaseRed.height);
@@ -25,6 +28,8 @@ function decreaseRed(){
 
 function decreaseGreen(){
     var canvasDecreaseGreen = document.getElementById('decreaseGreen');
+    canvasDecreaseGreen.width = imgCh4.width;
+    canvasDecreaseGreen.height = imgCh4.height;
     var contextDecreaseGreen = canvasDecreaseGreen.getContext('2d');
     contextDecreaseGreen.drawImage(imgCh4, 0, 0);
     var imgData = contextDecreaseGreen.getImageData(0, 0, canvasDecreaseGreen.width, canvasDecreaseGreen.height);
@@ -38,6 +43,8 @@ function decreaseGreen(){
 
 function decreaseBlue(){
     var canvasDecreaseBlue = document.getElementById('decreaseBlue');
+    canvasDecreaseBlue.width = imgCh4.width;
+    canvasDecreaseBlue.height = imgCh4.height;
     var contextDecreaseBlue = canvasDecreaseBlue.getContext('2d');
     contextDecreaseBlue.drawImage(imgCh4, 0, 0);
     var imgData = contextDecreaseBlue.getImageData(0, 0, canvasDecreaseBlue.width, canvasDecreaseBlue.height);
@@ -51,6 +58,8 @@ function decreaseBlue(){
 
 function whileDecreaseRed(){
     var canvasWhileDecreaseRed = document.getElementById('decreaseRedWhile');
+    canvasWhileDecreaseRed.width = imgCh4.width;
+    canvasWhileDecreaseRed.height = imgCh4.height;
     var contextWhileDecreaseRed = canvasWhileDecreaseRed.getContext('2d');
     contextWhileDecreaseRed.drawImage(imgCh4, 0, 0);
     var imgData = contextWhileDecreaseRed.getImageData(0, 0, canvasWhileDecreaseRed.width, canvasWhileDecreaseRed.height);
@@ -66,6 +75,8 @@ function whileDecreaseRed(){
 
 function whileDecreaseGreen(){
     var canvasWhileDecreaseGreen = document.getElementById('decreaseGreenWhile');
+    canvasWhileDecreaseGreen.width = imgCh4.width;
+    canvasWhileDecreaseGreen.height = imgCh4.height;
     var contextWhileDecreaseGreen = canvasWhileDecreaseGreen.getContext('2d');
     contextWhileDecreaseGreen.drawImage(imgCh4, 0, 0);
     var imgData = contextWhileDecreaseGreen.getImageData(0, 0, canvasWhileDecreaseGreen.width, canvasWhileDecreaseGreen.height);
@@ -81,6 +92,8 @@ function whileDecreaseGreen(){
 
 function whileDecreaseBlue(){
     var canvasWhileDecreaseBlue = document.getElementById('decreaseBlueWhile');
+    canvasWhileDecreaseBlue.width = imgCh4.width;
+    canvasWhileDecreaseBlue.height = imgCh4.height;
     var contextWhileDecreaseBlue = canvasWhileDecreaseBlue.getContext('2d');
     contextWhileDecreaseBlue.drawImage(imgCh4, 0, 0);
     var imgData = contextWhileDecreaseBlue.getImageData(0, 0, canvasWhileDecreaseBlue.width, canvasWhileDecreaseBlue.height);
@@ -96,6 +109,8 @@ function whileDecreaseBlue(){
 
 function increaseRed(){
     var canvasIncreaseRed = document.getElementById('increaseRed');
+    canvasIncreaseRed.width = imgCh4.width;
+    canvasIncreaseRed.height = imgCh4.height;
     var contextIncreaseRed = canvasIncreaseRed.getContext('2d');
     contextIncreaseRed.drawImage(imgCh4, 0, 0);
     var imgData = contextIncreaseRed.getImageData(0, 0, canvasIncreaseRed.width, canvasIncreaseRed.height);
@@ -109,6 +124,8 @@ function increaseRed(){
 
 function clearBlue(){
     var canvasClearBlue = document.getElementById('clearBlue');
+    canvasClearBlue.width = imgCh4.width;
+    canvasClearBlue.height = imgCh4.height;
     var contextClearBlue = canvasClearBlue.getContext('2d');
     contextClearBlue.drawImage(imgCh4, 0, 0);
     var imgData = contextClearBlue.getImageData(0, 0, canvasClearBlue.width, canvasClearBlue.height);
@@ -130,6 +147,8 @@ function sunset(){
 function changeRed(form){
     var amount = form.value.value;
     var canvasChangeRed = document.getElementById('changeRed');
+    canvasChangeRed.width = imgCh4.width;
+    canvasChangeRed.height = imgCh4.height;
     var contextChangeRed = canvasChangeRed.getContext('2d');
     contextChangeRed.drawImage(imgCh4, 0, 0);
     var imgData = contextChangeRed.getImageData(0, 0, canvasChangeRed.width, canvasChangeRed.height);
@@ -146,6 +165,8 @@ function changeColors(form){
     var greenAmount = form.valueGreen.value;
     var blueAmount = form.valueBlue.value;
     var canvasChangeColors = document.getElementById('changeColors');
+    canvasChangeColors.width = imgCh4.width;
+    canvasChangeColors.height = imgCh4.height;
     var contextChangeColors = canvasChangeColors.getContext('2d');
     contextChangeColors.drawImage(imgCh4, 0, 0);
     var imgData = contextChangeColors.getImageData(0, 0, canvasChangeColors.width, canvasChangeColors.height);
@@ -161,6 +182,8 @@ function changeColors(form){
 
 function lighten(){
     var canvaslighten = document.getElementById('lighten');
+    canvaslighten.width = imgCh4.width;
+    canvaslighten.height = imgCh4.height;
     var contextlighten = canvaslighten.getContext('2d');
     contextlighten.drawImage(imgCh4, 0, 0);
     var imgData = contextlighten.getImageData(0, 0, canvaslighten.width, canvaslighten.height);
@@ -176,6 +199,8 @@ function lighten(){
 
 function darken(){//TO DO IN HTML
     var canvasdarken = document.getElementById('darken');
+    canvasdarken.width = imgCh4.width;
+    canvasdarken.height = imgCh4.height;
     var contextdarken = canvasdarken.getContext('2d');
     contextdarken.drawImage(imgCh4, 0, 0);
     var imgData = contextdarken.getImageData(0, 0, canvasdarken.width, canvasdarken.height);
@@ -190,6 +215,8 @@ function darken(){//TO DO IN HTML
 
 function invert(){
     var canvasInvert = document.getElementById('invert');
+    canvasInvert.width = imgCh4.width;
+    canvasInvert.height = imgCh4.height;
     var contextInvert = canvasInvert.getContext('2d');
     contextInvert.drawImage(imgCh4, 0, 0);
     var imgData = contextInvert.getImageData(0, 0, canvasInvert.width, canvasInvert.height);
@@ -205,6 +232,8 @@ function invert(){
 
 function shadeGrey(){
     var canevasGris = document.getElementById('grey');
+    canevasGris.width = imgCh4.width;
+    canevasGris.height = imgCh4.height;
     var contextGris = canevasGris.getContext('2d');
     contextGris.drawImage(imgCh4, 0, 0);
     var imgData = contextGris.getImageData(0, 0, canevasGris.width, canevasGris.height);
@@ -221,6 +250,8 @@ function shadeGrey(){
 
 function betterShadeGrey(){
     var canevasBetterShadeGrey = document.getElementById('grey');
+    canevasBetterShadeGrey.width = imgCh4.width;
+    canevasBetterShadeGrey.height = imgCh4.height;
     var contextBetterShadeGrey = canevasBetterShadeGrey.getContext('2d');
     contextBetterShadeGrey.drawImage(imgCh4, 0, 0);
     var imgData = contextBetterShadeGrey.getImageData(0, 0, canevasBetterShadeGrey.width, canevasBetterShadeGrey.height);
