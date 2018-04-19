@@ -174,7 +174,7 @@ function increaseRedCode(){
     document.getElementById('codeIncreaseRed').innerHTML = 
     "<pre>\
         <code>\
-    function IncreaseRed(){<br>\
+    function increaseRed(){<br>\
             var canvasIncreaseRed = document.getElementById('increaseRed');<br>\
             var contextIncreaseRed = canvasIncreaseRed.getContext('2d');<br>\
             contextIncreaseRed.drawImage(img, 0, 0);<br>\
@@ -228,6 +228,53 @@ function changeRedCode(){
                 console.log(data[i]);<br>\
             }<br>\
             contextChangeRed.putImageData(imgData, 0, 0);<br>\
+    } <br>\
+        </code>\
+    </pre>";
+}
+
+function changeColorsCode(){
+    document.getElementById('headChangeColors').innerHTML = 'function changeColors()';
+    document.getElementById('codeChangeColors').innerHTML = 
+    "<pre>\
+        <code>\
+    function changeColors(form){<br>\
+            var redAmount = form.valueRed.value;<br>\
+            var greenAmount = form.valueGreen.value;<br>\
+            var blueAmount = form.valueBlue.value;<br>\
+            var canvasChangeColors = document.getElementById('changeColors');<br>\
+            var contextChangeColors = canvasChangeColors.getContext('2d');<br>\
+            contextChangeColors.drawImage(imgCh4, 0, 0);<br>\
+            var imgData = contextChangeColors.getImageData(0, 0, canvasChangeColors.width, canvasChangeColors.height);<br>\
+            var data = imgData.data;<br>\
+            for(var i = 0; i < data.length; i += 4){<br>\
+                data[i] = data[i]*redAmount;<br>\
+                data[i+1] = data[i+1]*greenAmount;<br>\
+                data[i+2] = data[i+2]*blueAmount;<br>\
+            }<br>\
+            contextChangeColors.putImageData(imgData, 0, 0);<br>\
+    } <br>\
+        </code>\
+    </pre>";
+}
+
+function lightenCode(){
+    document.getElementById('headLighten').innerHTML = 'function lighten()';
+    document.getElementById('codeLighten').innerHTML = 
+    "<pre>\
+        <code>\
+    function lighten(){<br>\
+            var canvaslighten = document.getElementById('lighten');<br>\
+            var contextlighten = canvaslighten.getContext('2d');<br>\
+            contextlighten.drawImage(imgCh4, 0, 0);<br>\
+            var imgData = contextlighten.getImageData(0, 0, canvaslighten.width, canvaslighten.height);<br>\
+            var data = imgData.data;<br>\
+            for(var i = 3; i < data.length; i += 4){<br>\
+                data[i] = data[i]*1.3;<br>\
+                data[i+1] = data[i+1]*1.3;<br>\
+                data[i+2] = data[i+2]*1.3;<br>\
+            }<br>\
+            contextlighten.putImageData(imgData, 0, 0);<br>\
     } <br>\
         </code>\
     </pre>";

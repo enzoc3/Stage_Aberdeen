@@ -1,21 +1,19 @@
-var img = new Image();
-
-img.src = "img/drapeauFr.png"
+var imgCh4 = document.getElementById("drapeau");
 
 window.onload = function(){
-    dessiner(img);
+    dessiner();
 }
 
 function dessiner(){
     var base = document.getElementById('base');
     var context_base = base.getContext('2d');
-    context_base.drawImage(img, 0, 0);
+    context_base.drawImage(imgCh4, 0, 0);
 }
 
 function decreaseRed(){
     var canvasDecreaseRed = document.getElementById('decreaseRed');
     var contextDecreaseRed = canvasDecreaseRed.getContext('2d');
-    contextDecreaseRed.drawImage(img, 0, 0);
+    contextDecreaseRed.drawImage(imgCh4, 0, 0);
     var imgData = contextDecreaseRed.getImageData(0, 0, canvasDecreaseRed.width, canvasDecreaseRed.height);
     var data = imgData.data;
     for(var i = 0; i < data.length; i += 4){
@@ -28,7 +26,7 @@ function decreaseRed(){
 function decreaseGreen(){
     var canvasDecreaseGreen = document.getElementById('decreaseGreen');
     var contextDecreaseGreen = canvasDecreaseGreen.getContext('2d');
-    contextDecreaseGreen.drawImage(img, 0, 0);
+    contextDecreaseGreen.drawImage(imgCh4, 0, 0);
     var imgData = contextDecreaseGreen.getImageData(0, 0, canvasDecreaseGreen.width, canvasDecreaseGreen.height);
     var data = imgData.data;
     for(var i = 0; i < data.length; i += 4){
@@ -41,7 +39,7 @@ function decreaseGreen(){
 function decreaseBlue(){
     var canvasDecreaseBlue = document.getElementById('decreaseBlue');
     var contextDecreaseBlue = canvasDecreaseBlue.getContext('2d');
-    contextDecreaseBlue.drawImage(img, 0, 0);
+    contextDecreaseBlue.drawImage(imgCh4, 0, 0);
     var imgData = contextDecreaseBlue.getImageData(0, 0, canvasDecreaseBlue.width, canvasDecreaseBlue.height);
     var data = imgData.data;
     for(var i = 0; i < data.length; i += 4){
@@ -54,7 +52,7 @@ function decreaseBlue(){
 function whileDecreaseRed(){
     var canvasWhileDecreaseRed = document.getElementById('decreaseRedWhile');
     var contextWhileDecreaseRed = canvasWhileDecreaseRed.getContext('2d');
-    contextWhileDecreaseRed.drawImage(img, 0, 0);
+    contextWhileDecreaseRed.drawImage(imgCh4, 0, 0);
     var imgData = contextWhileDecreaseRed.getImageData(0, 0, canvasWhileDecreaseRed.width, canvasWhileDecreaseRed.height);
     var data = imgData.data;
     var i=0;
@@ -69,7 +67,7 @@ function whileDecreaseRed(){
 function whileDecreaseGreen(){
     var canvasWhileDecreaseGreen = document.getElementById('decreaseGreenWhile');
     var contextWhileDecreaseGreen = canvasWhileDecreaseGreen.getContext('2d');
-    contextWhileDecreaseGreen.drawImage(img, 0, 0);
+    contextWhileDecreaseGreen.drawImage(imgCh4, 0, 0);
     var imgData = contextWhileDecreaseGreen.getImageData(0, 0, canvasWhileDecreaseGreen.width, canvasWhileDecreaseGreen.height);
     var data = imgData.data;
     var i=1;
@@ -84,7 +82,7 @@ function whileDecreaseGreen(){
 function whileDecreaseBlue(){
     var canvasWhileDecreaseBlue = document.getElementById('decreaseBlueWhile');
     var contextWhileDecreaseBlue = canvasWhileDecreaseBlue.getContext('2d');
-    contextWhileDecreaseBlue.drawImage(img, 0, 0);
+    contextWhileDecreaseBlue.drawImage(imgCh4, 0, 0);
     var imgData = contextWhileDecreaseBlue.getImageData(0, 0, canvasWhileDecreaseBlue.width, canvasWhileDecreaseBlue.height);
     var data = imgData.data;
     var i=2;
@@ -96,14 +94,14 @@ function whileDecreaseBlue(){
     decreaseBlueWhileCode();
 }
 
-function IncreaseRed(){
+function increaseRed(){
     var canvasIncreaseRed = document.getElementById('increaseRed');
     var contextIncreaseRed = canvasIncreaseRed.getContext('2d');
-    contextIncreaseRed.drawImage(img, 0, 0);
+    contextIncreaseRed.drawImage(imgCh4, 0, 0);
     var imgData = contextIncreaseRed.getImageData(0, 0, canvasIncreaseRed.width, canvasIncreaseRed.height);
     var data = imgData.data;
     for(var i = 0; i < data.length; i += 4){
-        data[i] = data[i]*2.5;
+        data[i] = data[i] *5.5;
     }
     contextIncreaseRed.putImageData(imgData, 0, 0);
     increaseRedCode();
@@ -112,7 +110,7 @@ function IncreaseRed(){
 function clearBlue(){
     var canvasClearBlue = document.getElementById('clearBlue');
     var contextClearBlue = canvasClearBlue.getContext('2d');
-    contextClearBlue.drawImage(img, 0, 0);
+    contextClearBlue.drawImage(imgCh4, 0, 0);
     var imgData = contextClearBlue.getImageData(0, 0, canvasClearBlue.width, canvasClearBlue.height);
     var data = imgData.data;
     var i=2;
@@ -133,7 +131,7 @@ function changeRed(form){
     var amount = form.value.value;
     var canvasChangeRed = document.getElementById('changeRed');
     var contextChangeRed = canvasChangeRed.getContext('2d');
-    contextChangeRed.drawImage(img, 0, 0);
+    contextChangeRed.drawImage(imgCh4, 0, 0);
     var imgData = contextChangeRed.getImageData(0, 0, canvasChangeRed.width, canvasChangeRed.height);
     var data = imgData.data;
     for(var i = 0; i < data.length; i += 4){
@@ -149,7 +147,7 @@ function changeColors(form){
     var blueAmount = form.valueBlue.value;
     var canvasChangeColors = document.getElementById('changeColors');
     var contextChangeColors = canvasChangeColors.getContext('2d');
-    contextChangeColors.drawImage(img, 0, 0);
+    contextChangeColors.drawImage(imgCh4, 0, 0);
     var imgData = contextChangeColors.getImageData(0, 0, canvasChangeColors.width, canvasChangeColors.height);
     var data = imgData.data;
     for(var i = 0; i < data.length; i += 4){
@@ -158,26 +156,28 @@ function changeColors(form){
         data[i+2] = data[i+2]*blueAmount;
     }
     contextChangeColors.putImageData(imgData, 0, 0);
+    changeColorsCode();
 }
 
-function lighten(){//TO DO IN HTML
+function lighten(){
     var canvaslighten = document.getElementById('lighten');
     var contextlighten = canvaslighten.getContext('2d');
-    contextlighten.drawImage(img, 0, 0);
+    contextlighten.drawImage(imgCh4, 0, 0);
     var imgData = contextlighten.getImageData(0, 0, canvaslighten.width, canvaslighten.height);
     var data = imgData.data;
     for(var i = 3; i < data.length; i += 4){
-        data[i] = data[i]*1.3;
-        data[i+1] = data[i+1]*1.3;
-        data[i+2] = data[i+2]*1.3;
+        data[i] = data[i]*3.3;
+        data[i+1] = data[i+1]*3.3;
+        data[i+2] = data[i+2]*3.3;
     }
     contextlighten.putImageData(imgData, 0, 0);
+    lightenCode();
 }
 
 function darken(){//TO DO IN HTML
     var canvasdarken = document.getElementById('darken');
     var contextdarken = canvasdarken.getContext('2d');
-    contextdarken.drawImage(img, 0, 0);
+    contextdarken.drawImage(imgCh4, 0, 0);
     var imgData = contextdarken.getImageData(0, 0, canvasdarken.width, canvasdarken.height);
     var data = imgData.data;
     for(var i = 0; i < data.length; i += 4){
@@ -191,7 +191,7 @@ function darken(){//TO DO IN HTML
 function invert(){
     var canvasInvert = document.getElementById('invert');
     var contextInvert = canvasInvert.getContext('2d');
-    contextInvert.drawImage(img, 0, 0);
+    contextInvert.drawImage(imgCh4, 0, 0);
     var imgData = contextInvert.getImageData(0, 0, canvasInvert.width, canvasInvert.height);
     var data = imgData.data;
     for(var i = 0; i < data.length; i += 4){
@@ -206,7 +206,7 @@ function invert(){
 function shadeGrey(){
     var canevasGris = document.getElementById('grey');
     var contextGris = canevasGris.getContext('2d');
-    contextGris.drawImage(img, 0, 0);
+    contextGris.drawImage(imgCh4, 0, 0);
     var imgData = contextGris.getImageData(0, 0, canevasGris.width, canevasGris.height);
     var data = imgData.data;
     for (var i = 0; i < data.length; i += 4) {
@@ -222,7 +222,7 @@ function shadeGrey(){
 function betterShadeGrey(){
     var canevasBetterShadeGrey = document.getElementById('grey');
     var contextBetterShadeGrey = canevasBetterShadeGrey.getContext('2d');
-    contextBetterShadeGrey.drawImage(img, 0, 0);
+    contextBetterShadeGrey.drawImage(imgCh4, 0, 0);
     var imgData = contextBetterShadeGrey.getImageData(0, 0, canevasBetterShadeGrey.width, canevasBetterShadeGrey.height);
     var data = imgData.data;
     redValue=greenValue=blueValue=0;

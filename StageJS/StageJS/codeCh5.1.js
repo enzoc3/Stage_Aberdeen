@@ -2,15 +2,15 @@
  * Created by 1715844 on 17/04/2018.
  */
 //Image Loadimg
-var img = new Image();
-img.src = "img/download.jpg"
+
+var img = document.getElementById("flower");
 window.onload = function(){
     drawBase();
     //mirrorVertial(this);
 
 }
 /**
- * Method to draw the image of reference
+ * Method to draw the reference image
  */
 function drawBase() {
     var base = document.getElementById('baseFlower');
@@ -32,13 +32,7 @@ function drawBase() {
 function getPixel(x, y, width) {
     var colorIndice = y * (width * 4) + x * 4;
     return [colorIndice, colorIndice+1, colorIndice+2, colorIndice+3];
-    getPixelCode();
 }
-
-/**
- * Method to change the color of an image with nested loops
- * @param img
- */
 
 function ChangePixelColorNestedLoop(){
     //init the canvas and the image
@@ -60,16 +54,12 @@ function ChangePixelColorNestedLoop(){
             data[pixel[0]] = 0; //red
             data[pixel[1]] = 0; //green
             data[pixel[2]] = 0; //blue
-        }
+        }   
     }
     contextModify.putImageData(imgData, 0, 0);
     changePixelColorNestedLoopCode();
 }
 
-/**
- * Method to ligthen an image with nested loop
- * @param img
- */
 function lighten2WithNestedLoop(){
     //init the canvas and the image
     var canevasModify = document.getElementById('lighten2');
@@ -152,11 +142,7 @@ function mirrorHorizontalTopToBottom(){
     mirrorHorizontalCode();
 }
 
-/**
- * Method to mirror pixels in a picture along a horizontal line, bottom to top with nested loops
- * @param img
- */
-function mirrorHorizontalBottomToTop(img){
+function mirrorHorizontalBottomToTop(){
     //init the canvas and the image
     var canevasModify = document.getElementById('modify');
     //normalise the caneva with the image
@@ -185,11 +171,7 @@ function mirrorHorizontalBottomToTop(img){
     contextModify.putImageData(imgData, 0, 0);
 }
 
-/**
- * Method to mirror part of the picture around a verticalline at a mirror point
- * @param img
- */
-function mirrorTemplePartVertical(img) {
+function mirrorTemplePartVertical() {
     var mirrorPoint = 768;
     img.src = "img/temple.jpg";
     //init the canvas and the image
@@ -222,11 +204,7 @@ function mirrorTemplePartVertical(img) {
 
 //5.2 Copying And Transforming Pictures
 
-/**
- *
- * @param img
- */
-function copyPicture(img) {
+function copyPicture() {
     var base = document.getElementById('base');
     //normalise the caneva with the image
     base.width = img.width;
@@ -256,11 +234,7 @@ function copyPicture(img) {
     contextModify.putImageData(target, 0, 0);
 }
 
-/**
- *
- * @param img
- */
-function copyPictureMidway(img) {
+function copyPictureMidway() {
     var base = document.getElementById('base');
     //normalise the caneva with the image
     base.width = img.width;
@@ -290,7 +264,7 @@ function copyPictureMidway(img) {
     contextModify.putImageData(target, 100, 100);
 }
 
-function copyPictureSmallPart(img) {
+function copyPictureSmallPart() {
     var base = document.getElementById('base');
     //normalise the caneva with the image
     base.width = img.width;
@@ -320,11 +294,7 @@ function copyPictureSmallPart(img) {
     contextModify.putImageData(target, 0, 0);
 }
 
-/**
- * Method to copy an picture and rotate it left 90 degrees on the current picture
- * @param img
- */
-function copyAndLeftRotation(img) {
+function copyAndLeftRotation() {
     var base = document.getElementById('base');
     var context_base = base.getContext('2d');
     var source = context_base.getImageData(0, 0, base.width, base.height);
