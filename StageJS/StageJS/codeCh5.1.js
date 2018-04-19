@@ -13,7 +13,7 @@ window.onload = function(){
  * Method to draw the image of reference
  */
 function drawBase() {
-    var base = document.getElementById('base');
+    var base = document.getElementById('baseFlower');
     //normalise the caneva with the image
     base.width = img.width;
     base.height = img.height;
