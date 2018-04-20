@@ -332,15 +332,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <form class="col s12" method="GET" action='' id='scaleUpForm'>
-                                            <div class="input-field col s12">
-                                                <label for = "scale"> Enter a value to scale up: </label>
-                                                <input name='scale' type="text" value="0"/>
-                                            </div>
-                                            <div class="input-field col s12">
-                                                <input type="button" class="btn waves-effect waves-light" onclick="scaleUp(this.form)"value="Scale up!"></input>
-                                            </div>
-                                        </form>
+                                        <button  type="button" onClick="scaleUp()" class="btn waves-effect waves-light">Scale Up!</button>
                                     </td>
                                     <td><canvas id="scale"></canvas></td>
                                     <td class='collapsible popout' data-collapsible='accordion'>

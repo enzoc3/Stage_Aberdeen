@@ -353,10 +353,11 @@ function copyAndLeftRotation() {
 /**
 * Method to create a new picture that is scaled up by 10 times
 */
-function scaleUp(form) {
-    var time = form.scale.value;
+function scaleUp() {
+    var time = 2;
     var base = document.getElementById('base');
     var context_base = base.getContext('2d');
+    context_base.drawImage(img, 0, 0);
     var source = context_base.getImageData(0, 0,base.width, base.height);
     var canevasModify = document.getElementById("scale");
     //normalise the caneva with the image
