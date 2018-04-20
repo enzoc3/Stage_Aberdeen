@@ -6,9 +6,11 @@
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <meta charset="UTF-8">
-    <title>Super site web</title>
+    <title>Java to JS</title>
     <img id="nous" src="img/nous.jpg">
     <img id="temple" src="img/temple.jpg" style="display: none;">
+    <img id="flower1" src="img/flower1.png" style="display: none;">
+    <img id="flower2" src="img/flower2.png" style="display: none;">
     <script type="text/javascript" src="codeCh4.js"></script>
     <script type="text/javascript" src="codeCh5.js"></script>
     <script type="text/javascript" src="displayCodeCh5.js"></script>
@@ -17,8 +19,13 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     
-    <canvas id="base"></canvas>
-    <canvas id="baseFlower"></canvas>
+    <div style="text-align: center">
+        <h1>Java to JS : Pictures</h1>
+        <canvas id="base"></canvas>
+        <h4>Computing Education Team - Timothé Rouze / Enzo Contini / Vincent Morel / Noémie Chevalier</h4>
+        <hr size=4 width=40%>
+        <p>This website is treating our picture in differents ways with JavaScript. You can see here the 2 first chapters of the book : Introduction to Computing & Programming With Java by Mark Guzdial & Barbara Ericson. Our work is a kind of translation of this book.</p>
+    </div>
 </head>
 <body>
     <table class="z-depth-3 bordered highlight responsive-table">
@@ -26,7 +33,7 @@
             <td class='collapsible popout' data-collapsible='accordion'>
                 <li style='list-style-type:none'>
                     <div class='collapsible-header'>
-                        <h1>Chapter 4:</h1>
+                        <h1>Chapter 4</h1>
                     </div>
                     <div class='collapsible-body'>        
                         <table class="z-depth-3 bordered highlight responsive-table">
@@ -142,7 +149,7 @@
                                     <td>
                                         <form class="col s12" method="GET" action='' id='changeRedForm'>
                                             <div class="input-field col s12">
-                                                <label for = "value"> Enter a value to change the amount of red (between 0 & 1): </label>
+                                                <label for = "value"> Enter a value to multiply the amount of red : </label>
                                                 <input name='value' type="text" value="0"/>
                                             </div>
                                             <div class="input-field col s12">
@@ -162,15 +169,15 @@
                                     <td>
                                         <form class="col s12" method="GET" action='' id='changeColorsForm'>
                                             <div class="input-field col s12">
-                                                <label for = "valueRed"> Enter a value to change the amount of red (between 0 & 1): </label>
+                                                <label for = "valueRed"> Enter a value to multiply the amount of red : </label>
                                                 <input name='valueRed' type="text" value="0"/>
                                             </div>
                                             <div class="input-field col s12">
-                                                <label for = "valueGreen"> Enter a value to change the amount of green (between 0 & 1): </label>
+                                                <label for = "valueGreen"> Enter a value to multiply the amount of green : </label>
                                                 <input name='valueGreen' type="text" value="0"/>
                                             </div>
                                             <div class="input-field col s12">
-                                                <label for = "valueBlue"> Enter a value to change the amount of blue (between 0 & 1): </label>
+                                                <label for = "valueBlue"> Enter a value to multiply the amount of blue : </label>
                                                 <input name='valueBlue' type="text" value="0"/>
                                             </div>
                                             <div class="input-field col s12">
@@ -218,7 +225,7 @@
             <td class='collapsible popout' data-collapsible='accordion'>
                 <li style='list-style-type:none'>
                     <div class='collapsible-header'>
-                        <h1>Chapter 5:</h1>
+                        <h1>Chapter 5</h1>
                     </div>
                     <div class='collapsible-body'>        
                         <table class="z-depth-3 bordered highlight responsive-table">
@@ -342,6 +349,42 @@
                                         </li>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td>
+                                        <button  type="button" onClick="copyPictureHalfAsBig()" class="btn waves-effect waves-light">Copy Picture Half as Big!</button>
+                                    </td>
+                                    <td><canvas id="copyPictureHAB"></canvas></td>
+                                    <td class='collapsible popout' data-collapsible='accordion'>
+                                        <li style='list-style-type:none'>
+                                            <div class='collapsible-header' id='headPictureHAB'></div>
+                                            <div class='collapsible-body' id='codePictureHAB'></div>
+                                        </li>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <form class="col s12" method="GET" action='' id='changePlaceForm'>
+                                            <div class="input-field col s12">
+                                                <label for = "x"> Enter a value for x : </label>
+                                                <input name='x' type="text" value="0"/>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <label for = "y"> Enter a value for y : </label>
+                                                <input name='y' type="text" value="0"/>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <input type="button" class="btn waves-effect waves-light" onclick="copyFlowerTO(this.form)"value="Change Place"></input>
+                                            </div>
+                                        </form>
+                                    </td>
+                                    <td><canvas id="copyFlowerT"></canvas></td>
+                                    <td class='collapsible popout' data-collapsible='accordion'>
+                                        <li style='list-style-type:none'>
+                                            <div class='collapsible-header' id='headFlowerT'></div>
+                                            <div class='collapsible-body' id='codeFlowerT'></div>
+                                        </li>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -350,4 +393,9 @@
         </tr>
     </table>
 </body>
+<footer>
+    <div style="text-align: center" style="background-color: black">
+        <p>COMET Website - Timothé Rouze / Enzo Contini / Vincent Morel / Noémie Chevalier </p>
+    </div>    
+</footer>
 </html>

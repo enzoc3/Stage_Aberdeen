@@ -424,3 +424,85 @@ function scaleUpCode(){
         </code>\
     </pre>";
 }
+
+
+function copyPictureHalfAsBigCode(){
+    document.getElementById('headPictureHAB').innerHTML = 'function copyPictureHalfAsBig()';
+    document.getElementById('codePictureHAB').innerHTML = 
+    "<pre>\
+        <code>\
+    function copyFlowerTO(form) {<br>\
+            var xStart=form.x.value;<br>\
+            var yStart=form.y.value;<br>\
+            var base = document.getElementById('base');<br>\
+            //normalise the caneva with the image<br>\
+            base.width = imgflower1.width;<br>\
+            base.height = imgflower1.height;<br>\
+            var context_base = base.getContext('2d');<br>\
+            context_base.drawImage(imgflower1, 0, 0);<br>\
+            var source= context_base.getImageData(0, 0,base.width, base.height);<br>\
+            var canevasModify = document.getElementById(\"copyFlowerT\");<br>\
+            //normalise the caneva with the image<br>\
+            canevasModify.width = 1000;<br>\
+            canevasModify.height = 1000;<br>\
+            var contextModify = canevasModify.getContext(\"2d\");<br>\
+            var target= contextModify.createImageData(imgflower1.width, imgflower1.height);<br>\
+            for (var row = 0; row < imgflower1.height; row ++) {<br>\
+                //loop through the cols (x direction)<br>\
+                for (var col=0; col<imgflower1.width; col ++){<br>\
+                    // get the pixel<br>\
+                    var pixel= getPixel(col,row,imgflower1.width);<br>\
+                    target.data[pixel[0]]=source.data[pixel[0]];<br>\
+                    target.data[pixel[1]]=source.data[pixel[1]];<br>\
+                    target.data[pixel[2]]=source.data[pixel[2]];<br>\
+                    target.data[pixel[3]]=source.data[pixel[3]];<br>\
+                }<br>\
+            }<br>\
+            contextModify.putImageData(target, xStart, yStart);<br>\
+            copyFlowerTOCode();<br>\
+        }<br>\
+    } <br>\
+        </code>\
+    </pre>";
+}
+
+
+function copyFlowerTOCode(){
+    document.getElementById('headFlowerT').innerHTML = 'function copyFlowerTO()';
+    document.getElementById('codeFlowerT').innerHTML = 
+    "<pre>\
+        <code>\
+    function copyFlowerTO(form) {<br>\
+            var xStart=form.x.value;<br>\
+            var yStart=form.y.value;<br>\
+            var base = document.getElementById('base');<br>\
+            //normalise the caneva with the image<br>\
+            base.width = imgflower1.width;<br>\
+            base.height = imgflower1.height;<br>\
+            var context_base = base.getContext('2d');<br>\
+            context_base.drawImage(imgflower1, 0, 0);<br>\
+            var source= context_base.getImageData(0, 0,base.width, base.height);<br>\
+            var canevasModify = document.getElementById(\"copyFlowerT\");<br>\
+            //normalise the caneva with the image<br>\
+            canevasModify.width = 1000;<br>\
+            canevasModify.height = 1000;<br>\
+            var contextModify = canevasModify.getContext(\"2d\");<br>\
+            var target= contextModify.createImageData(imgflower1.width, imgflower1.height);<br>\
+            for (var row = 0; row < imgflower1.height; row ++) {<br>\
+                //loop through the cols (x direction)<br>\
+                for (var col=0; col<imgflower1.width; col ++){<br>\
+                    // get the pixel<br>\
+                    var pixel= getPixel(col,row,imgflower1.width);<br>\
+                    target.data[pixel[0]]=source.data[pixel[0]];<br>\
+                    target.data[pixel[1]]=source.data[pixel[1]];<br>\
+                    target.data[pixel[2]]=source.data[pixel[2]];<br>\
+                    target.data[pixel[3]]=source.data[pixel[3]];<br>\
+                }<br>\
+            }<br>\
+            contextModify.putImageData(target, xStart, yStart);<br>\
+            copyFlowerTOCode();<br>\
+        }<br>\
+    } <br>\
+        </code>\
+    </pre>";
+}

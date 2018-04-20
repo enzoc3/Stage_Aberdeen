@@ -1,9 +1,8 @@
-/**
- * Created by 1715844 on 17/04/2018.
- */
-
 var img = document.getElementById("nous");
 var imgtemple = document.getElementById("temple");
+var imgflower1 = document.getElementById("flower1");
+var imgflower2 = document.getElementById("flower2");
+
 window.onload = function(){
     drawBase();
 
@@ -12,7 +11,7 @@ window.onload = function(){
  * Method to draw the reference image
  */
 function drawBase() {
-    var base = document.getElementById('baseFlower');
+    var base = document.getElementById('base');
     //normalise the caneva with the image
     base.width = img.width;
     base.height = img.height;
@@ -386,5 +385,69 @@ function scaleUp() {
     scaleUpCode();
 }
 
+function copyPictureHalfAsBig() {
+    var base = document.getElementById('base');
+    //normalise the caneva with the image
+    base.width = img.width;
+    base.height = img.height;
+    var context_base = base.getContext('2d');
+    context_base.drawImage(img, 0, 0);
+    var source= context_base.getImageData(0, 0,base.width, base.height);
+    var canevasModify = document.getElementById("copyPictureHAB");
+    //normalise the caneva with the image
+    canevasModify.width = img.width/2;
+    canevasModify.height = img.height/2;
+    var contextModify = canevasModify.getContext("2d");
+    var target= contextModify.createImageData(img.width/2, img.height/2);
+    var rowT=0
+    for (var row = 0; row < img.height; row +=2) {
+        var colT=0
+        //loop through the cols (x direction)
+        for (var col=0; col<img.width; col +=2){
+            // get the pixel
+            var pixel= getPixel(col,row,img.width);
+            var pixelT=getPixel(colT,rowT,img.width/2);
+            target.data[pixelT[0]]=source.data[pixel[0]];
+            target.data[pixelT[1]]=source.data[pixel[1]];
+            target.data[pixelT[2]]=source.data[pixel[2]];
+            target.data[pixelT[3]]=source.data[pixel[3]];
 
+            colT++;
+        }
+        rowT++;
+    }
+    contextModify.putImageData(target, 0, 0);
+    copyPictureHalfAsBigCode();
+}
+
+function copyFlowerTO(form) {
+    var xStart=form.x.value;
+    var yStart=form.y.value;
+    var base = document.getElementById('base');
+    //normalise the caneva with the image
+    base.width = imgflower1.width;
+    base.height = imgflower1.height;
+    var context_base = base.getContext('2d');
+    context_base.drawImage(imgflower1, 0, 0);
+    var source= context_base.getImageData(0, 0,base.width, base.height);
+    var canevasModify = document.getElementById("copyFlowerT");
+    //normalise the caneva with the image
+    canevasModify.width = 1000;
+    canevasModify.height = 1000;
+    var contextModify = canevasModify.getContext("2d");
+    var target= contextModify.createImageData(imgflower1.width, imgflower1.height);
+    for (var row = 0; row < imgflower1.height; row ++) {
+        //loop through the cols (x direction)
+        for (var col=0; col<imgflower1.width; col ++){
+            // get the pixel
+            var pixel= getPixel(col,row,imgflower1.width);
+            target.data[pixel[0]]=source.data[pixel[0]];
+            target.data[pixel[1]]=source.data[pixel[1]];
+            target.data[pixel[2]]=source.data[pixel[2]];
+            target.data[pixel[3]]=source.data[pixel[3]];
+        }
+    }
+    contextModify.putImageData(target, xStart, yStart);
+    copyFlowerTOCode();
+}
 
