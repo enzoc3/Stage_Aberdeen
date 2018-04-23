@@ -1,12 +1,23 @@
 function Pixel(r, g, b, a, x, y){
-    this.r = r;
-    this.g = g;
-    this.b = b;
-    this.a = a;
-    this.x = x;
-    this.y = y;
-}
-
-var pix = new Pixel(10,10,10,0,0,0);
-
-console.log(pix);
+    this.red = r;
+    this.green = g;
+    this.blue = b;
+    this.alpha = a;
+    this.posX = x;
+    this.posY = y;
+    this.getColor = function() {
+        return [this.red, this.green, this.blue];
+    };
+    this.getPos = function() {
+        return [this.posX, this.posY];
+    };
+    this.setColor = function(newRed,newGreen,newBlue) {
+        this.red=newRed;
+        this.green=newGreen;
+        this.blue=newBlue;
+    };
+    this.setPos = function(newPosX,newPosY){
+        this.posX=newPosX;
+        this.posY=newPosY;
+    };
+};
