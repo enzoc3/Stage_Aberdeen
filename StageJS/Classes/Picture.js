@@ -1,0 +1,3 @@
+function Picture(){
+    /* AIMEZ VOUS LES UNS LES AUTRES COMME JE VOUS AI AIMES */
+};
