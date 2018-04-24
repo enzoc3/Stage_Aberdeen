@@ -1,11 +1,16 @@
 function getImage(path) {
     var image=new Image();
     image.src=path;
-    image.onload = function(){
-        return getImageData(this);
+    return new Promise(function(resolve,reject)
+    {
+        image.onload = function(){
+            console.log("coucou")
+            var tab= getImageData(this);
+            console.log(tab);
+            resolve([this, tab]);
+        };
     }
-    var data = image.onload();
-    return [image, data];
+    );
 }
 
 function getImageData(image) {
@@ -20,33 +25,37 @@ function getImageData(image) {
     return context2d.getImageData(0,0,image.width,image.height);
 }
 
-function getPixelInices(x, y, width) {
-    var colorIndice = y * (this.width * 4) + x * 4;
-    return new [colorIndice ,colorIndice +1,colorIndice+2,colorIndice +3];
+function getPixelIndices(x, y, width) {
+    var colorIndice = y * (width * 4) + x * 4;
+    return [colorIndice ,colorIndice +1,colorIndice+2,colorIndice +3];
 }
 
 
 function Picture(path){
-    var tab = getImage(path);
-    this.source= tab[0];
-    this.height=this.source.height;
-    this.width=this.source.width;
-    this.data=tab[1];
-    this.canvas=document.getElementById('source');
-    this.context=this.canvas.getContext('2d');
+    var promise = getImage(path);
+    thus=this;
+    promise.then(function(tab){
+        thus.source=tab[0];
+        thus.height=thus.source.height;
+        thus.width=thus.source.width;
+        thus.imgData=tab[1];
+        thus.canvas=document.getElementById('source');
+        thus.context=thus.canvas.getContext('2d');
+    });
+
     this.getPixel= function (x,y) {
         var colorIndice = y * (this.width * 4) + x * 4;
-        return new Pixel(this.data[colorIndice],this.data[colorIndice+1],this.data[colorIndice+2],this.data[colorIndice+3],x,y);
+        return new Pixel(this.imgData.data[colorIndice],this.imgData.data[colorIndice+1],this.imgData.data[colorIndice+2],this.imgData.data[colorIndice+3],x,y);
     };
     this.setPixel=function(r,g,b,a,x,y){
-        var pixIndice=getPixelInices(x,y);
-        this.data[pixIndice[0]]=r;
-        this.data[pixIndice[1]]=g;
-        this.data[pixIndice[2]]=b;
-        this.data[pixIndice[3]]=a;
+        var pixIndice=getPixelIndices(x,y);
+        this.imgData.data[pixIndice[0]]=r;
+        this.imgData.data[pixIndice[1]]=g;
+        this.imgData.data[pixIndice[2]]=b;
+        this.imgData.data[pixIndice[3]]=a;
     };
     this.display= function(){
-        this.context.putImageData(this.data,0,0);
+        this.context.putImageData(this.imgData,0,0);
         this.canvas.style.display="inline";
     };
     this.redraw= function(){
@@ -54,6 +63,10 @@ function Picture(path){
     };
 
 };
-
 var pic= new Picture("resources/flower1.png");
-pic.display()
+//pic.display();
+console.log(pic.imgData);
+var test = getPixelIndices(127,97,pic.width);
+//console.log("test: "+pic.imgData.data[test[0]],pic.imgData.data[test[1]],pic.imgData.data[test[2]]);
+var pix= pic.getPixel(127,97);
+console.log(pix);

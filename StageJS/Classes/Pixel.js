@@ -20,4 +20,7 @@ function Pixel(r, g, b, a, x, y){
         this.posX=newPosX;
         this.posY=newPosY;
     };
+    this.toString=function () {
+        return "Red: "+ this.red + " Green: " + this.green + " Blue: " + this.blue + " Alpha: " + this.alpha;
+    }
 };
