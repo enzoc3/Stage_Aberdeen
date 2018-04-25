@@ -108,6 +108,3 @@ function Pixel(r, g, b, a, x, y){
         return "Red : " + this.red + "\nGreen : " + this.green + "\nBlue : " + this.blue + "\nAlpha : " + this.alpha + "\nX : " + this.posX + "\nY : " + this.posY;
     };
 };
-
-var p = new Pixel(255, 25, -10, 0, 400, 200);
-console.log(p.toString());

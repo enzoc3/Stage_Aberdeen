@@ -5,12 +5,21 @@
         <script type="text/javascript" src="Pixel.js"></script>
         <script type="text/javascript" src="Picture.js"></script>
         <script type="text/javascript" src="Error.js"></script>
+        <script src="resources/codemirror-5.37.0/lib/codemirror.js"></script>
+        <link rel="stylesheet" href="resources/codemirror-5.37.0/lib/codemirror.css">
+        <script src="resources/codemirror-5.37.0/mode/javascript/javascript.js"></script>
         <canvas id="test"></canvas>
     </head>
     <body>
         <div id="error">
 
         </div>
+        <script>
+            var myCodeMirror = CodeMirror(document.body, {
+                value: "function myScript(){return 100;}\n",
+                mode:  "javascript"
+            });
+        </script>
     </body>
 
 </html>
