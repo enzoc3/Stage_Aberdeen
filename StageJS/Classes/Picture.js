@@ -1,16 +1,23 @@
+function wait(ms) {
+    var start = Date.now(),
+        now = start;
+    while (now - start < ms) {
+        now = Date.now();
+    }
+}
 function getImage(path) {
     var image=new Image();
     image.src=path;
-    return new Promise(function(resolve,reject)
+    var tab= getImageData(image);
+    return [image,tab];
+    /*return new Promise(function(resolve,reject)
     {
         image.onload = function(){
-            console.log("coucou")
             var tab= getImageData(this);
-            console.log(tab);
             resolve([this, tab]);
         };
     }
-    );
+    );*/
 }
 
 function getImageData(image) {
@@ -31,24 +38,25 @@ function getPixelIndices(x, y, width) {
 }
 
 
-function Picture(path){
+function Picture(path,wait = true ){
+    if(wait== true){
+        wait(500);
+    }
     var promise = getImage(path);
-    thus=this;
-    promise.then(function(tab){
-        thus.source=tab[0];
-        thus.height=thus.source.height;
-        thus.width=thus.source.width;
-        thus.imgData=tab[1];
-        thus.canvas=document.getElementById('source');
-        thus.context=thus.canvas.getContext('2d');
-    });
+    //thus=this;
+    this.source=promise[0];
+    this.height=this.source.height;
+    this.width=this.source.width;
+    this.imgData=promise[1];
+    this.canvas=document.getElementById('source');
+    this.context=this.canvas.getContext('2d');
 
     this.getPixel= function (x,y) {
         var colorIndice = y * (this.width * 4) + x * 4;
         return new Pixel(this.imgData.data[colorIndice],this.imgData.data[colorIndice+1],this.imgData.data[colorIndice+2],this.imgData.data[colorIndice+3],x,y);
     };
     this.setPixel=function(r,g,b,a,x,y){
-        var pixIndice=getPixelIndices(x,y);
+        var pixIndice=getPixelIndices(x,y,this.width);
         this.imgData.data[pixIndice[0]]=r;
         this.imgData.data[pixIndice[1]]=g;
         this.imgData.data[pixIndice[2]]=b;
@@ -61,12 +69,13 @@ function Picture(path){
     this.redraw= function(){
         this.display()
     };
+}
 
-};
-var pic= new Picture("resources/flower1.png");
-//pic.display();
-console.log(pic.imgData);
-var test = getPixelIndices(127,97,pic.width);
-//console.log("test: "+pic.imgData.data[test[0]],pic.imgData.data[test[1]],pic.imgData.data[test[2]]);
-var pix= pic.getPixel(127,97);
-console.log(pix);
+function createPicture(path){
+    return new Promise(function(resolve,reject)
+    {
+        var pic= new Picture(path,false);
+        resolve(pic);
+    });
+}
+
