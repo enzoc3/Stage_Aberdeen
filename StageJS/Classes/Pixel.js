@@ -100,6 +100,7 @@ function Pixel(r, g, b, a, x, y){
         this.posY = newPosY;
     };
 
+
     /**
      * Return all of information about the pixel
      * @returns {string} all information about the pixel
