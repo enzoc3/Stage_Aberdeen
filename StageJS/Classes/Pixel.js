@@ -33,6 +33,10 @@ function isCorrect(name, nb, min, max) {
  * @constructor
  */
 function Pixel(r, g, b, a, x, y){
+    this.red = 0;
+    this.green = 0;
+    this.blue = 0;
+    this.alpha = 0;
     if (isCorrect("red", r, 0, 255)) {
         this.red = r;
     }
