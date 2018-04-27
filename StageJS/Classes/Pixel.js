@@ -107,4 +107,4 @@ function Pixel(r, g, b, a, x, y){
     this.toString = function() {
         return "Red : " + this.red + "\nGreen : " + this.green + "\nBlue : " + this.blue + "\nAlpha : " + this.alpha + "\nX : " + this.posX + "\nY : " + this.posY;
     };
-};
+}
