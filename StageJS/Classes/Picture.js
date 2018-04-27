@@ -81,6 +81,7 @@ function getPixelIndices(x, y, width){
  * @param {boolean} wait - if is it is necessary to wait the download of the image
  * @constructor
  */
+
 function Picture(path, load = true){
     if(load == true){
         wait(500);
@@ -113,6 +114,7 @@ function Picture(path, load = true){
      * @param {int} x - the new coordinate x of the pixel between 0 and width-1
      * @param {int} y - the new coordinate y of the pixel between 0 and height-1
      */
+
     this.setPixel = function(newPixel, x, y){
         if (isCorrect("posX", x, 0, this.width)){
             if (isCorrect("posY", y, 0, this.height)){
@@ -131,11 +133,11 @@ function Picture(path, load = true){
             this.setCanvasSize(this.width,this.height);
         }
         this.context=this.canvas.getContext('2d');
-    }
+    };
     this.setCanvasSize=function (newWidth,newheight) {
         this.canvas.setAttribute("width",newWidth);
         this.canvas.setAttribute("height",newheight);
-    }
+    };
     /**
      * Display the picture in the canevas
      */

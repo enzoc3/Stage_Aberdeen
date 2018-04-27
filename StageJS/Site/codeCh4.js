@@ -7,7 +7,6 @@ function decreaseRed(){
     var imgCh4 = new Picture("img/nous.jpg");
     imgCh4.setCanvas('decreaseRed');
     var pixel= null;
-    console.log(imgCh4);
     for(var x = 0; x < imgCh4.width; x ++){
         for(var y = 0; y < imgCh4.height; y ++){
             pixel= imgCh4.getPixel(x,y);
@@ -17,13 +16,11 @@ function decreaseRed(){
     }
 
     imgCh4.display();
-    decreaseRedCode();
 }
 
 function decreaseGreen(){
     var imgCh4 = new Picture("img/nous.jpg");
     imgCh4.setCanvas('decreaseGreen');
-    var pixel= null;
     console.log(imgCh4);
     for(var x = 0; x < imgCh4.width; x ++){
         for(var y = 0; y < imgCh4.height; y ++){
@@ -33,7 +30,6 @@ function decreaseGreen(){
         }
     }
     imgCh4.display();
-    decreaseGreenCode();
 }
 
 function decreaseBlue(){
@@ -49,7 +45,6 @@ function decreaseBlue(){
         }
     }
     imgCh4.display();
-    decreaseBlueCode();
 }
 
 function whileDecreaseRed(){
@@ -61,7 +56,6 @@ function whileDecreaseRed(){
         i+=4;
     }
     imgCh4.display();
-    decreaseRedWhileCode();
 }
 
 function whileDecreaseGreen(){
@@ -73,7 +67,6 @@ function whileDecreaseGreen(){
         i+=4;
     }
     imgCh4.display();
-    decreaseGreenWhileCode();
 }
 
 function whileDecreaseBlue(){
@@ -86,7 +79,6 @@ function whileDecreaseBlue(){
         i+=4;
     }
     imgCh4.display();
-    decreaseBlueWhileCode();
 }
 
 function increaseRed(){
@@ -95,8 +87,7 @@ function increaseRed(){
     for(var i = 0; i < imgCh4.imgData.data.length; i += 4){
         imgCh4.imgData.data[i] = imgCh4.imgData.data[i] *5.5;
     }
-    imgCh4.display();
-    increaseRedCode();
+    imgCh4.display();;
 }
 
 function clearBlue(){
@@ -108,7 +99,6 @@ function clearBlue(){
         i+=4;
     }
     imgCh4.display();
-    clearBlueCode();
 }
 
 function sunset(){
@@ -124,7 +114,6 @@ function changeRed(form){
         imgCh4.imgData.data[i] = imgCh4.imgData.data[i]*amount;
     }
     imgCh4.display();
-    changeRedCode();
 }
 
 function changeColors(form){
@@ -150,7 +139,6 @@ function lighten(){
         imgCh4.imgData.data[i+2] = imgCh4.imgData.data[i+2]*3.3;
     }
     imgCh4.display();
-    lightenCode();
 }
 
 function darken(){//TO DO IN HTML
@@ -173,7 +161,6 @@ function invert(){
         imgCh4.imgData.data[i + 2] = 255 - imgCh4.imgData.data[i + 2];
     }
     imgCh4.display();
-    InvertCode();
 }
 
 function shadeGrey(){
@@ -186,7 +173,6 @@ function shadeGrey(){
         imgCh4.imgData.data[i + 2] = moy;
     }
     imgCh4.display();
-    greyCode();
 }
 
 function betterShadeGrey(){
@@ -207,6 +193,3 @@ function betterShadeGrey(){
     imgCh4.display();
     betterShadeGreyCode();
 }
-
-
-
