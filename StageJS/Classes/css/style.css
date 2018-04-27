@@ -31,3 +31,9 @@ h3{
     text-align: justify;
     
 }
+
+#origin, #modified{
+
+    height: 420px;
+}
+
