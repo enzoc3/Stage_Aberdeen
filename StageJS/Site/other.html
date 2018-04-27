@@ -15,10 +15,9 @@
     <script type="text/javascript" src="codeCh5.js"></script>
     <script type="text/javascript" src="displayCodeCh5.js"></script>
     <script type="text/javascript" src="displayCodeCh4.js"></script>
-    
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    
+
     <div style="text-align: center">
         <h1>Java to JS : Pictures</h1>
         <canvas id="base"></canvas>
@@ -26,6 +25,10 @@
         <hr size=4 width=40%>
         <p>This website is treating our picture in differents ways with JavaScript. You can see here the 2 first chapters of the book : Introduction to Computing & Programming With Java by Mark Guzdial & Barbara Ericson. Our work is a kind of translation of this book.</p>
     </div>
+    <script src="../Classes/Picture.js"></script>
+    <script src="../Classes/Pixel.js"></script>
+
+
 </head>
 <body>
     <table class="z-depth-3 bordered highlight responsive-table">
@@ -46,7 +49,8 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><button type="button" onClick="shadeGrey()" class="btn waves-effect waves-light">Black & White!</button></td>
+                                    <td><button type="button" onClick="shade
+                                    ()" class="btn waves-effect waves-light">Black & White!</button></td>
                                     <td><canvas id="grey"></canvas></td>
                                     <td class='collapsible popout' data-collapsible='accordion'>
                                         <li style='list-style-type:none'>
