@@ -81,8 +81,9 @@ function getPixelIndices(x, y, width){
  * @param {boolean} wait - if is it is necessary to wait the download of the image
  * @constructor
  */
-function Picture(path, wait = true){
-    if(wait == true){
+
+function Picture(path, load = true){
+    if(load == true){
         wait(500);
     }
     var promise = getImage(path);
@@ -100,7 +101,7 @@ function Picture(path, wait = true){
      * @returns {Pixel} the new pixel with all information
      */
     this.getPixel = function (x, y){
-        var colorIndice = y * (this.width * 4) + x * 4;
+        var colorIndice = y * (this.canvas.width * 4) + x * 4;
         return new Pixel(this.imgData.data[colorIndice], this.imgData.data[colorIndice+1], this.imgData.data[colorIndice+2], this.imgData.data[colorIndice+3], x, y);
     };
 
@@ -113,30 +114,30 @@ function Picture(path, wait = true){
      * @param {int} x - the new coordinate x of the pixel between 0 and width-1
      * @param {int} y - the new coordinate y of the pixel between 0 and height-1
      */
-    this.setPixel = function(r, g, b, a, x, y){
-        if (isCorrect(posX, x, 0, this.width)){
-            if (isCorrect(posY, y, 0, this.height)){
-                var pixIndice = getPixelIndices(x, y, this.width);
-                this.imgData.data[pixIndice[0]] = 0;
-                this.imgData.data[pixIndice[1]] = 0;
-                this.imgData.data[pixIndice[2]] = 0;
-                this.imgData.data[pixIndice[3]] = 0;
-                if (isCorrect("red", r, 0, 255)) {
-                    this.data[pixIndice[0]] = r;
-                }
-                if (isCorrect("green", g, 0, 255)) {
-                    this.data[pixIndice[1]] = g;
-                }
-                if (isCorrect("blue", b, 0, 255)) {
-                    this.data[pixIndice[2]] = b;
-                }
-                if (isCorrect("alpha", a, 0, 255)) {
-                    this.data[pixIndice[3]] = a;
-                }
+
+    this.setPixel = function(newPixel, x, y){
+        if (isCorrect("posX", x, 0, this.width)){
+            if (isCorrect("posY", y, 0, this.height)){
+                var pixIndice = getPixelIndices(x, y, this.canvas.width);
+                this.imgData.data[pixIndice[0]] = newPixel.red;
+                this.imgData.data[pixIndice[1]] = newPixel.green;
+                this.imgData.data[pixIndice[2]] = newPixel.blue;
+                this.imgData.data[pixIndice[3]] = newPixel.alpha;
             }
         }
     };
-
+    this.setCanvas=function(newCanvas, setSize = true){
+        c=document.getElementById(newCanvas);
+        this.canvas=c;
+        if(setSize == true){
+            this.setCanvasSize(this.width,this.height);
+        }
+        this.context=this.canvas.getContext('2d');
+    };
+    this.setCanvasSize=function (newWidth,newheight) {
+        this.canvas.setAttribute("width",newWidth);
+        this.canvas.setAttribute("height",newheight);
+    };
     /**
      * Display the picture in the canevas
      */
