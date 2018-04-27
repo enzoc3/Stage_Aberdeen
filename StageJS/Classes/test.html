@@ -17,6 +17,24 @@
         
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+        <!-- CODE MIRROR + JQuery -->
+        <link rel="stylesheet" type="text/css" href="plugin/codemirror/lib/codemirror.css">
+        <link rel="stylesheet" type="text/css" href="plugin/codemirror/theme/dracula.css">
+        <link rel="stylesheet" type="text/css" href="plugin/codemirror/addon/hint/show-hint.css">
+
+        
+        <script type="text/javascript" src="plugin/codemirror/lib/codemirror.js"></script>
+        <script type="text/javascript" src="plugin/codemirror/mode/javascript/javascript.js"></script>
+        <script type="text/javascript" src="plugin/codemirror/mode/css/css.js"></script>
+        <script type="text/javascript" src="plugin/codemirror/mode/xml/xml.js"></script>
+        <script type="text/javascript" src="plugin/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+        <script type="text/javascript" src="plugin/codemirror/addon/hint/show-hint.js"></script>
+        <script type="text/javascript" src="plugin/codemirror/addon/hint/javascript-hint.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>  
+        <script type="text/javascript" src="js/code.js"></script>
+
+        <!-- End of CodeMirror & JQuery Imports -->
+
     </head>
     <body>
         
@@ -32,24 +50,16 @@
             </div>
         </nav>
 
-        <p>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod ligula nisi, eu viverra velit tristique accumsan. In eget nisl cursus, lacinia magna a, vestibulum nisi. Etiam laoreet gravida interdum. Maecenas viverra eros a sapien ornare placerat. Sed vehicula est at leo rutrum mattis. Sed odio sapien, fermentum ac tristique sit amet, condimentum ut ipsum. In rhoncus euismod congue. Vivamus in lectus mollis, ultricies orci ut, volutpat arcu. Curabitur dolor eros, gravida vel cursus a, ornare quis lorem. Pellentesque accumsan non mauris vitae rhoncus. Nunc lacinia nibh id ultrices mollis. Quisque convallis dictum efficitur. Pellentesque in ullamcorper sapien.
+        <div class = "codemirror-div" id="editor"></div>
 
-                Aliquam erat volutpat. Donec commodo accumsan leo egestas congue. Integer laoreet hendrerit pellentesque. Integer eget mattis dui. In convallis turpis id malesuada consectetur. Integer et tincidunt lacus. Maecenas viverra mi massa, quis fringilla nibh aliquam id. Praesent scelerisque efficitur lacus, sit amet feugiat nulla condimentum at. Aliquam congue vehicula rhoncus. Aliquam nec posuere sapien, non eleifend augue.
-                
-                Vivamus facilisis in nibh eu imperdiet. Sed tempus sed odio ut placerat. Praesent velit libero, luctus eu sagittis vitae, imperdiet id dolor. Morbi purus dui, scelerisque vitae vulputate quis, tincidunt quis nunc. Donec rhoncus, nulla sed tristique fermentum, libero orci vulputate quam, et rhoncus arcu ligula ut metus. Nullam pharetra tellus nisi, in semper turpis viverra ut. Fusce molestie, velit in ornare pulvinar, orci nulla luctus dui, ut varius nulla est vel lorem. Pellentesque viverra, enim et dignissim consequat, mi augue egestas lorem, quis rutrum nibh nunc aliquam quam. Etiam maximus nunc a leo accumsan convallis. In mi urna, tempor sed metus sed, dignissim auctor massa. Duis molestie mauris purus, malesuada convallis ligula viverra sed. Morbi vel augue vel dui sollicitudin volutpat sit amet a nibh. Etiam sodales eros in tempor tincidunt. Donec hendrerit, quam feugiat egestas mollis, nunc orci semper neque, sollicitudin facilisis ligula odio eu ligula. Pellentesque id velit et odio interdum pulvinar.
-                
-                Nullam pharetra, ante ac suscipit vulputate, lacus nunc auctor sapien, et suscipit velit mauris ut purus. Nulla sapien lorem, hendrerit sed quam sit amet, varius fringilla nisl. Nam porttitor, nunc sed molestie facilisis, augue sapien hendrerit augue, quis pharetra mauris est at turpis. Pellentesque ut nibh lectus. Sed interdum, nisi sed rhoncus rhoncus, leo neque elementum sapien, in pharetra metus dui non nulla. Etiam maximus commodo viverra. Nunc feugiat eros non urna pulvinar dictum quis ut massa.
-        </p>
-
-
-        <button style="width: 100%;" class="btn waves-effect waves-large purple darken-2" type="submit" name="action">Let's try this code
+        <button style="width: 100%;" class="btn waves-effect waves-large purple darken-2" id="btn" type="submit" name="action">Let's try this code
                 <i class="material-icons right">send</i>
         </button>
 
 
         <ul id="menu">
-                <li><canvas id="myCanvasL" style="border:1px solid #000000;"></canvas></li>
-                <li><canvas id="myCanvasR" style="border:1px solid #000000;"></canvas></li>
+                <li><iframe id="origin"><canvas id="myCanvasL" style="border:1px solid #000000;"></canvas></iframe></li>
+                <li><iframe id="modified"><canvas id="myCanvasR" style="border:1px solid #000000;"></canvas></iframe></li>
                 <li><p style="text-align: center;">Original Picture</p></li>
                 <li><p style="text-align: center;">Modified Picture</p></li>
         </ul>

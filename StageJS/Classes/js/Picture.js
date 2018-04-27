@@ -84,7 +84,7 @@ function getPixelIndices(x, y, width){
 
 function Picture(path, load = true){
     if(load == true){
-        wait(500);
+        wait(1000);
     }
     var promise = getImage(path);
     this.source = promise[0];
