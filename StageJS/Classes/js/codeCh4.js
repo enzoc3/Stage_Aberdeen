@@ -3,9 +3,8 @@ window.onload = function(){
     //draw();
 }
 
-function decreaseRed(){
-    var imgCh4 = new Picture("img/nous.jpg");
-    imgCh4.setCanvas('decreaseRed');
+function decreaseRed(img){
+    var imgCh4 = img;
     var pixel= null;
     for(var x = 0; x < imgCh4.width; x ++){
         for(var y = 0; y < imgCh4.height; y ++){
@@ -18,8 +17,8 @@ function decreaseRed(){
     imgCh4.display();
 }
 
-function decreaseGreen(){
-    var imgCh4 = new Picture("img/nous.jpg");
+function decreaseGreen(img){
+    var imgCh4 = img;
     imgCh4.setCanvas('decreaseGreen');
     console.log(imgCh4);
     for(var x = 0; x < imgCh4.width; x ++){
@@ -32,8 +31,8 @@ function decreaseGreen(){
     imgCh4.display();
 }
 
-function decreaseBlue(){
-    var imgCh4 = new Picture("img/nous.jpg");
+function decreaseBlue(img){
+    var imgCh4 = img;
     imgCh4.setCanvas('decreaseBlue');
     var pixel= null;
     console.log(imgCh4);
@@ -47,8 +46,8 @@ function decreaseBlue(){
     imgCh4.display();
 }
 
-function whileDecreaseRed(){
-    var imgCh4 = new Picture("img/nous.jpg");
+function whileDecreaseRed(img){
+    var imgCh4 = img;
     imgCh4.setCanvas('decreaseRedWhile');
     var i=0;
     while(i<imgCh4.imgData.data.length){
@@ -58,8 +57,8 @@ function whileDecreaseRed(){
     imgCh4.display();
 }
 
-function whileDecreaseGreen(){
-    var imgCh4 = new Picture("img/nous.jpg");
+function whileDecreaseGreen(img){
+    var imgCh4 = img;
     imgCh4.setCanvas('decreaseGreenWhile');
     var i=1;
     while(i<imgCh4.imgData.data.length){
@@ -69,8 +68,8 @@ function whileDecreaseGreen(){
     imgCh4.display();
 }
 
-function whileDecreaseBlue(){
-    var imgCh4 = new Picture("img/nous.jpg");
+function whileDecreaseBlue(img){
+    var imgCh4 = img;
     imgCh4.setCanvas('decreaseBlueWhile');
     imgCh4.setCanvasSize(800,600);
     var i=2;
@@ -81,8 +80,8 @@ function whileDecreaseBlue(){
     imgCh4.display();
 }
 
-function increaseRed(){
-    var imgCh4 = new Picture("img/nous.jpg");
+function increaseRed(img){
+    var imgCh4 = img;
     imgCh4.setCanvas('increaseRed');
     for(var i = 0; i < imgCh4.imgData.data.length; i += 4){
         imgCh4.imgData.data[i] = imgCh4.imgData.data[i] *5.5;
@@ -90,8 +89,8 @@ function increaseRed(){
     imgCh4.display();;
 }
 
-function clearBlue(){
-    var imgCh4 = new Picture("img/nous.jpg");
+function clearBlue(img){
+    var imgCh4 = img;
     imgCh4.setCanvas('clearBlue');
     var i=2;
     while(i<imgCh4.imgData.data.length){
@@ -130,8 +129,8 @@ function changeColors(form){
     imgCh4.display();
 }
 
-function lighten(){
-    var imgCh4 = new Picture("img/nous.jpg");
+function lighten(img){
+    var imgCh4 = img;
     imgCh4.setCanvas('lighten');
     for(var i = 0; i < imgCh4.imgData.data.length; i += 4){
         imgCh4.imgData.data[i] = imgCh4.imgData.data[i]*3.3;
@@ -141,8 +140,8 @@ function lighten(){
     imgCh4.display();
 }
 
-function darken(){//TO DO IN HTML
-    var imgCh4 = new Picture("img/nous.jpg");
+function darken(img){//TO DO IN HTML
+    var imgCh4 = img;
     imgCh4.setCanvas('darken');
     for(var i = 0; i < imgCh4.imgData.data.length; i += 4){
         imgCh4.imgData.data[i] = imgCh4.imgData.data[i]*0.7;
@@ -152,8 +151,8 @@ function darken(){//TO DO IN HTML
     imgCh4.display();
 }
 
-function invert(){
-    var imgCh4 = new Picture("img/nous.jpg");
+function invert(img){
+    var imgCh4 = img;
     imgCh4.setCanvas('invert');
     for(var i = 0; i < imgCh4.imgData.data.length; i += 4){
         imgCh4.imgData.data[i] = 255 - imgCh4.imgData.data[i];
@@ -163,8 +162,8 @@ function invert(){
     imgCh4.display();
 }
 
-function shadeGrey(){
-    var imgCh4 = new Picture("img/nous.jpg");
+function shadeGrey(img){
+    var imgCh4 = img;
     imgCh4.setCanvas('grey');
     for (var i = 0; i < imgCh4.imgData.data.length; i += 4) {
         var moy = (imgCh4.imgData.data[i] + imgCh4.imgData.data[i + 1] + imgCh4.imgData.data[i + 2]) / 3;
@@ -175,8 +174,8 @@ function shadeGrey(){
     imgCh4.display();
 }
 
-function betterShadeGrey(){
-    var imgCh4 = new Picture("img/nous.jpg");
+function betterShadeGrey(img){
+    var imgCh4 = img;
     imgCh4.setCanvas('grey');
     var redValue=0;
     var greenValue=0;

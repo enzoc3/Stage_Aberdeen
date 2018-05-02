@@ -8,9 +8,12 @@ $(document).ready(function(){
         value: "<!Doctype HTMl>\n\
         <html>\n\
             <head>\n\
+            <!-- Please do not remove -->\n\
             <script type='text/javascript' src='js/Pixel.js'></script>\n\
             <script type='text/javascript' src='js/Picture.js'></script>\n\
             <script type='text/javascript' src='js/codeCh4.js'></script>\n\
+            <script type='text/javascript' src='js/mousePosition.js'></script>\n\
+            <!-- Please do not remove -->\n\
             </head>\n\
             <body>\n\
                 <script>\n\
@@ -22,6 +25,8 @@ $(document).ready(function(){
         theme: "dracula",
         extraKeys: {"Ctrl-Space" : "autocomplete"}
     });
+    
+    $('select').formSelect();
 
     $("#btn").click (function()
     {
@@ -43,9 +48,24 @@ $(document).ready(function(){
         frameDoc.close();
 
     });
-  
-    
+
+    $("#modified").mouseover(function(e)
+    {
+        $(this).contents().find("canvas").mousemove(function(e){
+            
+            var eventLocation = getEventLocation(this,e);
+            var coord = "x=" + eventLocation.x + ", y=" + eventLocation.y;
+            
+            var context = this.getContext("2d");
+            var pixelData = context.getImageData(eventLocation.x, eventLocation.y, 1, 1);
+            var red = pixelData.data[0];
+            var green = pixelData.data[1];
+            var blue = pixelData.data[2];
+            var res = "red: " +red + ", green: " + green + ", blue: " + blue + " " + coord;
+            document.getElementById("affiche").innerHTML = res;
+        });
+    });
 });
 
 
-
+/**/
