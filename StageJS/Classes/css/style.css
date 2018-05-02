@@ -37,3 +37,10 @@ h3{
     height: 420px;
 }
 
+#listemenuprincipal{
+    text-align: center;
+}
+
+li{
+    padding-bottom: 4px;
+}
