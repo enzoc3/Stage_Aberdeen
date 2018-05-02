@@ -54,15 +54,59 @@ $(document).ready(function(){
         $(this).contents().find("canvas").mousemove(function(e){
             
             var eventLocation = getEventLocation(this,e);
-            var coord = "x=" + eventLocation.x + ", y=" + eventLocation.y;
             
             var context = this.getContext("2d");
             var pixelData = context.getImageData(eventLocation.x, eventLocation.y, 1, 1);
             var red = pixelData.data[0];
             var green = pixelData.data[1];
             var blue = pixelData.data[2];
-            var res = "red: " +red + ", green: " + green + ", blue: " + blue + " " + coord;
-            document.getElementById("affiche").innerHTML = res;
+
+            var resred = "red: " +red;
+            document.getElementById("affiche2red").innerHTML = resred;
+
+            var resgreen = "green: " + green;
+            document.getElementById("affiche2green").innerHTML = resgreen;
+
+            var resblue = "blue: " + blue;
+            document.getElementById("affiche2blue").innerHTML = resblue;
+
+            var resx = "X: " + eventLocation.x;
+            document.getElementById("affiche2x").innerHTML = resx;
+
+            var resy = "Y: " + eventLocation.y;
+            document.getElementById("affiche2y").innerHTML = resy;
+
+        });
+    });
+
+
+    $("#origin").mouseover(function(e)
+    {
+        $(this).contents().find("canvas").mousemove(function(e){
+            
+            var eventLocation = getEventLocation(this,e);
+            
+            var context = this.getContext("2d");
+            var pixelData = context.getImageData(eventLocation.x, eventLocation.y, 1, 1);
+            var red = pixelData.data[0];
+            var green = pixelData.data[1];
+            var blue = pixelData.data[2];
+
+            var resred = "red: " +red;
+            document.getElementById("affichered").innerHTML = resred;
+
+            var resgreen = "green: " + green;
+            document.getElementById("affichegreen").innerHTML = resgreen;
+
+            var resblue = "blue: " + blue;
+            document.getElementById("afficheblue").innerHTML = resblue;
+
+            var resx = "X: " + eventLocation.x;
+            document.getElementById("affichex").innerHTML = resx;
+
+            var resy = "Y: " + eventLocation.y;
+            document.getElementById("affichey").innerHTML = resy;
+
         });
     });
 });
