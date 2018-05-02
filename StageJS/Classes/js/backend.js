@@ -28,6 +28,22 @@ $(document).ready(function(){
     
     $('select').formSelect();
 
+    $('#selectBtn').click(function(){
+        var choice = document.getElementById("select");
+        console.log(choice);
+        var img = "resources/";
+        if(choice = "group"){
+            img += "nous.jpg";
+        }
+        if(choice = "magnificent temple"){
+            img += "temple.jpg";
+        }
+        if(choice = "flower"){
+            img += "download.jpg";
+        }
+        document.getElementById('origin').src = img;    
+    });
+
     $("#btn").click (function()
     {
         var code = editor.getValue();
