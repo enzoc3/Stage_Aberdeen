@@ -17,6 +17,8 @@
         
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+        <script type="text/javascript" src="js/tuto.js"></script>
+
     </head>
     <body>
         
@@ -44,6 +46,107 @@
                 Nullam pharetra, ante ac suscipit vulputate, lacus nunc auctor sapien, et suscipit velit mauris ut purus. Nulla sapien lorem, hendrerit sed quam sit amet, varius fringilla nisl. Nam porttitor, nunc sed molestie facilisis, augue sapien hendrerit augue, quis pharetra mauris est at turpis. Pellentesque ut nibh lectus. Sed interdum, nisi sed rhoncus rhoncus, leo neque elementum sapien, in pharetra metus dui non nulla. Etiam maximus commodo viverra. Nunc feugiat eros non urna pulvinar dictum quis ut massa.
         </p>
 
+        <ul class="collapsible">
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">filter_hdr</i>Pictures</div>
+                  <div class="collapsible-body"><span>
+
+                        The main of this website is to discover and learn the JavaScript language. For that, we have created some classes to simplify the manipulation of different objects like a pixel, a picture, a sound or also a video.
+                        
+                        <h3>What is a pixel?</h3>
+
+                        <hr>
+                        
+                        A pixel is defined by a three integer values: red, green and blue between 0 and 255. For example, white pixel was defined by (255, 255, 255), black pixel by (0, 0, 0), classic red pixel by <font COLOR="#FF0000">(255, 0, 0)</font>, classic green pixel by <font COLOR="#00FF00">(0, 255, 0)</font> and classic blue pixel by <font COLOR="#0000FF">(0, 0, 255)</font>.<br><br>
+                        
+                        Another value, less known and used is the integer of alpha also between 0 and 255. It’s the percentage of transparency of the pixel. The value 0 equals a transparency of 100%, so a transparent pixel. The value 255 is a pixel totally visible, so a transparency of 0%. The alpha can be used for example to modify the light of the pixel.<br><br>
+                        
+                        A pixel alone can’t be call a picture, so a picture is composed of many pixel. To know where the pixel which we would modify is, it’s important to know its position in the width (x) and height (y) of the picture.<br><br>
+                        
+                        Example of a red pixel 50% transparent:			(255, 0, 0, 127)
+                        Example of a black pixel 50% transparent:		(0, 0, 0, 127)
+                        
+                        <h3>What is a picture?</h3>
+
+                        <hr>
+                        
+                        A picture is defined with its width and height values both as integer. There are the number of pixel in the width and in the height in the pixel. In fact, a picture is an array of pixel with width*height pixel in total. A picture is write and read to the top corner left to the bottom corner right, as a book.
+                        
+                        Example of a white picture of 3x3:			                Example of a black picture of 3x3:
+                        (255, 255, 255) (255, 255, 255) (255, 255, 255)				(0, 0, 0) (0, 0, 0) (0, 0, 0)
+                        (255, 255, 255) (255, 255, 255) (255, 255, 255)				(0, 0, 0) (0, 0, 0) (0, 0, 0)
+                        (255, 255, 255) (255, 255, 255) (255, 255, 255)				(0, 0, 0) (0, 0, 0) (0, 0, 0)
+                        Example of a red picture of 3x2:				           Example of a green picture of 2x3:
+                        (255, 0, 0) (255, 0, 0) (255, 0, 0)						(0, 255, 0) (0, 255, 0)
+                        (255, 0, 0) (255, 0, 0) (255, 0, 0)						(0, 255, 0) (0, 255, 0)
+                                                                                 (0, 255, 0) (0, 255, 0)
+
+
+                        Example of the French flag (blue, white and red) of 3x5:
+                        (0, 0, 255) (255, 255, 255) (255, 0, 0) 
+                        (0, 0, 255) (255, 255, 255) (255, 0, 0)
+                        (0, 0, 255) (255, 255, 255) (255, 0, 0)
+                        (0, 0, 255) (255, 255, 255) (255, 0, 0)
+                        (0, 0, 255) (255, 255, 255) (255, 0, 0)
+
+                        <h3>Property and functions of the class Pixel in our JavaScript</h3>
+
+                        <hr>
+                        
+                        As said, a pixel need some values: red, green, blue, alpha and its position x and y in the picture. The constructor of the class Pixel need the same number and order of properties. Of course, it isn’t possible to take a values smaller than 0 and higher than 255 for a colour. It is possible to reach all of them, with the call of property (“this.”) or with a function.
+                        
+                        To create a pixel black at coordinates 50, 50:		var myPixel = Pixel(0, 0, 0, 255, 50, 50);
+                        To display some information about a pixel:		myPixel.toString();
+                        
+                        To reach the value red with property:				myPixel.this.red;
+                        To reach the value green with property:				myPixel.this.green; 
+                        To reach the value blue with property:				myPixel.this.blue;
+                        To reach the value alpha with property:				myPixel.this.alpha;
+                        To reach the position x with property:				myPixel.this.x;
+                        To reach the position y with property:				myPixel.this.y; 
+                        To reach the colour with function:				myPixel.getColor();
+                        To reach the position with function:				myPixel.getPos();
+                        
+                            All of this properties can be modify, just with the call of this property or with a function which we have created.
+                        
+                        To modify the red value of the pixel with property:		myPixel.this.red = 255;
+                        To modify the alpha value of the pixel with property:		myPixel.this.alpha = 175; 
+                        To modify all colours of the pixel to white with function:		myPixel.setColor(0, 0, 0, 255);
+                        To modify all coordinates of the pixel with function:		myPixel.setPos(100, 100);
+                        
+                        <h3>Property and functions of the class Picture in our JavaScript</h3>
+
+                        <hr>
+
+                            Before to draw or modify a picture, the picture must be existed. Create a picture needs an image in the same folder source as parameter. The format of the image can be a “png” or “jpg”. The path source of the picture can be modify. To use the picture, she is drawing in a canvas, a space in the web page. The size of this canvas was initialised to the size of the picture, but it is possible to modify it. 
+                        To create a picture:					var myPicture = Picture(“picture.jpg”);
+                        To display the first time a picture:			myPicture.display();
+                        To draw the others time the picture:			myPicture.redraw();
+                        To display some information about the picture:		myPicture.toString();
+                        
+                        To reach the width with property:				myPicture.this.width; 
+                        To reach the height with property:				myPicture.this.height; 
+                        To reach the canvas with property:				myPicture.this.canvas; 
+                        To reach the path source with property:				myPicture.this.source;
+                        To reach the colour of a pixel with function:			myPicture.getPixel(50, 50);
+                        
+
+
+
+
+
+
+                  </span></div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">audiotrack</i>Sounds</div>
+                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">videocam</i>Videos</div>
+                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                </li>
+        </ul>
 
         
 

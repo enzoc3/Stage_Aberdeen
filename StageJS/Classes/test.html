@@ -39,6 +39,8 @@
 
     </head>
     <body>
+
+        
         
         <nav>
             <div class="nav-wrapper purple darken-2">
@@ -52,39 +54,58 @@
             </div>
         </nav>
 
+        
+
         <div class = "codemirror-div" id="editor"></div>
 
         <button style="width: 100%;" class="btn waves-effect waves-large purple darken-2" id="btn" type="submit" name="action">Let's try this code
                 <i class="material-icons right">send</i>
         </button>
 
+        <div class="input-field col s6 m6 text-lighten-3">
+            <select class="icons" id="selector">
+                <option value="" disabled selected>Choose your picture</option>
+                <option value="" data-icon="resources/download.jpg" class="left">Flower</option>
+                <option value="" data-icon="resources/nous.jpg" class="left">COMET Team</option>
+                <option value="" data-icon="resources/temple.jpg" class="left">Temple</option>
+            </select>
+
+            <button class="btn waves-effect waves-large purple darken-2" id="selectBtn" type="submit" name="action">Choose Image</button>
+        </div>
 
         
 
         <ul id="menu">
-            <li><img id="origin"></img></li>
-            <li><iframe id="modified"></iframe></li>
+                <li><img id="origin"></li>
+                <li><iframe id="modified"></iframe></li>
             <li><p style="text-align: center;">Original Picture</p></li>
             <li><p style="text-align: center;">Modified Picture</p></li>
-            <div class="input-field col s12 m6">
-                <select class="icons">
-                    <option value="" disabled selected>Choose your image</option>
-                    <option value="" data-icon="resources/nous.jpg">group</option>
-                    <option value="" data-icon="resources/download.jpg">flower</option>
-                    <option value="" data-icon="resources/temple.jpg">temple</option>
-                </select>
-            </div>
-            <li><button class="btn waves-effect waves-large purple darken-2" id="selectBtn" type="submit" name="action">Choose Image</button></li>
-            <li><p style="text-align: center;" id="affiche">display rgb & positions</p></li>
+            <li>
+                <a class="waves-effect waves-light btn red" id="affichered">Red Value</a>
+                <a class="waves-effect waves-light btn green" id="affichegreen">Green Value</a>
+                <a class="waves-effect waves-light btn blue" id="afficheblue">Blue Value</a>
+                <a class="btn waves-effect waves-teal grey darken-3" id="affichex">X Value</a>
+                <a class="btn waves-effect waves-teal black" id="affichey">Y Value</a>
+            </li>
+            
+            <li>    
+                <a class="waves-effect waves-light btn red" id="affiche2red">Red Value</a>
+                <a class="waves-effect waves-light btn green" id="affiche2green">Green Value</a>
+                <a class="waves-effect waves-light btn blue" id="affiche2blue">Blue Value</a>
+                <a class="btn waves-effect waves-teal grey darken-3" id="affiche2x">X Value</a>
+                <a class="btn waves-effect waves-teal black" id="affiche2y">Y Value</a>
+            </li>
+
         </ul>
 
-        <a href="tutorial.html" style="margin-left: 97%;" class="btn-floating pulse purple darken-2 btn tooltipped" data-position="left" data-tooltip="Need Help? Click on this icon for tutorial!"><i class="material-icons">help</i></a>
-
-
-
-        <p> </p>
         
-        </div>
+    
+        
+
+        <a href="tutorial.html" style="margin-left: 97%;" class="btn-floating pulse purple darken-2 btn tooltipped" data-position="left" data-tooltip="Need Help? Click on this icon for tutorial!"><i class="material-icons">help</i></a>
+        
+        <p></p>
+
     </body>
 
     <footer class="page-footer purple darken-2">
@@ -98,9 +119,9 @@
                         <h5 class="white-text">Collaborators</h5>
                         <ul>
                         <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/noemie.chevalier.771">Noémie Chevalier</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/nzocontini">Enzo Contini</a></li>
                         <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/vincent.morel.7505">Vincent Morel</a></li>
                         <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/timothe.rouze">Timothé Rouze</a></li>
-                        <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/nzocontini">Enzo Contini</a></li>
                         </ul>
                     </div>
                 </div>
