@@ -4,7 +4,6 @@
 
     <head>
         <title>COMET - Edit Pixels</title>
-        <img id="flower1" src="resources/flower1.png" style="display: none;">
         <script type="text/javascript" src="js/Pixel.js"></script>
         <script type="text/javascript" src="js/Picture.js"></script>
         <canvas id="test" style="display: none;"></canvas>
@@ -31,7 +30,7 @@
         <script type="text/javascript" src="plugin/codemirror/addon/hint/show-hint.js"></script>
         <script type="text/javascript" src="plugin/codemirror/addon/hint/javascript-hint.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>  
-        <script type="text/javascript" src="js/code.js"></script>
+        <script type="text/javascript" src="js/backendVideo.js"></script>
 
         <!-- End of CodeMirror & JQuery Imports -->
 
@@ -51,14 +50,25 @@
             <div class="nav-content">
               <ul class="tabs tabs-transparent">
                 <li class="tab"><a href="test.html">Traiting Images</a></li>
-                <li class="tab"><a href="son.html">Traiting Sounds</a></li>
+                <li class="tab"><a href="video.html">Traiting Sounds</a></li>
               </ul>
             </div>
           </nav>
 
-        <p> Bienvenue dans le son </p>
-        
-        </div>
+        <div class = "codemirror-div" id="editor"></div>
+
+        <button style="width: 100%;" class="btn waves-effect waves-large purple darken-2" id="btn" type="submit" name="action">Let's try this code
+            <i class="material-icons right">send</i>
+        </button>
+
+
+
+        <ul id="menu">
+            <li><iframe id="origin"></iframe></li>
+            <li><iframe id="modified"></iframe></li>
+            <li><p style="text-align: center;">Original Picture</p></li>
+            <li><p style="text-align: center;">Modified Picture</p></li>
+        </ul>
     </body>
 
     <footer class="page-footer purple darken-2">

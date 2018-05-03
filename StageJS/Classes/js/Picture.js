@@ -82,19 +82,23 @@ function getPixelIndices(x, y, width){
  * @constructor
  */
 
-function Picture(path, load = true){
-    /*if(load == true){
-        wait(1000);
-
-    }*/
-    var promise = getImage(path);
-    this.source = promise[0];
-    this.height = this.source.height;
-    this.width = this.source.width;
-    this.imgData = promise[1];
-    this.canvas = document.getElementById('source');
-    this.context = this.canvas.getContext('2d');
-
+function Picture(path=null, pWidth=null,pHeight=null){
+    if(path!= null){
+        var promise = getImage(path);
+        this.source = promise[0];
+        this.height = this.source.height;
+        this.width = this.source.width;
+        this.imgData = promise[1];
+        this.canvas = document.getElementById('source');
+        this.context = this.canvas.getContext('2d');
+    }
+    else{
+        this.source = null;
+        this.height = pHeight;
+        this.width = pWidth;
+        this.imgData =new ImageData(pWidth,pHeiht);
+        this.canvas = null;
+    }
     /**
      * Return a new pixel with a value of red, green, blue and alpha and with coordinate x and y
      * @param {int} x - the coordinate x of the pixel in the picture
@@ -127,9 +131,16 @@ function Picture(path, load = true){
             }
         }
     };
-    this.setCanvas=function(newCanvas, setSize = true){
+    this.setCanvasWithID=function(newCanvas, setSize = true){
         c=document.getElementById(newCanvas);
         this.canvas=c;
+        if(setSize == true){
+            this.setCanvasSize(this.width,this.height);
+        }
+        this.context=this.canvas.getContext('2d');
+    };
+    this.setCanvas=function(newCanvas, setSize = true){
+        this.canvas=newCanvas;
         if(setSize == true){
             this.setCanvasSize(this.width,this.height);
         }
@@ -138,12 +149,14 @@ function Picture(path, load = true){
     this.setCanvasSize=function (newWidth,newheight) {
         this.canvas.setAttribute("width",newWidth);
         this.canvas.setAttribute("height",newheight);
+        this.width=newWidth;
+        this.height=newheight;
     };
     /**
      * Display the picture in the canevas
      */
-    this.display = function(){
-        this.context.putImageData(this.imgData, 0, 0);
+    this.display = function(x=0,y=0){
+        this.context.putImageData(this.imgData, x, y);
         this.canvas.style.display = "inline";
     };
 
@@ -153,7 +166,21 @@ function Picture(path, load = true){
     this.redraw = function(){
         this.display()
     };
-
+    this.clearCanvas=function () {
+        for(var i=3;i<this.imgData.data.length;i++){
+            this.imgData.data[i]=0;
+        }
+    };
+    this.drawRectangle=function (xStart,yStart,rwidth,rheight,rcolor) {
+        this.context.rect(xStart,yStart,rwidth,rheight)
+        this.context.fillStyle =rcolor;
+        this.context.fill();
+    }
+    this.drawCircle=function (xStart,yStart,radius,rcolor) {
+        this.context.arc(xStart,yStart,radius,0,2*Math.PI);
+        this.context.fillStyle =rcolor;
+        this.context.fill();
+    }
     /**
      * Return all information about the picture
      * @returns {string} all information about the picture
