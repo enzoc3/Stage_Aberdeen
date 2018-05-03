@@ -12,7 +12,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Classes/test.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="62">
@@ -25,17 +25,17 @@
       <file leaf-file-name="backend.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Classes/js/backend.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1131">
-              <caret line="74" column="7" lean-forward="true" selection-start-line="59" selection-start-column="4" selection-end-line="74" selection-end-column="7" />
+            <state relative-caret-position="1923">
+              <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="backendVideo.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="backendVideo.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Classes/js/backendVideo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
+            <state relative-caret-position="726">
               <caret line="27" column="48" lean-forward="true" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
@@ -96,6 +96,7 @@
         <option value="$PROJECT_DIR$/Classes/js/backendVideo.js" />
         <option value="$PROJECT_DIR$/Classes/video.html" />
         <option value="$PROJECT_DIR$/Classes/js/Picture.js" />
+        <option value="$PROJECT_DIR$/Classes/js/backend.js" />
       </list>
     </option>
   </component>
@@ -327,10 +328,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9833000" />
+    <option name="totallyTimeSpent" value="10105000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-13" y="29" width="3844" height="2106" extended-state="1" />
+    <frame x="-13" y="29" width="3844" height="2106" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09926663" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -575,29 +576,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/test.html">
+    <entry file="file://$PROJECT_DIR$/Classes/js/backendVideo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="93" column="20" lean-forward="true" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="726">
+          <caret line="27" column="48" lean-forward="true" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Classes/js/backend.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1131">
-          <caret line="74" column="7" lean-forward="true" selection-start-line="59" selection-start-column="4" selection-end-line="74" selection-end-column="7" />
+        <state relative-caret-position="1923">
+          <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/js/backendVideo.js">
+    <entry file="file://$PROJECT_DIR$/Classes/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="27" column="48" lean-forward="true" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="62">
+          <caret line="93" column="20" lean-forward="true" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
