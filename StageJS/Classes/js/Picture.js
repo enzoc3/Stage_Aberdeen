@@ -42,6 +42,7 @@ function wait(ms){
 function getImage(path){
     var image = new Image();
     image.src = path;
+    wait(500);
     var tab = getImageData(image);
     return [image, tab];
 }
