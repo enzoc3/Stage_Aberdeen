@@ -45,3 +45,10 @@ hr {
     border-style: inset;
     border-width: 1px;
 }
+#listemenuprincipal{
+    text-align: center;
+}
+
+li{
+    padding-bottom: 4px;
+}
