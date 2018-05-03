@@ -27,27 +27,39 @@ $(document).ready(function(){
     });
     
     $('select').formSelect();
+    jQuery('select').on('change', function() {
+        
+        var code = "<!Doctype HTMl>\n\
+        <html>\n\
+            <head>\n\
+                <script type='text/javascript' src='js/mousePosition.js'></script>\n\
+                <script type='text/javascript' src='js/Picture.js'></script>\n\
+                <script type='text/javascript' src='https://code.jquery.com/jquery-3.3.1.min.js'/>\n\
+            </head>\n\
+            <body>\n\
+                <script>\n\
+                    var choice = $('select').val();\n\
+                    var img = new Picture(choice);\n\
+                    img.display();\n\
+                </script>\n\
+            </body>\n\
+        </html>"
 
-    $('#selectBtn').click(function(){
-        var choice = document.getElementById("select");
-        console.log(choice);
-        var img = "resources/";
-        if(choice = "group"){
-            img += "nous.jpg";
-        }
-        if(choice = "magnificent temple"){
-            img += "temple.jpg";
-        }
-        if(choice = "flower"){
-            img += "download.jpg";
-        }
-        document.getElementById('origin').src = img;    
+        var iframe = document.getElementById("origin");
+        
+
+        var frameDoc = iframe.document;
+        if (iframe.contentWindow)
+            frameDoc = iframe.contentWindow.document;
+
+        frameDoc.open();
+        frameDoc.writeln(code);
+        frameDoc.close();
     });
 
     $("#btn").click (function()
     {
         var code = editor.getValue();
-        var content = document.getElementById("editor").innerHTML;
         var iframe = document.getElementById("modified");
 
         M.toast({html: 'Generating...', classes: 'rounded', displayLength : 10})
@@ -55,9 +67,6 @@ $(document).ready(function(){
         var frameDoc = iframe.document;
         if (iframe.contentWindow)
             frameDoc = iframe.contentWindow.document;
-
-
-
 
         frameDoc.open();
         frameDoc.writeln(code);
@@ -78,51 +87,48 @@ $(document).ready(function(){
             var blue = pixelData.data[2];
 
             var resred = "red: " +red;
-            document.getElementById("affiche2red").innerHTML = resred;
+            document.getElementById("affiche2Red").innerHTML = resred;
 
             var resgreen = "green: " + green;
-            document.getElementById("affiche2green").innerHTML = resgreen;
+            document.getElementById("affiche2Green").innerHTML = resgreen;
 
             var resblue = "blue: " + blue;
-            document.getElementById("affiche2blue").innerHTML = resblue;
+            document.getElementById("affiche2Blue").innerHTML = resblue;
 
             var resx = "X: " + eventLocation.x;
-            document.getElementById("affiche2x").innerHTML = resx;
+            document.getElementById("affiche2X").innerHTML = resx;
 
             var resy = "Y: " + eventLocation.y;
-            document.getElementById("affiche2y").innerHTML = resy;
+            document.getElementById("affiche2Y").innerHTML = resy;
 
         });
     });
 
 
-    $("#origin").mouseover(function(e)
+    $("#origin").mousemove(function(e)
     {
         $(this).contents().find("canvas").mousemove(function(e){
-            
             var eventLocation = getEventLocation(this,e);
-            
             var context = this.getContext("2d");
             var pixelData = context.getImageData(eventLocation.x, eventLocation.y, 1, 1);
             var red = pixelData.data[0];
             var green = pixelData.data[1];
             var blue = pixelData.data[2];
 
-            var resred = "red: " +red;
-            document.getElementById("affichered").innerHTML = resred;
+            var resRed = "red: " +red;
+            document.getElementById("afficheRed").innerHTML = resRed;
 
-            var resgreen = "green: " + green;
-            document.getElementById("affichegreen").innerHTML = resgreen;
+            var resGreen = "green: " + green;
+            document.getElementById("afficheGreen").innerHTML = resGreen;
 
-            var resblue = "blue: " + blue;
-            document.getElementById("afficheblue").innerHTML = resblue;
+            var resBlue = "blue: " + blue;
+            document.getElementById("afficheBlue").innerHTML = resBlue;
 
-            var resx = "X: " + eventLocation.x;
-            document.getElementById("affichex").innerHTML = resx;
+            var resX = "X: " + eventLocation.x;
+            document.getElementById("afficheX").innerHTML = resX;
 
-            var resy = "Y: " + eventLocation.y;
-            document.getElementById("affichey").innerHTML = resy;
-
+            var resY = "Y: " + eventLocation.y;
+            document.getElementById("afficheY").innerHTML = resY;
         });
     });
 });

@@ -4,7 +4,6 @@
 
     <head>
         <title>COMET - Edit Pixels</title>
-        <img id="flower1" src="resources/flower1.png" style="display: none;">
         <script type="text/javascript" src="js/Pixel.js"></script>
         <script type="text/javascript" src="js/Picture.js"></script>
         <script type="text/javascript" src="js/mousePosition.js"></script>
@@ -65,41 +64,36 @@
         <div class="input-field col s6 m6 text-lighten-3">
             <select class="icons" id="selector">
                 <option value="" disabled selected>Choose your picture</option>
-                <option value="" data-icon="resources/download.jpg" class="left">Flower</option>
-                <option value="" data-icon="resources/nous.jpg" class="left">COMET Team</option>
-                <option value="" data-icon="resources/temple.jpg" class="left">Temple</option>
+                <option value="resources/download.jpg" data-icon="resources/download.jpg" class="left">Flower</option>
+                <option value="resources/nous.jpg" data-icon="resources/nous.jpg" class="left">COMET Team</option>
+                <option value="resources/temple.jpg" data-icon="resources/temple.jpg" class="left">Temple</option>
             </select>
-
-            <button class="btn waves-effect waves-large purple darken-2" id="selectBtn" type="submit" name="action">Choose Image</button>
         </div>
 
         
 
         <ul id="menu">
-                <li><img id="origin"></li>
+                <li><iframe id="origin"></iframe></li>
                 <li><iframe id="modified"></iframe></li>
             <li><p style="text-align: center;">Original Picture</p></li>
             <li><p style="text-align: center;">Modified Picture</p></li>
             <li>
-                <a class="waves-effect waves-light btn red" id="affichered">Red Value</a>
-                <a class="waves-effect waves-light btn green" id="affichegreen">Green Value</a>
-                <a class="waves-effect waves-light btn blue" id="afficheblue">Blue Value</a>
-                <a class="btn waves-effect waves-teal grey darken-3" id="affichex">X Value</a>
-                <a class="btn waves-effect waves-teal black" id="affichey">Y Value</a>
+                <a class="waves-effect waves-light btn red" id="afficheRed">Red Value</a>
+                <a class="waves-effect waves-light btn green" id="afficheGreen">Green Value</a>
+                <a class="waves-effect waves-light btn blue" id="afficheBlue">Blue Value</a>
+                <a class="btn waves-effect waves-teal grey darken-3" id="afficheX">X Value</a>
+                <a class="btn waves-effect waves-teal black" id="afficheY">Y Value</a>
             </li>
             
             <li>    
-                <a class="waves-effect waves-light btn red" id="affiche2red">Red Value</a>
-                <a class="waves-effect waves-light btn green" id="affiche2green">Green Value</a>
-                <a class="waves-effect waves-light btn blue" id="affiche2blue">Blue Value</a>
-                <a class="btn waves-effect waves-teal grey darken-3" id="affiche2x">X Value</a>
-                <a class="btn waves-effect waves-teal black" id="affiche2y">Y Value</a>
+                <a class="waves-effect waves-light btn red" id="affiche2Red">Red Value</a>
+                <a class="waves-effect waves-light btn green" id="affiche2Green">Green Value</a>
+                <a class="waves-effect waves-light btn blue" id="affiche2Blue">Blue Value</a>
+                <a class="btn waves-effect waves-teal grey darken-3" id="affiche2X">X Value</a>
+                <a class="btn waves-effect waves-teal black" id="affiche2Y">Y Value</a>
             </li>
 
         </ul>
-
-        
-    
         
 
         <a href="tutorial.html" style="margin-left: 97%;" class="btn-floating pulse purple darken-2 btn tooltipped" data-position="left" data-tooltip="Need Help? Click on this icon for tutorial!"><i class="material-icons">help</i></a>
