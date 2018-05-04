@@ -69,79 +69,205 @@
                         
                         A pixel alone can’t be call a picture, so a picture is composed of many pixel. To know where the pixel which we would modify is, it’s important to know its position in the width (x) and height (y) of the picture.<br><br>
                         
-                        Example of a red pixel 50% transparent:			(255, 0, 0, 127)
-                        Example of a black pixel 50% transparent:		(0, 0, 0, 127)
+                        
+                        Example of a red pixel 50% transparent:			<font COLOR="#FF0000">(255, 0, 0, 127)</font><br><br>
+                        Example of a black pixel 50% transparent:		(0, 0, 0, 127)<br><br>
+
+
+
                         
                         <h3>What is a picture?</h3>
 
                         <hr>
                         
-                        A picture is defined with its width and height values both as integer. There are the number of pixel in the width and in the height in the pixel. In fact, a picture is an array of pixel with width*height pixel in total. A picture is write and read to the top corner left to the bottom corner right, as a book.
+                        A picture is defined with its width and height values both as integer. There are the number of pixel in the width and in the height in the pixel. In fact, a picture is an array of pixel with width*height pixel in total. A picture is write and read to the top corner left to the bottom corner right, as a book. <br><br>
                         
-                        Example of a white picture of 3x3:			                Example of a black picture of 3x3:
-                        (255, 255, 255) (255, 255, 255) (255, 255, 255)				(0, 0, 0) (0, 0, 0) (0, 0, 0)
-                        (255, 255, 255) (255, 255, 255) (255, 255, 255)				(0, 0, 0) (0, 0, 0) (0, 0, 0)
-                        (255, 255, 255) (255, 255, 255) (255, 255, 255)				(0, 0, 0) (0, 0, 0) (0, 0, 0)
-                        Example of a red picture of 3x2:				           Example of a green picture of 2x3:
-                        (255, 0, 0) (255, 0, 0) (255, 0, 0)						(0, 255, 0) (0, 255, 0)
-                        (255, 0, 0) (255, 0, 0) (255, 0, 0)						(0, 255, 0) (0, 255, 0)
-                                                                                 (0, 255, 0) (0, 255, 0)
+                        Example of a white picture of 3x3:<br>			
+                        (255, 255, 255) (255, 255, 255) (255, 255, 255)	<br>			
+                        (255, 255, 255) (255, 255, 255) (255, 255, 255)	<br>			
+                        (255, 255, 255) (255, 255, 255) (255, 255, 255)	<br><br>
+
+                        Example of a black picture of 3x3:<br>
+                        (0, 0, 0) (0, 0, 0) (0, 0, 0)<br>
+                        (0, 0, 0) (0, 0, 0) (0, 0, 0)<br>
+                        (0, 0, 0) (0, 0, 0) (0, 0, 0)<br><br>
+
+                        Example of a red picture of 3x2:<br>				
+                        <font color="FF0000">(255, 0, 0) (255, 0, 0) (255, 0, 0)</font>	<br>				
+                        <font color="FF0000">(255, 0, 0) (255, 0, 0) (255, 0, 0)</font>	<br><br>					
+
+                        Example of a green picture of 2x3:<br>
+                        <font color="00FF00">(0, 255, 0) (0, 255, 0)</font><br>
+                        <font color="00FF00">(0, 255, 0) (0, 255, 0)</font><br>
+                        <font color="00FF00">(0, 255, 0) (0, 255, 0)</font><br><br>
+
+                        Example of the French flag (blue, white and red) of 3x5:<br>
+                        <font color="0000FF">(0, 0, 255)</font> (255, 255, 255)  <font color="FF0000">(255, 0, 0)</font><br> 
+                        <font color="0000FF">(0, 0, 255)</font> (255, 255, 255)  <font color="FF0000">(255, 0, 0)</font><br>
+                        <font color="0000FF">(0, 0, 255)</font> (255, 255, 255)  <font color="FF0000">(255, 0, 0)</font><br>
+                        <font color="0000FF">(0, 0, 255)</font> (255, 255, 255)  <font color="FF0000">(255, 0, 0)</font><br>
+                        <font color="0000FF">(0, 0, 255)</font> (255, 255, 255)  <font color="FF0000">(255, 0, 0)</font><br><br>
 
 
-                        Example of the French flag (blue, white and red) of 3x5:
-                        (0, 0, 255) (255, 255, 255) (255, 0, 0) 
-                        (0, 0, 255) (255, 255, 255) (255, 0, 0)
-                        (0, 0, 255) (255, 255, 255) (255, 0, 0)
-                        (0, 0, 255) (255, 255, 255) (255, 0, 0)
-                        (0, 0, 255) (255, 255, 255) (255, 0, 0)
 
                         <h3>Property and functions of the class Pixel in our JavaScript</h3>
 
                         <hr>
                         
-                        As said, a pixel need some values: red, green, blue, alpha and its position x and y in the picture. The constructor of the class Pixel need the same number and order of properties. Of course, it isn’t possible to take a values smaller than 0 and higher than 255 for a colour. It is possible to reach all of them, with the call of property (“this.”) or with a function.
+                        As said, a pixel need some values: red, green, blue, alpha and its position x and y in the picture. The constructor of the class Pixel need the same number and order of properties. Of course, it isn’t possible to take a values smaller than 0 and higher than 255 for a colour. It is possible to reach all of them, with the call of property (“this.”) or with a function. <br><br>
                         
-                        To create a pixel black at coordinates 50, 50:		var myPixel = Pixel(0, 0, 0, 255, 50, 50);
-                        To display some information about a pixel:		myPixel.toString();
+                        <table>
+                            <tr>
+                                <th>To create a pixel black at coordinates 50, 50:</th>
+                                <td>var myPixel = Pixel(0, 0, 0, 255, 50, 50);</td>
+                            </tr>
+                            <tr>
+                                <th>To display some information about a pixel:</th>
+                                <td>myPixel.toString();</td>
+                            </tr>
+                        </table>
+                    
                         
-                        To reach the value red with property:				myPixel.this.red;
-                        To reach the value green with property:				myPixel.this.green; 
-                        To reach the value blue with property:				myPixel.this.blue;
-                        To reach the value alpha with property:				myPixel.this.alpha;
-                        To reach the position x with property:				myPixel.this.x;
-                        To reach the position y with property:				myPixel.this.y; 
-                        To reach the colour with function:				myPixel.getColor();
-                        To reach the position with function:				myPixel.getPos();
+                        <br><br>
                         
-                            All of this properties can be modify, just with the call of this property or with a function which we have created.
-                        
-                        To modify the red value of the pixel with property:		myPixel.this.red = 255;
-                        To modify the alpha value of the pixel with property:		myPixel.this.alpha = 175; 
-                        To modify all colours of the pixel to white with function:		myPixel.setColor(0, 0, 0, 255);
-                        To modify all coordinates of the pixel with function:		myPixel.setPos(100, 100);
+                        <table>
+                            <tr>
+                                <th>To reach the value red with property:</th>
+                                <td>myPixel.this.red;</td>
+                            </tr>
+                            <tr>
+                                <th>To reach the value green with property:</th>
+                                <td>myPixel.this.green;</td>
+                            </tr>
+                            <tr>
+                                <th>To reach the value blue with property:</th>
+                                <td>myPixel.this.blue;</td>
+                            </tr>
+                            <tr>
+                                <th>To reach the value alpha with property:</th>
+                                <td>myPixel.this.alpha;</td>
+                            </tr>
+                            <tr>
+                                <th>To reach the position x with property:</th>
+                                <td>myPixel.this.x;</td>
+                            </tr>
+                            <tr>
+                                <th>To reach the position y with property:</th>
+                                <td>myPixel.this.y;</td>
+                            </tr>
+                            <tr>
+                                <th>To reach the colour with function:</th>
+                                <td>myPixel.getColor();</td>
+                            </tr>
+                            <tr>
+                                <th>To reach the position with function:</th>
+                                <td>myPixel.getPos();</td>
+                            </tr>
+                        </table>
+                        				
+                        <br><br>
+                        All of this properties can be modify, just with the call of this property or with a function which we have created.<br><br>
+
+                        <table>
+                            <tr>
+                                <th>To modify the red value of the pixel with property:</th>
+                                <td>myPixel.this.red = 255;</td>
+                            </tr>
+                            <tr>
+                                <th>To modify the alpha value of the pixel with property:</th>
+                                <td>myPixel.this.alpha = 175;</td>
+                            </tr>
+                            <tr>
+                                <th>To modify all colours of the pixel to white with function:</th>
+                                <td>myPixel.setColor(0, 0, 0, 255);</td>
+                            </tr>
+                            <tr>
+                                <th>To modify all coordinates of the pixel with function:</th>
+                                <td>myPixel.setPos(100, 100);</td>
+                            </tr>
+                        </table>
+
+                        <br><br>                  		
                         
                         <h3>Property and functions of the class Picture in our JavaScript</h3>
 
                         <hr>
 
-                            Before to draw or modify a picture, the picture must be existed. Create a picture needs an image in the same folder source as parameter. The format of the image can be a “png” or “jpg”. The path source of the picture can be modify. To use the picture, she is drawing in a canvas, a space in the web page. The size of this canvas was initialised to the size of the picture, but it is possible to modify it. 
-                        To create a picture:					var myPicture = Picture(“picture.jpg”);
-                        To display the first time a picture:			myPicture.display();
-                        To draw the others time the picture:			myPicture.redraw();
-                        To display some information about the picture:		myPicture.toString();
+                        Before to draw or modify a picture, the picture must be existed. Create a picture needs an image in the same folder source as parameter. The format of the image can be a “png” or “jpg”. The path source of the picture can be modify. To use the picture, she is drawing in a canvas, a space in the web page. The size of this canvas was initialised to the size of the picture, but it is possible to modify it. <br><br>
                         
-                        To reach the width with property:				myPicture.this.width; 
-                        To reach the height with property:				myPicture.this.height; 
-                        To reach the canvas with property:				myPicture.this.canvas; 
-                        To reach the path source with property:				myPicture.this.source;
-                        To reach the colour of a pixel with function:			myPicture.getPixel(50, 50);
-                        
+                        <br>
+
+                        <table>
+                            <tr>
+                                <th>To create a picture:</th>
+                                <td>var myPicture = Picture(“picture.jpg”);</td>
+                            </tr>
+                            <tr>
+                                <th>To display the first time a picture:</th>
+                                <td>myPicture.display();</td>
+                            </tr>
+                            <tr>
+                                <th>To draw the others time the picture:</th>
+                                <td>myPicture.redraw();</td>
+                            </tr>
+                            <tr>
+                                <th>To display some information about the picture:</th>
+                                <td>myPicture.toString();</td>
+                            </tr>
+                        </table>
+
+                        <br><br>
+
+                        <table>
+                            <tr>
+                                <th>To reach the width with property:</th>
+                                <td>myPicture.this.width; </td>
+                            </tr>
+                            <tr>
+                                <th>To reach the height with property:</th>
+                                <td>myPicture.this.height;</td>
+                            </tr>
+                            <tr>
+                                <th>To reach the canvas with property:</th>
+                                <td>myPicture.this.canvas;</td>
+                            </tr>
+                            <tr>
+                                <th>To reach the path source with property:	</th>
+                                <td>myPicture.this.source;</td>
+                            </tr>
+                            <tr>
+                                <th>To reach the colour of a pixel with function:</th>
+                                <td>myPicture.getPixel(50, 50);</td>
+                            </tr>
+                        </table>
 
 
+                    <br><br>
+
+                    All of this properties can’t be modify, only the following can be changed, just with the call of this property or with a function which we have created. To modify the canvas, the function need the name of a canvas which existed in the page HTML. It isn’t possible to modify the size of the picture but is possible to change the size of the canvas and after modify pixels of the picture.<br><br>
 
 
+                    <table>
+                        <tr>
+                            <th>To modify the path source of the picture:</th>
+                            <td>myPicture.this.source = “picture2.png”;</td>
+                        </tr>
+                        <tr>
+                            <th>To modify the colour of the pixel 50, 50 with function:</th>
+                            <td>myPicture.setPixel(newPixel, 50, 50);</td>
+                        </tr>
+                        <tr>
+                            <th>To modify the canvas of the picture with function:</th>
+                            <td>myPicture.setCanvas(newCanvas);</td>
+                        </tr>
+                        <tr>
+                            <th>To modify the size of the canvas to 25, 25 with function:</th>
+                            <td>myPicture.setCanvasSize(25, 25);</td>
+                        </tr>
+                    </table>
 
-
+                    <br><br>    
+                    		                        
                   </span></div>
                 </li>
                 <li>
