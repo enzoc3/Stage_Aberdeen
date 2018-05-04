@@ -28,23 +28,22 @@ $(document).ready(function(){
     
     $('select').formSelect();
     jQuery('select').on('change', function() {
-        
+        var choice = $('select').val();
         var code = "<!Doctype HTMl>\n\
         <html>\n\
             <head>\n\
                 <script type='text/javascript' src='js/mousePosition.js'></script>\n\
                 <script type='text/javascript' src='js/Picture.js'></script>\n\
-                <script type='text/javascript' src='https://code.jquery.com/jquery-3.3.1.min.js'/>\n\
             </head>\n\
             <body>\n\
                 <script>\n\
-                    var choice = $('select').val();\n\
-                    var img = new Picture(choice);\n\
+                    var img = new Picture('"+choice+"');\n\
                     img.display();\n\
                 </script>\n\
             </body>\n\
         </html>"
 
+        console.log(code);
         var iframe = document.getElementById("origin");
         
 

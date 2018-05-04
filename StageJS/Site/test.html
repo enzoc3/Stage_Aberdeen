@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas" width="578" height="200"></canvas>
+<script>
+    /*var redAmount = form.valueRed.value;
+     var greenAmount = form.valueGreen.value;
+     var blueAmount = form.valueBlue.value;
+     var imgCh4 = new Picture("img/nous.jpg");
+     imgCh4.setCanvas('changeColors');
+     for(var i = 0; i < imgCh4.imgData.data.length; i+=4){
+     imgCh4.imgData.data[i] = imgCh4.imgData.data[i]*redAmount;
+     imgCh4.imgData.data[i+1] = imgCh4.imgData.data[i+1]*greenAmount;
+     imgCh4.imgData.data[i+2] = imgCh4.imgData.data[i+2]*blueAmount;
+     }
+     imgCh4.display();*/
+    //var img1 = new Picture("img/nous.jpg");
+    //var img2 = new Picture("img/temple.jpg");
+    //var img3 = new Picture("img/nous.jpg");
+    //var img = new Picture("img/temple.jpg");
+    var img4 = new Picture("img/circle1.jpg");
+    var img5 = new Picture("img/circle2.jpg");
+    //var img6 = new Picture("img/circle3.jpg");
+    /*var img7 = new Picture("img/star5.png");
+     var img8 = new Picture("img/star6.png");*/
+    var c = document.getElementById('changeColors');
+    mov=new gif(c);
+    for(var i=0;i<30*0.5;i++){
+        mov.addFrame(img4);
+    }
+    for(var i=0;i<30*0.5;i++){
+        mov.addFrame(img5);
+    }
+    /*for(var i=0;i<30*0.5;i++){
+     mov.addFrame(img6);
+     }*/
+    for(var i=0;i<30*0.5;i++){
+        mov.addFrame(img5);
+    }
+    for(var i=0;i<30*0.5;i++){
+        mov.addFrame(img4);
+    }
+    /*for(var i=0;i<30*2;i++){
+     mov.addFrame(img1);
+     }
+     for(var i=0;i<30*2;i++){
+     mov.addFrame(img2);
+     }*/
+    //mov.addFrame(img5);
+    //mov.addFrame(img6);
+    //mov.addFrame(img6);
+    //console.log(mov.frame.length);
+    mov.playInLoop(30);
+</script>
+</body>
+</html>
