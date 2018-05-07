@@ -42,8 +42,6 @@ $(document).ready(function(){
                 </script>\n\
             </body>\n\
         </html>"
-
-        console.log(code);
         var iframe = document.getElementById("origin");
         
 
@@ -52,6 +50,7 @@ $(document).ready(function(){
             frameDoc = iframe.contentWindow.document;
 
         frameDoc.open();
+        frameDoc.writeln("");
         frameDoc.writeln(code);
         frameDoc.close();
     });
@@ -68,6 +67,7 @@ $(document).ready(function(){
             frameDoc = iframe.contentWindow.document;
 
         frameDoc.open();
+        frameDoc.writeln("");
         frameDoc.writeln(code);
         frameDoc.close();
 

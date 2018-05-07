@@ -42,7 +42,6 @@ function wait(ms){
 function getImage(path){
     var image = new Image();
     image.src = path;
-    wait(500);
     var tab = getImageData(image);
     return [image, tab];
 }
@@ -53,12 +52,16 @@ function getImage(path){
  * @returns {ImageData} the context of the data of an image
  */
 function getImageData(image){
-    var canvas = document.createElement('canvas');
-    canvas.id = 'source';
-    canvas.setAttribute("width", image.width);
-    canvas.setAttribute("height", image.height);
-    document.body.appendChild(canvas);
-    canvas.style.display = "none";
+    var canvas = document.getElementById('source');
+    console.log(canvas);
+    if(canvas == null){
+        canvas = document.createElement('canvas');
+        canvas.id = 'source';
+        canvas.setAttribute("width", image.width);
+        canvas.setAttribute("height", image.height);
+        document.body.appendChild(canvas);
+        canvas.style.display = "none";
+    }
     var context2d = canvas.getContext('2d');
     context2d.drawImage(image, 0, 0);
     return context2d.getImageData(0, 0, image.width, image.height);
@@ -181,6 +184,11 @@ function Picture(path=null, pWidth=null,pHeight=null){
         this.context.arc(xStart,yStart,radius,0,2*Math.PI);
         this.context.fillStyle =rcolor;
         this.context.fill();
+    }
+
+    this.load = function(){
+        this.display();
+        this.canvas.style.display = 'none';
     }
     /**
      * Return all information about the picture

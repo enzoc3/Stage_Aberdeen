@@ -13,16 +13,17 @@ window.requestAnimFrame = (function(callback) {
         function(callback) {
             window.setTimeout(callback, 1000 / 60);
         };
-})();
+});
 function animate(picture){
     window.requestAnimationFrame(function(){
         picture.display();
     });
 }
 
-function gif(canvas,adapt=true,width=500,height=500){
+function Gif(canvas,adapt=true,width=500,height=500){
     this.frame=[];
     this.canvas=canvas;
+    document.body.appendChild(this.canvas);
     if(adapt !=true){
         this.canvas.setAttribute("width",width);
         this.canvas.setAttribute("height",height);
@@ -42,7 +43,7 @@ function gif(canvas,adapt=true,width=500,height=500){
         var delay=(1/framePerSecond)*1000;
         var frame= this.frame;
         animate(frame[0]);
-        var i=1
+        var i=1;
         var run=setInterval(function(){
             animate(frame[i]);
             i++;
@@ -57,16 +58,17 @@ function gif(canvas,adapt=true,width=500,height=500){
         this.isPlaying=true;
         thus=this;
         var delay=(1/framePerSecond)*1000;
-        var frame= this.frame;
-        var i=0
+        this.frame;
+        
+        var i=0;
         var runInLoop=setInterval(function(){
-            animate(frame[i]);
+            animate(thus.frame[i]);
             i++;
-            if(i==frame.length-1){
+            if(i==thus.frame.length-1){
                 i=0;
             }
             if (thus.isPlaying==false){
-                frame[i].clearCanvas();
+                thus.frame[i].clearCanvas();
                 clearInterval(runInLoop);
             }
         },delay);
@@ -94,5 +96,5 @@ function gif(canvas,adapt=true,width=500,height=500){
     };
     this.stop=function () {
         this.isPlaying=false;
-    }
+    };
 }
