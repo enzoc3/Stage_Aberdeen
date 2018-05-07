@@ -18,13 +18,9 @@ $(document).ready(function(){
             <body>\n\
                 <script>\n\
                     var frame2=new Picture('resources/star3.png');\n\
-                    frame2.display();\n\
                     var frame3=new Picture('resources/star4.png');\n\
-                    frame3.display();\n\
                     var frame4=new Picture('resources/star5.png');\n\
-                    frame4.display();\n\
                     var frame5=new Picture('resources/star6.png');\n\
-                    frame5.display();\n\
                     var canvas = document.createElement('canvas');\n\
                     var gif= new Gif(canvas);\n\
                     for(var i=0;i<30*0.5;i++){\n\
@@ -59,7 +55,14 @@ $(document).ready(function(){
             frameDoc = iframe.contentWindow.document;
 
         frameDoc.open();
-        frameDoc.writeln("");
+        frameDoc.writeln("\
+        <!-- PRELOAD -->\n\
+        <img src='resources/star3.png' style='display: none;'>\n\
+        <img src='resources/star4.png' style='display: none;'>\n\
+        <img src='resources/star5.png' style='display: none;'>\n\
+        <img src='resources/star6.png' style='display: none;'>\n\
+        <!-- End of Preload -->\n\
+        ");
         $("#modified").on("load", function(){
             frameDoc.writeln(code);
         })

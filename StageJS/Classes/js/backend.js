@@ -32,6 +32,11 @@ $(document).ready(function(){
         var code = "<!Doctype HTMl>\n\
         <html>\n\
             <head>\n\
+                <!-- PRELOAD -->\n\
+                <img src='resources/temple.jpg' style='display: none;'>\n\
+                <img src='resources/nous.jpg' style='display: none;'>\n\
+                <img src='resources/download.jpg' style='display: none;'>\n\
+                <!-- End of Preload -->\n\
                 <script type='text/javascript' src='js/mousePosition.js'></script>\n\
                 <script type='text/javascript' src='js/Picture.js'></script>\n\
             </head>\n\
@@ -67,7 +72,13 @@ $(document).ready(function(){
             frameDoc = iframe.contentWindow.document;
 
         frameDoc.open();
-        frameDoc.writeln("");
+        frameDoc.writeln("\
+        <!-- PRELOAD -->\n\
+        <img src='resources/temple.jpg' style='display: none;'>\n\
+        <img src='resources/nous.jpg' style='display: none;'>\n\
+        <img src='resources/download.jpg' style='display: none;'>\n\
+        <!-- End of Preload -->\n\
+        ");
         frameDoc.writeln(code);
         frameDoc.close();
 
@@ -104,7 +115,7 @@ $(document).ready(function(){
     });
 
 
-    $("#origin").mousemove(function(e)
+    $("#origin").mouseover(function(e)
     {
         $(this).contents().find("canvas").mousemove(function(e){
             var eventLocation = getEventLocation(this,e);
