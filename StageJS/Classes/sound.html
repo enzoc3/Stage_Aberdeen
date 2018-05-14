@@ -4,11 +4,10 @@
 
 <head>
     <title>COMET - Edit Pixels</title>
-    <script type="text/javascript" src="js/Pixel.js"></script>
-    <script type="text/javascript" src="js/Picture.js"></script>
-    <script type="text/javascript" src="js/Movie.js"></script>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="shortcut icon" href="resources/favicon.png">
+
+    <script type="text/javascript" src="js/Sound.js"></script>
 
     <!-- CODE MIRROR + JQuery -->
     <link rel="stylesheet" type="text/css" href="plugin/codemirror/lib/codemirror.css">
@@ -23,10 +22,10 @@
     <script type="text/javascript" src="plugin/codemirror/addon/hint/show-hint.js"></script>
     <script type="text/javascript" src="plugin/codemirror/addon/hint/javascript-hint.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="js/backendVideo.js"></script>
 
     <!-- End of CodeMirror & JQuery Imports -->
 
+    <script type="text/javascript" src="js/backendSound.js"></script>
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
@@ -63,8 +62,13 @@
             <i class="material-icons right">send</i>
         </button>
 
-        <iframe style="width:100%" id="modified"></iframe>
-        <p style="text-align: center;">Modified Video</p>
+        <ul id="menu">
+            <li><iframe id="origin" style="height:50%;"></iframe></li>
+            <li><iframe id="modified" style="height:50%;"></iframe></li>
+            <li><p style="text-align: center;">Original Sound</p></li>
+            <li><p style="text-align: center;">Modified Sound</p></li>
+        </ul>
+        
 
         <a href="tutorial.html" style="margin-left: 97%;" class="btn-floating pulse purple darken-2 btn tooltipped" data-position="left" data-tooltip="Need Help? Click on this icon for tutorial!"><i class="material-icons">help</i></a>
 

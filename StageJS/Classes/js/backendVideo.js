@@ -48,24 +48,25 @@ $(document).ready(function(){
         var code = editor.getValue();
         var iframe = document.getElementById("modified");
 
-        M.toast({html: 'Generating...', classes: 'rounded', displayLength : 10})
-
         var frameDoc = iframe.document;
         if (iframe.contentWindow)
             frameDoc = iframe.contentWindow.document;
 
         frameDoc.open();
-        frameDoc.writeln("\
+        frameDoc.writeln("");
+        frameDoc.writeln("<!Doctype HTMl>\n\
+        <html>\n\
+        <head>\n\
         <!-- PRELOAD -->\n\
         <img src='resources/star3.png' style='display: none;'>\n\
         <img src='resources/star4.png' style='display: none;'>\n\
         <img src='resources/star5.png' style='display: none;'>\n\
         <img src='resources/star6.png' style='display: none;'>\n\
         <!-- End of Preload -->\n\
+        </head>\n\
+        </html>\n\
         ");
-        $("#modified").on("load", function(){
-            frameDoc.writeln(code);
-        })
+        frameDoc.writeln(code);
         frameDoc.close();
 
     });
