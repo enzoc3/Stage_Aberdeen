@@ -40,8 +40,9 @@
         
         <nav class="nav-extended purple darken-2">
             <div class="nav-wrapper">
-                <img class="responsive-img" src="resources/logo.png" height="60" width="60">
-                <a class="brand-logo">COMET Team - Edit Pixels</a>
+                <a href="mainpage.html"><img class="responsive-img" src="resources/logo.png" height="60" width="60" alt= "WebsiteLogo"></a>
+
+                <a  href="mainpage.html" class="brand-logo">COMET Team - Edit Pixels</a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="mainpage.html">Main Page</a></li>
                 <li><a href="tutorial.html">Tutorial</a></li>
@@ -49,10 +50,11 @@
               </ul>
             </div>
             <div class="nav-content">
-              <ul class="tabs tabs-transparent">
-                <li class="tab"><a href="test.html">Traiting Images</a></li>
-                <li class="tab"><a href="video.html">Traiting Sounds</a></li>
-              </ul>
+                <ul class="tabs tabs-transparent">
+                    <li class="tab"><a href="test.html">Processing Images</a></li>
+                    <li class="tab"><a href="video.html">Processing Videos</a></li>
+                    <li class="tab"><a href="sound.html">Processing Sounds</a></li>
+                </ul>
             </div>
         </nav>
         
@@ -73,6 +75,7 @@
 
         <ul id="listemenuprincipal">
             <li><a href="test.html" class="waves-effect waves-light btn purple darken-2"><i class="material-icons right">filter_hdr</i>Processing Images</a></li>
+            <li><a href="video.html" class="waves-effect waves-light btn purple darken-2"><i class="material-icons right">ondemand_video</i>Processing Videos</a></li>
             <li><a href="video.html" class="waves-effect waves-light btn purple darken-2"><i class="material-icons right">audiotrack</i>Processing Sounds</a></li>
             <li><a href="tutorial.html" class="waves-effect waves-light btn purple darken-2"><i class="material-icons right">build</i>Tutorial</a></li>
             <li><a href="aboutus.html" class="waves-effect waves-light btn purple darken-2"><i class="material-icons right">help</i>About us</a></li>
@@ -85,30 +88,8 @@
         </div>
     </body>
 
-    <footer class="page-footer purple darken-2">
-            <div class="container">
-                <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Computing Education Team</h5>
-                    <p class="grey-text text-lighten-4">This project has been developped by 4 students from France during their intership at RGU, Aberdeen, Scotland.</p>
-                </div>  
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Collaborators</h5>
-                    <ul>
-                    <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/noemie.chevalier.771">Noémie Chevalier</a></li>
-                    <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/vincent.morel.7505">Vincent Morel</a></li>
-                    <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/timothe.rouze">Timothé Rouze</a></li>
-                    <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/nzocontini">Enzo Contini</a></li>
-                    </ul>
-                </div>
-                </div>
-            </div>
-            <div class="footer-copyright">
-                <div class="container">
-                ©2018 COMET Team
-                <a class="grey-text text-lighten-4 right" href="#!">Click here to watch the GitHub's project</a>
-                </div>
-            </div>
+    <footer class="page-footer purple darken-2" id="footer">
+        <script type="text/javascript" src="components/footer.js"></script>
     </footer>
 
 
