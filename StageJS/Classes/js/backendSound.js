@@ -72,7 +72,7 @@ $(document).ready(function(){
                     tab[i] = tmp.join(" ");
                 }
             }
-            if(tab[i].includes("play();") || tab[i].includes("startAt")){
+            if(tab[i].includes("play();") || tab[i].includes("startAt") || tab[i].includes("generatePlayer")){
                 var str = "});\
             }\n\
             "+rqst+".send();";
