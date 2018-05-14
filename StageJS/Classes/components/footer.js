@@ -8,10 +8,10 @@ document.getElementById("footer").innerHTML = "<div class='container'>\n\
         <div class='col l4 offset-l2 s12'>\n\
             <h5 class='white-text'>Collaborators</h5>\n\
             <ul>\n\
-                <li><a class='grey-text text-lighten-3' href='https://www.facebook.com/noemie.chevalier.771'>Noémie Chevalier</a></li>\n\
+                <li><a class='grey-text text-lighten-3' href='https://www.linkedin.com/in/noemieche/'>Noémie Chevalier</a></li>\n\
                 <li><a class='grey-text text-lighten-3' href='https://www.linkedin.com/in/nzocontini'>Enzo Contini</a></li>\n\
-                <li><a class='grey-text text-lighten-3' href='https://www.facebook.com/vincent.morel.7505'>Vincent Morel</a></li>\n\
-                <li><a class='grey-text text-lighten-3' href='https://www.facebook.com/timothe.rouze'>Timothé Rouze</a></li>\n\
+                <li><a class='grey-text text-lighten-3' href='https://www.linkedin.com/in/vincent-morel/'>Vincent Morel</a></li>\n\
+                <li><a class='grey-text text-lighten-3' href='https://www.linkedin.com/in/timotherouze/'>Timothé Rouze</a></li>\n\
             </ul>\n\
         </div>\n\
     </div>\n\
@@ -19,6 +19,6 @@ document.getElementById("footer").innerHTML = "<div class='container'>\n\
 <div class='footer-copyright'>\n\
     <div class='container'>\n\
         ©2018 COMET Team\n\
-        <a class='grey-text text-lighten-4 right' href='#!'>Click here to go to the GitHub project</a>\n\
+        <a class='grey-text text-lighten-4 right' href='https://github.com/EnzoContinho/Stage_Aberdeen'>Click here to go to the GitHub project</a>\n\
     </div>\n\
 </div>";
