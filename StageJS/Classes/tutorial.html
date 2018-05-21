@@ -274,6 +274,62 @@
                 <li>
                   <div class="collapsible-header"><i class="material-icons">audiotrack</i>Sounds</div>
                   <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    <h3>What is a sound?</h3>
+                    <hr>
+                    <br>
+                    A sound is represented by an array of float: the buffer. If you want to modify a sound you will be working on this array. The length of this array is determined by the duration and the sample rate of the sound.<br><br>
+                    <h3>Properties and functions of the class Sound:</h3>
+                    <hr>
+                    <br>
+                    The sound class possess various properties such as:
+                    <ul>
+                        <li>
+                            •	audioCtxt : the audio context used to manage the sound
+                        </li>
+                        <li>
+                            •	source : the audio source used to play the sound
+                        </li>
+                        <li>
+                            •	soundBuffer : the audio data
+                        </li>
+                        <li>
+                            •	nbChannels : the sound’s number of channels, each channel is an array of float
+                        </li>
+                        <li>
+                            •	duration  : the sound’s duration in seconds
+                        </li>
+                        <li>
+                            •	sampleRate : the sound’s sample rate
+                        </li>
+                        <li>
+                            •	length : the soundBuffer’s length
+                        </li>
+                    </ul>
+                    To create a sound you will use the constructor: var mySound = new Sound();
+                    Then if you want to play it there are 3 possibilities:
+                    <ul>
+                        <li>
+                            •	mySound.play(loop) : this function play the sound once by default and play the sound in loop if the function is called with loop = true. The Boolean loop is a facultative argument
+                        </li>
+                        <li>
+                            •	mySound.startAt(time) : this function start the sound at the specified time (in seconds)
+                        </li>
+                        <li>
+                            •	mySound.generatePlayer() : this function generate a player composed of 4 button: play, stop, pause, loop.
+                        </li>
+                    </ul>
+                    Now that you know how to create a sound and play it you may want to modify it. To do that you have 2 option:
+                    In the following line channelNb represent the number of the channel you want to modify, sampleIndex is the index in the channel that you want to obtain or modify.
+                    <ul>
+                        <li>
+                            •	The first option is to use these functions: getSample(channelNb,sampleIndex) and setSample(channelNb,sampleIndex,value).
+                            getSample(channelNb,sampleIndex): returns the value at sampleIndex of channelNb (be careful the first channel is 0)
+                            setSample(channelNb,sampleIndex,value): replaces the value at sampleIndex of channelNb (be careful the first channel is 0) with value
+                        </li>
+                        <li>
+                            •	The second option is to change the whole channel using getChannel(channelNb) and setChannel(channelNb, array)
+                        </li>
+                    </ul>
                 </li>
                 <li>
                   <div class="collapsible-header"><i class="material-icons">videocam</i>Videos</div>
