@@ -4,9 +4,6 @@
 
     <head>
         <title>COMET - Edit Pixels</title>
-        <img id="flower1" src="resources/flower1.png" style="display: none;">
-        <script type="text/javascript" src="js/Pixel.js"></script>
-        <script type="text/javascript" src="js/Picture.js"></script>
         <canvas id="test" style="display: none;"></canvas>
         <link rel="stylesheet" href="css/style.css"/>
         <link rel="shortcut icon" href="resources/favicon.png">
@@ -37,7 +34,7 @@
             </div>
             <div class="nav-content">
                 <ul class="tabs tabs-transparent">
-                    <li class="tab"><a href="test.html">Processing Images</a></li>
+                    <li class="tab"><a href="pictures.html">Processing Images</a></li>
                     <li class="tab"><a href="video.html">Processing Videos</a></li>
                     <li class="tab"><a href="sound.html">Processing Sounds</a></li>
                 </ul>
@@ -61,17 +58,17 @@
                   <div class="collapsible-header"><i class="material-icons">filter_hdr</i>Pictures</div>
                   <div class="collapsible-body"><span>
 
-                        The main of this website is to discover and learn the JavaScript language. For that, we have created some classes to simplify the manipulation of different objects like a pixel, a picture, a sound or also a video.
+                        The aim of this website is to discover and learn JavaScript. For that, we have created some classes to simplify the manipulation of different objects like pixels, pictures, sounds or videos.
                         
                         <h3>What is a pixel?</h3>
 
                         <hr>
                         
-                        A pixel is defined by a three integer values: red, green and blue between 0 and 255. For example, white pixel was defined by (255, 255, 255), black pixel by (0, 0, 0), classic red pixel by <font COLOR="#FF0000">(255, 0, 0)</font>, classic green pixel by <font COLOR="#00FF00">(0, 255, 0)</font> and classic blue pixel by <font COLOR="#0000FF">(0, 0, 255)</font>.<br><br>
+                        A pixel is defined by three integer values between 0 and 255 which represents the red, green and blue values of the pixel. For example, a white pixel is defined by (255, 255, 255), a black pixel by (0, 0, 0), a classic red pixel by <font COLOR="#FF0000">(255, 0, 0)</font>, a classic green pixel by <font COLOR="#00FF00">(0, 255, 0)</font> and a classic blue pixel by <font COLOR="#0000FF">(0, 0, 255)</font>.<br><br>
                         
-                        Another value, less known and used is the integer of alpha also between 0 and 255. It’s the percentage of transparency of the pixel. The value 0 equals a transparency of 100%, so a transparent pixel. The value 255 is a pixel totally visible, so a transparency of 0%. The alpha can be used for example to modify the light of the pixel.<br><br>
+                        Another value, less known and used is the alpha value of the pixel also defined between 0 and 255. It is the degree of transparency of the pixel. The value 0 is equal to a transparency of 100%, so a transparent pixel. The value 255 is a pixel totally visible, so a transparency of 0%. The alpha can be used for example to modify the light of the pixel.<br><br>
                         
-                        A pixel alone can’t be call a picture, so a picture is composed of many pixel. To know where the pixel which we would modify is, it’s important to know its position in the width (x) and height (y) of the picture.<br><br>
+                        A pixel alone can’t be called a picture. A picture is composed of many pixels.<br><br>
                         
                         
                         Example of a red pixel 50% transparent:			<font COLOR="#FF0000">(255, 0, 0, 127)</font><br><br>
@@ -283,10 +280,6 @@
                   <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                 </li>
         </ul>
-
-        
-
-
 
     </body>
 

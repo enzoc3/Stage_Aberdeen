@@ -21,7 +21,7 @@ $(document).ready(function(){
                     son.setSample(i, j, son.getSample(i, j)*10);\n\
                   }\n\
                 }\n\
-                son.play();\n\
+                son.generatePlayer();\n\
                 </script>\n\
             </body>\n\
         </html>\n",
@@ -49,6 +49,7 @@ $(document).ready(function(){
     function modifyCode(code){
         var tab = code.split("\n");
         var rqst = "request";
+        var choice = $('select').val();
         for(var i = 0; i < tab.length; i++){
             var tmp = tab[i].split(" ");
             for(j = 0; j < tmp.length; j++){
@@ -59,7 +60,7 @@ $(document).ready(function(){
                         k++;
                     }
                     tmp[j-k] = "var "+rqst+" = new XMLHttpRequest(); \n\
-                    "+rqst+".open('GET', 'resources/991961_46808344.mp3', true); \n\
+                    "+rqst+".open('GET', '"+choice+"', true); \n\
                     "+rqst+".responseType = 'arraybuffer'; \n\
                     "+rqst+".onload = function() { \n"
                     k= 0;
@@ -86,6 +87,44 @@ $(document).ready(function(){
         code = tab.join(" ");
         console.log(code);
         return code;
-    }
+    };
+
+    $('select').formSelect();
+    jQuery('select').on('change', function() {
+        var choice = $('select').val();
+        var code = "<!Doctype HTMl>\n\
+        <html>\n\
+            <head>\n\
+                <script type='text/javascript' src='js/Sound.js'></script>\n\
+            </head>\n\
+            <body>\n\
+                <script>\n\
+                    var request = new XMLHttpRequest();\
+                    request.open('GET', '"+choice+"', true); \
+                    request.responseType = 'arraybuffer'; \
+                    request.onload = function() { \
+                        var sound = new Sound();\
+                        sound.audioCxt.decodeAudioData(request.response, function(buffer) { \
+                            sound.setBuffer(buffer);\
+                            sound.generatePlayer();\
+                        });\
+                    }\n\
+                    request.send();\
+                </script>\n\
+            </body>\n\
+        </html>"
+        var iframe = document.getElementById("origin");
+        
+
+        var frameDoc = iframe.document;
+        if (iframe.contentWindow)
+            frameDoc = iframe.contentWindow.document;
+
+        frameDoc.open();
+        frameDoc.writeln("");
+        frameDoc.writeln(code);
+        frameDoc.close();
+    });
+
 
 });

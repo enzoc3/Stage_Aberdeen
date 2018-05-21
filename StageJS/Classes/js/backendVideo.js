@@ -12,7 +12,7 @@ $(document).ready(function(){
             <!-- Please do not remove -->\n\
             <script type='text/javascript' src='js/Pixel.js'></script>\n\
             <script type='text/javascript' src='js/Picture.js'></script>\n\
-            <script type='text/javascript' src='js/Movie.js'></script>\n\
+            <script type='text/javascript' src='js/Video.js'></script>\n\
             <!-- Please do not remove -->\n\
             </head>\n\
             <body>\n\
