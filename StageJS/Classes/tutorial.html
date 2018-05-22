@@ -81,28 +81,28 @@
 
                         <hr>
                         
-                        A picture is defined with its width and height values both as integer. There are the number of pixel in the width and in the height in the pixel. In fact, a picture is an array of pixel with width*height pixel in total. A picture is write and read to the top corner left to the bottom corner right, as a book. <br><br>
+                        A picture is defined by its width and height values both as integer. The width and height values define the number of pixels on the picture. In fact, a picture is an array of pixels with width*height pixel in total. A picture is written and read to the top corner left to the bottom corner right, such as a book. <br><br>
                         
-                        Example of a white picture of 3x3:<br>			
+                        Example of a white 3x3 picture:<br>			
                         (255, 255, 255) (255, 255, 255) (255, 255, 255)	<br>			
                         (255, 255, 255) (255, 255, 255) (255, 255, 255)	<br>			
                         (255, 255, 255) (255, 255, 255) (255, 255, 255)	<br><br>
 
-                        Example of a black picture of 3x3:<br>
+                        Example of a black 3x3 picture:<br>
                         (0, 0, 0) (0, 0, 0) (0, 0, 0)<br>
                         (0, 0, 0) (0, 0, 0) (0, 0, 0)<br>
                         (0, 0, 0) (0, 0, 0) (0, 0, 0)<br><br>
 
-                        Example of a red picture of 3x2:<br>				
+                        Example of a red 3x2 picture:<br>				
                         <font color="FF0000">(255, 0, 0) (255, 0, 0) (255, 0, 0)</font>	<br>				
                         <font color="FF0000">(255, 0, 0) (255, 0, 0) (255, 0, 0)</font>	<br><br>					
 
-                        Example of a green picture of 2x3:<br>
+                        Example of a green 2x3 picture:<br>
                         <font color="00FF00">(0, 255, 0) (0, 255, 0)</font><br>
                         <font color="00FF00">(0, 255, 0) (0, 255, 0)</font><br>
                         <font color="00FF00">(0, 255, 0) (0, 255, 0)</font><br><br>
 
-                        Example of the French flag (blue, white and red) of 3x5:<br>
+                        Example of a 3x5 picture representing the French flag (blue, white and red):<br>
                         <font color="0000FF">(0, 0, 255)</font> (255, 255, 255)  <font color="FF0000">(255, 0, 0)</font><br> 
                         <font color="0000FF">(0, 0, 255)</font> (255, 255, 255)  <font color="FF0000">(255, 0, 0)</font><br>
                         <font color="0000FF">(0, 0, 255)</font> (255, 255, 255)  <font color="FF0000">(255, 0, 0)</font><br>
@@ -111,16 +111,16 @@
 
 
 
-                        <h3>Property and functions of the class Pixel in our JavaScript</h3>
+                        <h3>Property and functions of the class Pixel</h3>
 
                         <hr>
                         
-                        As said, a pixel need some values: red, green, blue, alpha and its position x and y in the picture. The constructor of the class Pixel need the same number and order of properties. Of course, it isn’t possible to take a values smaller than 0 and higher than 255 for a colour. It is possible to reach all of them, with the call of property (“this.”) or with a function. <br><br>
+                        As said, a pixel need some values: red, green, blue, alpha and its position x and y in the picture. The constructor of the class Pixel need the same number and order of properties. Of course, it isn’t possible to take values smaller than 0 and higher than 255 for a colour. It is possible to reach all of them, with the line: "myVar.property;" or with a function. <br><br>
                         
                         <table>
                             <tr>
                                 <th>To create a pixel black at coordinates 50, 50:</th>
-                                <td>var myPixel = Pixel(0, 0, 0, 255, 50, 50);</td>
+                                <td>var myPixel = new Pixel(0, 0, 0, 255, 50, 50);</td>
                             </tr>
                             <tr>
                                 <th>To display some information about a pixel:</th>
@@ -133,82 +133,82 @@
                         
                         <table>
                             <tr>
-                                <th>To reach the value red with property:</th>
-                                <td>myPixel.this.red;</td>
+                                <th>To reach the value red with a property:</th>
+                                <td>myPixel.red;</td>
                             </tr>
                             <tr>
-                                <th>To reach the value green with property:</th>
-                                <td>myPixel.this.green;</td>
+                                <th>To reach the value green with a property:</th>
+                                <td>myPixel.green;</td>
                             </tr>
                             <tr>
-                                <th>To reach the value blue with property:</th>
-                                <td>myPixel.this.blue;</td>
+                                <th>To reach the value blue with a property:</th>
+                                <td>myPixel.blue;</td>
                             </tr>
                             <tr>
-                                <th>To reach the value alpha with property:</th>
-                                <td>myPixel.this.alpha;</td>
+                                <th>To reach the value alpha with a property:</th>
+                                <td>myPixel.alpha;</td>
                             </tr>
                             <tr>
-                                <th>To reach the position x with property:</th>
-                                <td>myPixel.this.x;</td>
+                                <th>To reach the position x with a property:</th>
+                                <td>myPixel.x;</td>
                             </tr>
                             <tr>
-                                <th>To reach the position y with property:</th>
-                                <td>myPixel.this.y;</td>
+                                <th>To reach the position y with a property:</th>
+                                <td>myPixel.y;</td>
                             </tr>
                             <tr>
-                                <th>To reach the colour with function:</th>
+                                <th>To reach the colour with a function (returns an array with the RGBa values):</th>
                                 <td>myPixel.getColor();</td>
                             </tr>
                             <tr>
-                                <th>To reach the position with function:</th>
+                                <th>To reach the position with a function (returns an array with the x & y values):</th>
                                 <td>myPixel.getPos();</td>
                             </tr>
                         </table>
                         				
                         <br><br>
-                        All of this properties can be modify, just with the call of this property or with a function which we have created.<br><br>
+                        All of this properties can be modified, just by calling these properties or the functions we have created.<br><br>
 
                         <table>
                             <tr>
-                                <th>To modify the red value of the pixel with property:</th>
-                                <td>myPixel.this.red = 255;</td>
+                                <th>To modify the red value of the pixel with a property:</th>
+                                <td>myPixel.red = 255;</td>
                             </tr>
                             <tr>
-                                <th>To modify the alpha value of the pixel with property:</th>
-                                <td>myPixel.this.alpha = 175;</td>
+                                <th>To modify the alpha value of the pixel with a property:</th>
+                                <td>myPixel.alpha = 175;</td>
                             </tr>
                             <tr>
-                                <th>To modify all colours of the pixel to white with function:</th>
+                                <th>To change the pixel color to white with a function:</th>
                                 <td>myPixel.setColor(0, 0, 0, 255);</td>
                             </tr>
                             <tr>
-                                <th>To modify all coordinates of the pixel with function:</th>
+                                <th>To change the pixel coordinates with a function:</th>
                                 <td>myPixel.setPos(100, 100);</td>
                             </tr>
                         </table>
 
                         <br><br>                  		
                         
-                        <h3>Property and functions of the class Picture in our JavaScript</h3>
+                        <h3>Properties and functions of the class Picture</h3>
 
                         <hr>
 
-                        Before to draw or modify a picture, the picture must be existed. Create a picture needs an image in the same folder source as parameter. The format of the image can be a “png” or “jpg”. The path source of the picture can be modify. To use the picture, she is drawing in a canvas, a space in the web page. The size of this canvas was initialised to the size of the picture, but it is possible to modify it. <br><br>
+                        Before drawing or modifying a picture, the picture must be created. The constructor for a pictures takes only one argument which is the relative path to the image. The format of the image can be a “png” or “jpg”. To see the picture we are using, it is drawn on the webpage in a container called a "Canvas". <br><br>
                         
                         <br>
 
                         <table>
                             <tr>
-                                <th>To create a picture:</th>
-                                <td>var myPicture = Picture(“picture.jpg”);</td>
+                                <th>Create a picture:</th>
+                                <td>var myPicture = new Picture(“picture.jpg”);</td>
                             </tr>
                             <tr>
-                                <th>To display the first time a picture:</th>
+                                <th>Display a picture for the first time:</th>
                                 <td>myPicture.display();</td>
                             </tr>
                             <tr>
-                                <th>To draw the others time the picture:</th>
+                                <th>Redraw the picture:</th>
                                 <td>myPicture.redraw();</td>
                             </tr>
                             <tr>
@@ -221,23 +221,23 @@
 
                         <table>
                             <tr>
-                                <th>To reach the width with property:</th>
-                                <td>myPicture.this.width; </td>
+                                <th>To reach the width with a property:</th>
+                                <td>myPicture.width; </td>
                             </tr>
                             <tr>
-                                <th>To reach the height with property:</th>
-                                <td>myPicture.this.height;</td>
+                                <th>To reach the height with a property:</th>
+                                <td>myPicture.height;</td>
                             </tr>
                             <tr>
-                                <th>To reach the canvas with property:</th>
-                                <td>myPicture.this.canvas;</td>
+                                <th>To reach the canvas in wich the picture is drawn with a property:</th>
+                                <td>myPicture.canvas;</td>
                             </tr>
                             <tr>
-                                <th>To reach the path source with property:	</th>
-                                <td>myPicture.this.source;</td>
+                                <th>To reach the source path with a property:	</th>
+                                <td>myPicture.source;</td>
                             </tr>
                             <tr>
-                                <th>To reach the colour of a pixel with function:</th>
+                                <th>To reach the colour of a pixel at coordinates (50,50) with a function (returns a new Pixel object as seen below):</th>
                                 <td>myPicture.getPixel(50, 50);</td>
                             </tr>
                         </table>
@@ -245,24 +245,24 @@
 
                     <br><br>
 
-                    All of this properties can’t be modify, only the following can be changed, just with the call of this property or with a function which we have created. To modify the canvas, the function need the name of a canvas which existed in the page HTML. It isn’t possible to modify the size of the picture but is possible to change the size of the canvas and after modify pixels of the picture.<br><br>
+                    All of this properties can’t be modify, only the following can be changed, just by calling these properties or with functions we have created.<br><br>
 
 
                     <table>
                         <tr>
-                            <th>To modify the path source of the picture:</th>
-                            <td>myPicture.this.source = “picture2.png”;</td>
+                            <th>To modify the source path of the picture:</th>
+                            <td>myPicture.source = “picture2.png”;</td>
                         </tr>
                         <tr>
-                            <th>To modify the colour of the pixel 50, 50 with function:</th>
+                            <th>To replacethe pixel at coordinates (50,50) by a new one with a function:</th>
                             <td>myPicture.setPixel(newPixel, 50, 50);</td>
                         </tr>
                         <tr>
-                            <th>To modify the canvas of the picture with function:</th>
+                            <th>To modify the canvas of the picture with a function:</th>
                             <td>myPicture.setCanvas(newCanvas);</td>
                         </tr>
                         <tr>
-                            <th>To modify the size of the canvas to 25, 25 with function:</th>
+                            <th>To modify the size of the canvas to 25x25 with a function:</th>
                             <td>myPicture.setCanvasSize(25, 25);</td>
                         </tr>
                     </table>
