@@ -53,7 +53,6 @@ function getImage(path){
  */
 function getImageData(image){
     var canvas = document.getElementById('source');
-    console.log(canvas);
     if(canvas == null){
         canvas = document.createElement('canvas');
         canvas.id = 'source';
