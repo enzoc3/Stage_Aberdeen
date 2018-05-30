@@ -31,28 +31,48 @@ function Gif(canvas,adapt=true,width=500,height=500){
     this.canvas.style.display = "inline";
     this.isPlaying=false;
     this.addFrame=function(picture){
-        picture.setCanvas(this.canvas,adapt);
-        this.frame.push(picture);
+        try{
+            var err;
+            if(typeof picture.source=="undefined" || typeof picture!= "object" ){
+                console.log("coucou")
+                var err= new Error("The frame must be a Picture");
+                throw err;
+            }
+            picture.setCanvas(this.canvas,adapt);
+            this.frame.push(picture);
+        }catch(err){
+            console.log(err.description);
+        }
     };
     this.getFrame=function(){
         var res=this.frame;
         return res;
     };
     this.play=function (framePerSecond) {
-        this.isPlaying=true
-        var delay=(1/framePerSecond)*1000;
-        var frame= this.frame;
-        animate(frame[0]);
-        var i=1;
-        var run=setInterval(function(){
-            animate(frame[i]);
-            i++;
-            if(i==frame.length-1 || this.isPlaying == false){
-                frame[i].clearCanvas();
-                clearInterval(run);
+        try{
+            if(this.frame.length==0){
+                throw new Error("No frame loaded.");
             }
-        },delay);
 
+            if(typeof framePerSecond != "number"){
+                throw new Error("framePerSecond must be a number");
+            }
+            this.isPlaying=true
+            var delay=(1/framePerSecond)*1000;
+            var frame= this.frame;
+            animate(frame[0]);
+            var i=1;
+            var run=setInterval(function(){
+                animate(frame[i]);
+                i++;
+                if(i==frame.length-1 || this.isPlaying == false){
+                    frame[i].clearCanvas();
+                    clearInterval(run);
+                }
+            },delay);
+        }catch (e){
+            console.log(e.description);
+        }
     };
     this.playInLoop=function (framePerSecond) {
         this.isPlaying=true;
