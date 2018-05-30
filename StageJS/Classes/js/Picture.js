@@ -53,7 +53,6 @@ function getImage(path){
  */
 function getImageData(image){
     var canvas = document.getElementById('source');
-    console.log(canvas);
     if(canvas == null){
         canvas = document.createElement('canvas');
         canvas.id = 'source';
@@ -85,7 +84,6 @@ function getPixelIndices(x, y, width){
  * @param {boolean} wait - if is it is necessary to wait the download of the image
  * @constructor
  */
-
 function Picture(path=null, pWidth=null,pHeight=null){
     if(path!= null){
         var promise = getImage(path);
