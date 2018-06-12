@@ -92,7 +92,6 @@ function checkPath(path){
  * @param {boolean} wait - if is it is necessary to wait the download of the image
  * @constructor
  */
-
 function Picture(path=null, pWidth=null,pHeight=null){
     if(path!= null){
         if(checkPath(path)){

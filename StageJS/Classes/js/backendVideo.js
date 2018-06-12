@@ -66,13 +66,24 @@ $(document).ready(function(){
         </head>\n\
         </html>\n\
         ");
-        frameDoc.writeln(code);
+        var nCode=modifyCode(code);
+        frameDoc.writeln(nCode);
         frameDoc.close();
 
     });
 
+    function modifyCode(code)
+    {
+        var tab = code.split("\n");
+        for(var i = 0; i<tab.length; i++){
+            if(tab[i].includes("<script>")){
+                tab[i+1] = "try{\n" + tab[i+1];
+            }
+            if(tab[i].includes("   </script>")){
+                tab[i-1] = tab[i-1] + "\n}catch(e){}";
+            }
+        }
+        code = tab.join(" ");
+        return code;
+    };
 });
-
-
-
-//$(window).on("load", function(){ });
