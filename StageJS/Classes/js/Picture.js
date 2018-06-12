@@ -13,11 +13,11 @@ function isCorrect(name, nb, min, max) {
             ok = true;
         }
         else {
-            window.alert("Be carefull, the variable " + name + " must be between " + min + " and " + max + " !");
+            window.alert("The var " + name + " must be between " + min + " and " + max + " !");
         }
     }
     else {
-        window.alert("Be carefull, the variable " + name + " must be initialized !");
+        window.alert("The var " + name + " must be initialized !");
     }
     return ok;
 }
@@ -78,6 +78,14 @@ function getPixelIndices(x, y, width){
     return [colorIndice, colorIndice+1, colorIndice+2, colorIndice+3];
 }
 
+function checkPath(path){
+    if (!path.match(/.(jpg|jpeg|png|gif)$/i)){
+        alert('the file provided for the picture is not an image');
+        return false;
+    }
+    return true;
+}
+
 /**
  * Class Picture which create a picture with a source path and a time of waiting
  * @param {String} path - the path source of the image
@@ -87,13 +95,15 @@ function getPixelIndices(x, y, width){
 
 function Picture(path=null, pWidth=null,pHeight=null){
     if(path!= null){
-        var promise = getImage(path);
-        this.source = promise[0];
-        this.height = this.source.height;
-        this.width = this.source.width;
-        this.imgData = promise[1];
-        this.canvas = document.getElementById('source');
-        this.context = this.canvas.getContext('2d');
+        if(checkPath(path)){
+            var promise = getImage(path);
+            this.source = promise[0];
+            this.height = this.source.height;
+            this.width = this.source.width;
+            this.imgData = promise[1];
+            this.canvas = document.getElementById('source');
+            this.context = this.canvas.getContext('2d');
+        }
     }
     else{
         this.source = null;
@@ -109,8 +119,10 @@ function Picture(path=null, pWidth=null,pHeight=null){
      * @returns {Pixel} the new pixel with all information
      */
     this.getPixel = function (x, y){
-        var colorIndice = y * (this.canvas.width * 4) + x * 4;
-        return new Pixel(this.imgData.data[colorIndice], this.imgData.data[colorIndice+1], this.imgData.data[colorIndice+2], this.imgData.data[colorIndice+3], x, y);
+        if(isCorrect("posX", x, 0, this.width-1) && isCorrect("posY", y, 0, this.height-1)){
+            var colorIndice = y * (this.canvas.width * 4) + x * 4;
+            return new Pixel(this.imgData.data[colorIndice], this.imgData.data[colorIndice+1], this.imgData.data[colorIndice+2], this.imgData.data[colorIndice+3], x, y);
+        }
     };
 
     /**
@@ -124,14 +136,12 @@ function Picture(path=null, pWidth=null,pHeight=null){
      */
 
     this.setPixel = function(newPixel, x, y){
-        if (isCorrect("posX", x, 0, this.width)){
-            if (isCorrect("posY", y, 0, this.height)){
-                var pixIndice = getPixelIndices(x, y, this.canvas.width);
-                this.imgData.data[pixIndice[0]] = newPixel.red;
-                this.imgData.data[pixIndice[1]] = newPixel.green;
-                this.imgData.data[pixIndice[2]] = newPixel.blue;
-                this.imgData.data[pixIndice[3]] = newPixel.alpha;
-            }
+        if (isCorrect("posX", x, 0, this.width-1) && isCorrect("posY", y, 0, this.height-1)){
+            var pixIndice = getPixelIndices(x, y, this.canvas.width);
+            this.imgData.data[pixIndice[0]] = newPixel.red;
+            this.imgData.data[pixIndice[1]] = newPixel.green;
+            this.imgData.data[pixIndice[2]] = newPixel.blue;
+            this.imgData.data[pixIndice[3]] = newPixel.alpha;
         }
     };
     this.setCanvasWithID=function(newCanvas, setSize = true){

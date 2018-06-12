@@ -6,20 +6,26 @@
  * @param {int} max - the maximal value possible of the variable
  * @returns {boolean} the answer
  */
-function isCorrect(name, nb, min, max) {
+function isColorCorrect(name, nb, min, max) {
     var ok = false;
     if (nb != null) {
         if (nb >= min && nb <= max) {
             ok = true;
         }
         else {
-            window.alert("Be carefull, the variable " + name + " of the pixel must be between " + min + " and " + max + " !");
+            window.alert("The variable " + name + " must be between " + min + " and " + max + " !");
         }
     }
     else {
-        window.alert("Be carefull, the variable " + name + " of the pixel must be initialize !");
+        window.alert("The variable " + name + " must be initialized !");
     }
     return ok;
+}
+
+function isPosCorrect(name, val){
+    if(val <= 0){
+        window.alert("The var " + name + "can't be under 0!")
+    }
 }
 
 /**
@@ -37,16 +43,16 @@ function Pixel(r, g, b, a, x, y){
     this.green = 0;
     this.blue = 0;
     this.alpha = 0;
-    if (isCorrect("red", r, 0, 255)) {
+    if (isColorCorrect("red", r, 0, 255)) {
         this.red = r;
     }
-    if (isCorrect("green", g, 0, 255)) {
+    if (isColorCorrect("green", g, 0, 255)) {
         this.green = g;
     }
-    if (isCorrect("blue", b, 0, 255)) {
+    if (isColorCorrect("blue", b, 0, 255)) {
         this.blue = b;
     }
-    if (isCorrect("alpha", a, 0, 255)) {
+    if (isColorCorrect("alpha", a, 0, 255)) {
         this.alpha = a;
     }
     this.posX = x;
@@ -76,16 +82,16 @@ function Pixel(r, g, b, a, x, y){
      * @param {int} newAlpha - the new value of alpha of the pixel between 0 and 255
      */
     this.setColor = function(newRed, newGreen, newBlue, newAlpha) {
-        if (isCorrect("red", newRed, 0, 255)) {
+        if (isColorCorrect("red", newRed, 0, 255)) {
             this.red = newRed;
         }
-        if (isCorrect("green", newGreen, 0, 255)) {
+        if (isColorCorrect("green", newGreen, 0, 255)) {
             this.green = newGreen;
         }
-        if (isCorrect("blue", newBlue, 0, 255)) {
+        if (isColorCorrect("blue", newBlue, 0, 255)) {
             this.blue = newBlue;
         }
-        if (isCorrect("alpha", newAlpha, 0, 255)) {
+        if (isColorCorrect("alpha", newAlpha, 0, 255)) {
             this.alpha = newAlpha;
         }
     };
@@ -96,8 +102,12 @@ function Pixel(r, g, b, a, x, y){
      * @param {int} newPosY - the new coordinate y of the pixel between 0 and height-1 in the picture
      */
     this.setPos = function(newPosX, newPosY){
-        this.posX = newPosX;
-        this.posY = newPosY;
+        if(isPosCorrect("Xpos", newPosX)){
+            this.posX = newPosX;
+        }
+        if(isPosCorrect("Ypos", newPosY)){
+            this.posY = newPosY;
+        }
     };
 
     /**
